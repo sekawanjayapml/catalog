@@ -993,18 +993,14 @@
                                 <label for="roomLength">
                                     <i class="fas fa-ruler-horizontal"></i> Panjang Ruangan (m)
                                 </label>
-                                <input type="number" id="roomLength" class="form-control" step="0.01" min="0.1" required>
-                                <small style="color: var(--abu-terang); font-size: 0.8rem; display: block; margin-top: 0.3rem;">
-                                </small>
+                                <input type="number" id="roomLength" class="form-control" step="0.01" min="0.1" required inputmode="decimal">
                             </div>
                             
                             <div class="form-group">
                                 <label for="roomWidth">
                                     <i class="fas fa-ruler-vertical"></i> Lebar Ruangan (m)
                                 </label>
-                                <input type="number" id="roomWidth" class="form-control" step="0.01" min="0.1" required>
-                                <small style="color: var(--abu-terang); font-size: 0.8rem; display: block; margin-top: 0.3rem;">
-                                </small>
+                                <input type="number" id="roomWidth" class="form-control" step="0.01" min="0.1" required inputmode="decimal">
                             </div>
                             
                             <div class="form-group full-width">
@@ -1193,6 +1189,40 @@
         const dropdownSelected = document.getElementById('dropdownSelected');
         const dropdownOptions = document.getElementById('dropdownOptions');
         const dropdownOptionElements = document.querySelectorAll('.dropdown-option');
+
+        // PREVENT NON-NUMERIC INPUT FOR ROOM DIMENSIONS
+        roomLength.addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^0-9.]/g, '');
+            
+            // Prevent multiple decimal points
+            if ((this.value.match(/\./g) || []).length > 1) {
+                this.value = this.value.substring(0, this.value.lastIndexOf('.'));
+            }
+        });
+
+        roomWidth.addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^0-9.]/g, '');
+            
+            // Prevent multiple decimal points
+            if ((this.value.match(/\./g) || []).length > 1) {
+                this.value = this.value.substring(0, this.value.lastIndexOf('.'));
+            }
+        });
+
+        // Also prevent paste of non-numeric characters
+        roomLength.addEventListener('paste', function(e) {
+            const pasteData = e.clipboardData.getData('text');
+            if (!/^[0-9.]+$/.test(pasteData)) {
+                e.preventDefault();
+            }
+        });
+
+        roomWidth.addEventListener('paste', function(e) {
+            const pasteData = e.clipboardData.getData('text');
+            if (!/^[0-9.]+$/.test(pasteData)) {
+                e.preventDefault();
+            }
+        });
 
         // Sticky header
         window.addEventListener('scroll', () => {
