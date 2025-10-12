@@ -297,6 +297,19 @@
             font-size: 16px; /* Prevent zoom on iOS */
         }
 
+        .dropdown-selected.placeholder {
+            color: var(--abu-terang);
+        }
+
+        .dropdown-selected.filled {
+            color: var(--abu-gelap);
+        }
+
+        .dropdown-selected.error {
+            border-color: #DC2626;
+            background-color: #FEF2F2;
+        }
+
         .dropdown-selected:hover {
             border-color: var(--biru-terang);
         }
@@ -536,7 +549,7 @@
             border: 1px solid #FED7AA;
         }
 
-        /* Footer - DIUBAH SESUAI SCREENSHOT */
+        /* Footer - PERBAIKAN GRID LAYOUT UNTUK BERJEJER */
         .footer {
             background-color: var(--biru-tua);
             color: var(--putih);
@@ -546,9 +559,17 @@
 
         .footer-container {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 2rem;
             margin-bottom: 2rem;
+        }
+
+        /* PERBAIKAN: Grid untuk Link Cepat & Kontak berjejer */
+        .footer-links-contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            width: 100%;
         }
 
         .footer-col h4 {
@@ -557,6 +578,7 @@
             position: relative;
             padding-bottom: 0.6rem;
             font-weight: 600;
+            text-align: left;
         }
 
         .footer-col h4::after {
@@ -574,10 +596,12 @@
             opacity: 0.8;
             font-size: 0.9rem;
             line-height: 1.6;
+            text-align: left;
         }
 
         .footer-links {
             list-style: none;
+            text-align: left;
         }
 
         .footer-links li {
@@ -612,6 +636,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.8rem;
             opacity: 0.7;
+            width: 100%;
         }
 
         /* Back to Top Button - MOBILE FRIENDLY */
@@ -646,7 +671,7 @@
             transform: translateY(-3px);
         }
 
-        /* MOBILE RESPONSIVE STYLES */
+        /* MOBILE RESPONSIVE STYLES - PERBAIKAN UNTUK FOOTER BERJEJER */
         @media (max-width: 768px) {
             .container {
                 padding: 0 1rem;
@@ -737,10 +762,25 @@
                 min-height: 70px;
             }
 
-            /* Footer Mobile */
-            .footer-container {
-                grid-template-columns: 1fr;
+            /* FOOTER MOBILE - LINK CEPAT DAN KONTAK BERJEJER */
+            .footer-links-contact-wrapper {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
                 gap: 1.5rem;
+                width: 100%;
+            }
+
+            .footer-col h4 {
+                font-size: 1rem;
+                text-align: left;
+            }
+
+            .footer-links {
+                text-align: left;
+            }
+
+            .footer-links a {
+                font-size: 0.8rem;
             }
         }
 
@@ -777,6 +817,20 @@
             .result-value {
                 font-size: 0.95rem;
             }
+
+            /* FOOTER UNTUK HP KECIL - TETAP BERJEJER */
+            .footer-links-contact-wrapper {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .footer-col h4 {
+                font-size: 0.95rem;
+            }
+
+            .footer-links a {
+                font-size: 0.75rem;
+            }
         }
 
         @media (max-width: 360px) {
@@ -805,6 +859,20 @@
             .result-item {
                 padding: 0.7rem;
                 min-height: 65px;
+            }
+
+            /* UNTUK HP SANGAT KECIL - MASIH BERJEJER */
+            .footer-links-contact-wrapper {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.8rem;
+            }
+
+            .footer-col h4 {
+                font-size: 0.9rem;
+            }
+
+            .footer-links a {
+                font-size: 0.7rem;
             }
         }
 
@@ -835,8 +903,14 @@
                 justify-content: center;
             }
 
+            /* FOOTER DESKTOP */
             .footer-container {
                 grid-template-columns: 2fr 1fr 1fr;
+                gap: 3rem;
+            }
+
+            .footer-links-contact-wrapper {
+                display: contents;
             }
         }
 
@@ -919,9 +993,8 @@
                                 <label for="roomLength">
                                     <i class="fas fa-ruler-horizontal"></i> Panjang Ruangan (m)
                                 </label>
-                                <input type="number" id="roomLength" class="form-control" placeholder="Contoh: 3.5" step="0.01" min="0.1" required>
+                                <input type="number" id="roomLength" class="form-control" step="0.01" min="0.1" required>
                                 <small style="color: var(--abu-terang); font-size: 0.8rem; display: block; margin-top: 0.3rem;">
-                                    Gunakan titik (.) untuk desimal
                                 </small>
                             </div>
                             
@@ -929,9 +1002,8 @@
                                 <label for="roomWidth">
                                     <i class="fas fa-ruler-vertical"></i> Lebar Ruangan (m)
                                 </label>
-                                <input type="number" id="roomWidth" class="form-control" placeholder="Contoh: 2.75" step="0.01" min="0.1" required>
+                                <input type="number" id="roomWidth" class="form-control" step="0.01" min="0.1" required>
                                 <small style="color: var(--abu-terang); font-size: 0.8rem; display: block; margin-top: 0.3rem;">
-                                    Gunakan titik (.) untuk desimal
                                 </small>
                             </div>
                             
@@ -940,7 +1012,7 @@
                                     <i class="fas fa-border-style"></i> Pilih Ukuran Keramik/Granit
                                 </label>
                                 <div class="custom-dropdown" id="tileDropdown">
-                                    <div class="dropdown-selected" id="dropdownSelected">
+                                    <div class="dropdown-selected placeholder" id="dropdownSelected">
                                         <span>Pilih ukuran keramik</span>
                                         <i class="fas fa-chevron-down dropdown-arrow"></i>
                                     </div>
@@ -1039,31 +1111,37 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-container">
-                <div class="footer-col">
+                <div class="footer-col footer-main">
                     <h4>SEKAWAN JAYA</h4>
                     <p>Penyedia keramik dan granit berkualitas tinggi dengan harga terjangkau. Melayani dengan profesionalisme dan komitmen terhadap kepuasan pelanggan.</p>
                 </div>
-                <div class="footer-col">
-                    <h4>Link Cepat</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
-                        <li><a href="index.html#products"><i class="fas fa-chevron-right"></i> Katalog</a></li>
-                        <li><a href="index.html#about-us"><i class="fas fa-chevron-right"></i> Tentang Kami</a></li>
-                        <li><a href="index.html#contact"><i class="fas fa-chevron-right"></i> Kontak</a></li>
-                    </ul>
+                
+                <!-- PERBAIKAN: Gunakan wrapper yang sama seperti index.html -->
+                <div class="footer-links-contact-wrapper">
+                    <div class="footer-col">
+                        <h4>Link Cepat</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+                            <li><a href="index.html#products"><i class="fas fa-chevron-right"></i> Katalog</a></li>
+                            <li><a href="index.html#about-us"><i class="fas fa-chevron-right"></i> Tentang Kami</a></li>
+                            <li><a href="index.html#contact"><i class="fas fa-chevron-right"></i> Kontak</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Kontak</h4>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-map-marker-alt"></i> Pemalang, Jawa Tengah</a></li>
+                            <li><a href="tel:+6288216124228"><i class="fas fa-phone-alt"></i> 0882-1612-4228</a></li>
+                            <li><a href="mailto:info@sekawanjaya.com"><i class="fas fa-envelope"></i> info@sekawanjaya.com</a></li>
+                            <li><a href="https://wa.me/6288216124228" target="_blank"><i class="fab fa-whatsapp"></i> +62 882-1612-4228</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="footer-col">
-                    <h4>Kontak</h4>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Pemalang, Jawa Tengah</a></li>
-                        <li><a href="tel:+6288216124228"><i class="fas fa-phone-alt"></i> 0882-1612-4228</a></li>
-                        <li><a href="mailto:info@sekawanjaya.com"><i class="fas fa-envelope"></i> info@sekawanjaya.com</a></li>
-                        <li><a href="https://wa.me/6288216124228" target="_blank"><i class="fab fa-whatsapp"></i> +62 882-1612-4228</a></li>
-                    </ul>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 SEKAWAN JAYA. All Rights Reserved.</p>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 SEKAWAN JAYA. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -1182,6 +1260,11 @@
                 selectedTileArea.value = area;
                 selectedTilePieces.value = pieces;
                 
+                // Update visual state
+                dropdownSelected.classList.remove('placeholder');
+                dropdownSelected.classList.add('filled');
+                dropdownSelected.classList.remove('error');
+                
                 // Update selected state
                 dropdownOptionElements.forEach(opt => opt.classList.remove('selected'));
                 this.classList.add('selected');
@@ -1211,14 +1294,27 @@
             
             if (!roomLength.value || parseFloat(roomLength.value) <= 0) {
                 isValid = false;
+                roomLength.style.borderColor = '#DC2626';
+                roomLength.style.backgroundColor = '#FEF2F2';
+            } else {
+                roomLength.style.borderColor = '';
+                roomLength.style.backgroundColor = '';
             }
             
             if (!roomWidth.value || parseFloat(roomWidth.value) <= 0) {
                 isValid = false;
+                roomWidth.style.borderColor = '#DC2626';
+                roomWidth.style.backgroundColor = '#FEF2F2';
+            } else {
+                roomWidth.style.borderColor = '';
+                roomWidth.style.backgroundColor = '';
             }
             
             if (!selectedTileSize.value) {
                 isValid = false;
+                dropdownSelected.classList.add('error');
+            } else {
+                dropdownSelected.classList.remove('error');
             }
             
             if (!isValid) {
@@ -1355,9 +1451,14 @@
 
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
-            // Set default tile selection
-            const defaultOption = dropdownOptionElements[0];
-            defaultOption.click();
+            // TIDAK ADA DEFAULT SELECTION - Dropdown tetap kosong
+            dropdownSelected.querySelector('span').textContent = "Pilih ukuran keramik";
+            selectedTileSize.value = "";
+            selectedTileArea.value = "";
+            selectedTilePieces.value = "";
+            
+            // Reset selected state
+            dropdownOptionElements.forEach(opt => opt.classList.remove('selected'));
             
             // Show warning alert
             warningAlert.style.display = 'block';
