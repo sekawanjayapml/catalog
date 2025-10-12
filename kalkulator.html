@@ -1240,10 +1240,25 @@
             });
         });
 
+        // NEW FEATURE: Function to reset calculator result
+        function resetCalculatorResult() {
+            calculatorResult.classList.remove('show');
+            warningAlert.style.display = 'none';
+        }
+
+        // NEW FEATURE: Reset hasil ketika panjang ruangan berubah
+        roomLength.addEventListener('input', resetCalculatorResult);
+
+        // NEW FEATURE: Reset hasil ketika lebar ruangan berubah
+        roomWidth.addEventListener('input', resetCalculatorResult);
+
         // Dropdown functionality
         dropdownSelected.addEventListener('click', function(e) {
             e.stopPropagation();
             tileDropdown.classList.toggle('dropdown-open');
+            
+            // NEW FEATURE: Reset hasil sebelumnya ketika dropdown diklik
+            resetCalculatorResult();
         });
 
         dropdownOptionElements.forEach(option => {
@@ -1271,6 +1286,9 @@
                 
                 // Close dropdown
                 tileDropdown.classList.remove('dropdown-open');
+                
+                // NEW FEATURE: Reset hasil ketika ukuran keramik dipilih
+                resetCalculatorResult();
             });
         });
 
