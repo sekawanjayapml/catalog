@@ -2,10 +2,9 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="Kalkulator Keramik & Granit - Hitung kebutuhan material dengan akurat. SEKAWAN JAYA Supplier Keramik & Granit Berkualitas di Pemalang.">
   <title>Kalkulator Keramik & Granit · SEKAWAN JAYA</title>
-  <!-- Fonts: Poppins (judul) + Inter (isi) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
@@ -21,29 +20,28 @@
       background: #f5f7fc;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       color: #0b1a33;
-      line-height: 1.5;
-      padding: 0 0 2rem 0;
+      line-height: 1.4;
+      padding: 0 0 1.5rem 0;
       -webkit-font-smoothing: antialiased;
+      font-size: 13px;
     }
 
-    /* container */
     .container {
-      max-width: 600px;
+      max-width: 480px;
       margin: 0 auto;
-      padding: 0 1rem;
+      padding: 0 0.7rem;
     }
 
-    /* header minimal */
+    /* header */
     .header {
-      background: #ffffff;
-      padding: 0.8rem 0;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(6px);
+      padding: 0.5rem 0;
       position: sticky;
       top: 0;
       z-index: 40;
-      backdrop-filter: blur(6px);
-      background: rgba(255,255,255,0.92);
       border-bottom: 1px solid rgba(0,0,0,0.03);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
     }
     .header .container {
       display: flex;
@@ -53,15 +51,15 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: #0b1a33;
       text-decoration: none;
     }
     .logo img {
-      height: 32px;
+      height: 26px;
       width: auto;
       display: block;
     }
@@ -71,70 +69,68 @@
     .nav-trigger {
       background: none;
       border: none;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       color: #0b1a33;
-      padding: 0.3rem 0.6rem;
+      padding: 0.2rem 0.4rem;
       cursor: pointer;
     }
 
-    /* HERO PENDEK – langsung terlihat kalkulator */
+    /* hero mini */
     .hero-mini {
       background: linear-gradient(135deg, #0b1a33 0%, #1a3a6b 100%);
       color: white;
-      padding: 1.8rem 1.2rem 1.8rem 1.2rem;
-      border-radius: 20px;
-      margin: 0 1rem 1.5rem 1rem;
-      box-shadow: 0 8px 20px rgba(11,26,51,0.12);
+      padding: 1.2rem 1rem 1.2rem;
+      border-radius: 16px;
+      margin: 0 0.7rem 1rem 0.7rem;
+      box-shadow: 0 6px 16px rgba(11,26,51,0.10);
       text-align: center;
     }
     .hero-mini h1 {
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       letter-spacing: -0.3px;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.1rem;
     }
     .hero-mini p {
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       opacity: 0.85;
       font-weight: 400;
-      max-width: 300px;
-      margin: 0 auto;
     }
 
-    /* card utama */
+    /* card */
     .card-calc {
       background: #ffffff;
-      border-radius: 16px;
-      padding: 1.8rem 1.5rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,20,40,0.04);
-      margin: 0 1rem 1.5rem 1rem;
+      border-radius: 14px;
+      padding: 1.2rem 1rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.02), 0 1px 4px rgba(0,20,40,0.04);
+      margin: 0 0.7rem 1rem 0.7rem;
       border: 1px solid rgba(0,0,0,0.02);
     }
 
     .form-group {
-      margin-bottom: 1.4rem;
+      margin-bottom: 0.9rem;
     }
     .form-group label {
       display: block;
       font-weight: 500;
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       color: #1f3a5f;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.25rem;
       letter-spacing: -0.2px;
     }
     .form-group label i {
-      margin-right: 0.3rem;
+      margin-right: 0.25rem;
       opacity: 0.5;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
     }
     .form-control {
       width: 100%;
-      padding: 0.8rem 0.9rem;
+      padding: 0.6rem 0.7rem;
       border: 1.5px solid #e9edf4;
-      border-radius: 14px;
+      border-radius: 12px;
       font-family: 'Inter', sans-serif;
-      font-size: 1rem;
+      font-size: 15px;
       background: #fafcff;
       transition: 0.2s;
       color: #0b1a33;
@@ -144,14 +140,15 @@
       border-color: #1a4b8c;
       outline: none;
       background: #ffffff;
-      box-shadow: 0 0 0 4px rgba(26,75,140,0.06);
+      box-shadow: 0 0 0 3px rgba(26,75,140,0.06);
     }
     .form-control::placeholder {
       color: #a0b3cc;
       font-weight: 400;
+      font-size: 0.85rem;
     }
 
-    /* dropdown custom */
+    /* dropdown */
     .custom-dropdown {
       position: relative;
     }
@@ -159,15 +156,16 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.8rem 0.9rem;
+      padding: 0.6rem 0.7rem;
       border: 1.5px solid #e9edf4;
-      border-radius: 14px;
+      border-radius: 12px;
       background: #fafcff;
       cursor: pointer;
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       color: #0b1a33;
       transition: 0.2s;
       font-weight: 450;
+      min-height: 42px;
     }
     .dropdown-selected.placeholder {
       color: #8a9fb8;
@@ -175,12 +173,8 @@
     .dropdown-selected.filled {
       color: #0b1a33;
     }
-    .dropdown-selected:focus {
-      border-color: #1a4b8c;
-      box-shadow: 0 0 0 4px rgba(26,75,140,0.06);
-    }
     .dropdown-arrow {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       opacity: 0.5;
       transition: 0.25s;
     }
@@ -190,25 +184,25 @@
     }
     .dropdown-options {
       position: absolute;
-      top: calc(100% + 6px);
+      top: calc(100% + 4px);
       left: 0;
       right: 0;
       background: white;
-      border-radius: 16px;
+      border-radius: 14px;
       border: 1px solid #eef2f8;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-      max-height: 220px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+      max-height: 180px;
       overflow-y: auto;
       display: none;
       z-index: 30;
-      padding: 0.3rem 0;
+      padding: 0.2rem 0;
     }
     .dropdown-open .dropdown-options {
       display: block;
     }
     .dropdown-option {
-      padding: 0.7rem 1rem;
-      font-size: 0.9rem;
+      padding: 0.5rem 0.8rem;
+      font-size: 0.8rem;
       border-bottom: 1px solid #f0f4fa;
       cursor: pointer;
       transition: 0.1s;
@@ -227,31 +221,35 @@
       color: #0b1a33;
       font-weight: 500;
     }
+    .dropdown-option span {
+      color: #6a7f9e;
+      font-weight: 400;
+      font-size: 0.7rem;
+    }
 
-    /* tombol full width */
+    /* tombol */
     .btn-primary {
       width: 100%;
-      padding: 1rem;
+      padding: 0.75rem;
       background: #1a4b8c;
       color: white;
       border: none;
       border-radius: 40px;
       font-family: 'Inter', sans-serif;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.85rem;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
       cursor: pointer;
       transition: 0.2s;
-      box-shadow: 0 4px 8px rgba(26,75,140,0.15);
-      margin-top: 0.5rem;
+      box-shadow: 0 3px 8px rgba(26,75,140,0.12);
+      margin-top: 0.3rem;
+      min-height: 44px;
     }
-    .btn-primary:hover {
-      background: #123a6e;
-      transform: scale(0.99);
-      box-shadow: 0 6px 14px rgba(26,75,140,0.2);
+    .btn-primary:active {
+      transform: scale(0.97);
     }
     .btn-primary:disabled {
       opacity: 0.6;
@@ -259,44 +257,61 @@
       box-shadow: none;
     }
 
-    /* dashboard hasil – minimal, seperti ringkasan */
+    /* alert */
+    .alert-error {
+      background: #fee9e7;
+      border-left: 4px solid #c73b2b;
+      color: #8f2b1f;
+      display: none;
+      padding: 0.6rem 0.8rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      margin: 0.6rem 0 0;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .alert-error.show {
+      display: flex;
+    }
+
+    /* result */
     .result-dashboard {
-      margin-top: 2rem;
+      margin-top: 1.2rem;
       background: #f8faff;
-      border-radius: 18px;
-      padding: 1.5rem 1.2rem;
+      border-radius: 14px;
+      padding: 1rem 0.8rem;
       border: 1px solid #eef2f8;
       display: none;
     }
     .result-dashboard.show {
       display: block;
-      animation: fadeUp 0.4s ease;
+      animation: fadeUp 0.35s ease;
     }
     @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(12px); }
+      0% { opacity: 0; transform: translateY(10px); }
       100% { opacity: 1; transform: translateY(0); }
     }
 
     .result-header {
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1.2rem;
+      align-items: center;
+      margin-bottom: 0.8rem;
       border-bottom: 1px solid #e6ecf5;
-      padding-bottom: 0.6rem;
+      padding-bottom: 0.4rem;
     }
     .result-header h3 {
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 0.95rem;
       color: #0b1a33;
       letter-spacing: -0.3px;
     }
-    .result-header .badge-size {
+    .badge-size {
       background: #e9eff8;
-      padding: 0.2rem 0.8rem;
+      padding: 0.15rem 0.6rem;
       border-radius: 40px;
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       font-weight: 600;
       color: #1a4b8c;
     }
@@ -304,43 +319,38 @@
     .metric-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 0.8rem;
-      margin-bottom: 0.8rem;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
     }
     .metric-item {
       background: white;
-      border-radius: 14px;
-      padding: 0.7rem 0.3rem;
+      border-radius: 12px;
+      padding: 0.5rem 0.2rem;
       text-align: center;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
       border: 1px solid #f0f4fa;
     }
     .metric-label {
-      font-size: 0.6rem;
+      font-size: 0.55rem;
       text-transform: uppercase;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.3px;
       color: #6a7f9e;
       font-weight: 600;
     }
     .metric-value {
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: 700;
       color: #0b1a33;
-      margin-top: 0.1rem;
+      margin-top: 0.05rem;
       line-height: 1.2;
     }
     .metric-value small {
       font-weight: 400;
-      font-size: 0.7rem;
+      font-size: 0.6rem;
       color: #6f87aa;
-      margin-left: 2px;
+      margin-left: 1px;
     }
-
     .metric-buffer {
       background: #eef5fe;
-      border-radius: 14px;
-      padding: 0.7rem 0.3rem;
-      text-align: center;
       border: 1px solid #dbe7f5;
     }
     .metric-buffer .metric-label {
@@ -350,88 +360,92 @@
       color: #0b2a55;
     }
 
+    .pieces-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      color: #3b5a7f;
+      background: #f2f7fe;
+      padding: 0.3rem 0.7rem;
+      border-radius: 40px;
+      margin-top: 0.2rem;
+    }
+    .pieces-row strong {
+      color: #0b1a33;
+    }
+
     .action-group {
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
-      margin-top: 1.2rem;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
     }
     .btn-wa {
       background: #25b66b;
       color: white;
       border: none;
       border-radius: 40px;
-      padding: 0.8rem;
+      padding: 0.6rem;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem;
+      gap: 0.4rem;
       text-decoration: none;
       transition: 0.2s;
-      box-shadow: 0 3px 8px rgba(37,182,107,0.2);
+      box-shadow: 0 2px 8px rgba(37,182,107,0.15);
+      min-height: 40px;
     }
-    .btn-wa:hover {
-      background: #1e9e5a;
-      transform: scale(0.98);
+    .btn-wa:active {
+      transform: scale(0.97);
     }
     .btn-print {
       background: transparent;
       color: #1f3a5f;
       border: 1px solid #d0dcec;
       border-radius: 40px;
-      padding: 0.7rem;
+      padding: 0.5rem;
       font-weight: 500;
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.4rem;
+      gap: 0.3rem;
       cursor: pointer;
       transition: 0.2s;
+      min-height: 38px;
     }
-    .btn-print:hover {
+    .btn-print:active {
       background: #f0f5fe;
-      border-color: #b0c6e0;
     }
 
-    /* alert kecil */
     .alert-tip {
       background: #eef6fd;
-      border-radius: 14px;
-      padding: 0.8rem 1rem;
-      font-size: 0.8rem;
+      border-radius: 12px;
+      padding: 0.5rem 0.7rem;
+      font-size: 0.65rem;
       color: #1f4a7a;
-      margin: 1rem 0 0.2rem 0;
+      margin: 0.6rem 0 0.2rem 0;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      border-left: 4px solid #1a4b8c;
+      gap: 0.4rem;
+      border-left: 3px solid #1a4b8c;
     }
     .alert-tip i {
       color: #1a4b8c;
       opacity: 0.7;
-    }
-    .alert-error {
-      background: #fee9e7;
-      border-left: 4px solid #c73b2b;
-      color: #8f2b1f;
-      display: none;
-      padding: 0.8rem 1rem;
-      border-radius: 14px;
-      font-size: 0.8rem;
-      margin: 0.6rem 0;
+      font-size: 0.7rem;
     }
 
-    /* footer minimal */
+    /* footer */
     .footer-mini {
       text-align: center;
-      font-size: 0.7rem;
+      font-size: 0.6rem;
       color: #8a9fb8;
-      padding: 2.5rem 1rem 1rem;
+      padding: 1.5rem 0.7rem 0.5rem;
       border-top: 1px solid #eef2f8;
-      margin: 1.5rem 1rem 0;
+      margin: 1rem 0.7rem 0;
     }
     .footer-mini a {
       color: #1a4b8c;
@@ -440,19 +454,28 @@
     }
 
     /* responsive */
-    @media (max-width: 460px) {
-      .hero-mini h1 { font-size: 1.3rem; }
-      .card-calc { padding: 1.4rem 1rem; }
-      .metric-grid { grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; }
-      .metric-value { font-size: 1rem; }
-      .btn-primary { font-size: 0.95rem; padding: 0.9rem; }
-    }
-    @media (max-width: 380px) {
-      .metric-grid { grid-template-columns: 1fr 1fr; }
-      .metric-item:last-child { grid-column: span 2; }
+    @media (max-width: 420px) {
+      body { font-size: 12px; }
+      .hero-mini { padding: 1rem 0.8rem; }
+      .hero-mini h1 { font-size: 1.05rem; }
+      .card-calc { padding: 1rem 0.8rem; }
+      .metric-grid { gap: 0.35rem; }
+      .metric-item { padding: 0.4rem 0.15rem; }
+      .metric-value { font-size: 0.85rem; }
+      .form-control { font-size: 14px; padding: 0.5rem 0.6rem; }
+      .dropdown-selected { padding: 0.5rem 0.6rem; font-size: 0.8rem; min-height: 38px; }
     }
 
-    /* hilangkan spinner number */
+    @media (max-width: 360px) {
+      .metric-grid { grid-template-columns: 1fr 1fr; }
+      .metric-item:last-child { grid-column: span 2; }
+      .hero-mini h1 { font-size: 0.95rem; }
+      .hero-mini p { font-size: 0.65rem; }
+      .btn-primary { font-size: 0.75rem; padding: 0.6rem; min-height: 38px; }
+      .btn-wa { font-size: 0.7rem; padding: 0.5rem; min-height: 36px; }
+      .btn-print { font-size: 0.65rem; padding: 0.4rem; min-height: 34px; }
+    }
+
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button {
       -webkit-appearance: none;
@@ -465,7 +488,6 @@
 </head>
 <body>
 
-<!-- header ringan -->
 <header class="header">
   <div class="container">
     <a href="#" class="logo">
@@ -476,40 +498,38 @@
   </div>
 </header>
 
-<!-- HERO PENDEK -->
 <div class="hero-mini">
   <h1>Kalkulator Keramik &amp; Granit</h1>
-  <p>Hitung kebutuhan material dengan cepat · estimasi akurat</p>
+  <p>Hitung kebutuhan material dengan cepat</p>
 </div>
 
-<!-- KALKULATOR -->
 <div class="card-calc">
   <form id="calcForm">
     <div class="form-group">
-      <label for="roomLength"><i class="fas fa-arrows-left-right"></i> Panjang ruangan (m)</label>
+      <label for="roomLength"><i class="fas fa-arrows-left-right"></i> Panjang (m)</label>
       <input type="number" id="roomLength" class="form-control" step="0.01" min="0.1" placeholder="contoh: 4.5" required>
     </div>
     <div class="form-group">
-      <label for="roomWidth"><i class="fas fa-arrows-up-down"></i> Lebar ruangan (m)</label>
+      <label for="roomWidth"><i class="fas fa-arrows-up-down"></i> Lebar (m)</label>
       <input type="number" id="roomWidth" class="form-control" step="0.01" min="0.1" placeholder="contoh: 3.2" required>
     </div>
 
     <div class="form-group">
-      <label><i class="fas fa-border-all"></i> Ukuran keramik / granit</label>
+      <label><i class="fas fa-border-all"></i> Ukuran keramik</label>
       <div class="custom-dropdown" id="tileDropdown">
         <div class="dropdown-selected placeholder" id="dropdownSelected">
           <span>Pilih ukuran</span>
           <i class="fas fa-chevron-down dropdown-arrow"></i>
         </div>
         <div class="dropdown-options" id="dropdownOptions">
-          <div class="dropdown-option" data-size="25x25" data-area="1.00" data-pieces="16">25×25 cm <span style="color:#6a7f9e;font-weight:400;">1.00 m²/dus</span></div>
-          <div class="dropdown-option" data-size="25x40" data-area="1.00" data-pieces="10">25×40 cm <span style="color:#6a7f9e;font-weight:400;">1.00 m²/dus</span></div>
-          <div class="dropdown-option" data-size="30x30" data-area="0.99" data-pieces="11">30×30 cm <span style="color:#6a7f9e;font-weight:400;">0.99 m²/dus</span></div>
-          <div class="dropdown-option" data-size="30x60" data-area="0.90" data-pieces="5">30×60 cm <span style="color:#6a7f9e;font-weight:400;">0.90 m²/dus</span></div>
-          <div class="dropdown-option" data-size="40x40" data-area="1.00" data-pieces="6">40×40 cm <span style="color:#6a7f9e;font-weight:400;">1.00 m²/dus</span></div>
-          <div class="dropdown-option" data-size="50x50" data-area="1.00" data-pieces="4">50×50 cm <span style="color:#6a7f9e;font-weight:400;">1.00 m²/dus</span></div>
-          <div class="dropdown-option" data-size="60x60" data-area="1.44" data-pieces="4">60×60 cm <span style="color:#6a7f9e;font-weight:400;">1.44 m²/dus</span></div>
-          <div class="dropdown-option" data-size="60x120" data-area="1.44" data-pieces="2">60×120 cm <span style="color:#6a7f9e;font-weight:400;">1.44 m²/dus</span></div>
+          <div class="dropdown-option" data-size="25x25" data-area="1.00" data-pieces="16">25×25 cm <span>1.00 m²/dus</span></div>
+          <div class="dropdown-option" data-size="25x40" data-area="1.00" data-pieces="10">25×40 cm <span>1.00 m²/dus</span></div>
+          <div class="dropdown-option" data-size="30x30" data-area="0.99" data-pieces="11">30×30 cm <span>0.99 m²/dus</span></div>
+          <div class="dropdown-option" data-size="30x60" data-area="0.90" data-pieces="5">30×60 cm <span>0.90 m²/dus</span></div>
+          <div class="dropdown-option" data-size="40x40" data-area="1.00" data-pieces="6">40×40 cm <span>1.00 m²/dus</span></div>
+          <div class="dropdown-option" data-size="50x50" data-area="1.00" data-pieces="4">50×50 cm <span>1.00 m²/dus</span></div>
+          <div class="dropdown-option" data-size="60x60" data-area="1.44" data-pieces="4">60×60 cm <span>1.44 m²/dus</span></div>
+          <div class="dropdown-option" data-size="60x120" data-area="1.44" data-pieces="2">60×120 cm <span>1.44 m²/dus</span></div>
         </div>
       </div>
       <input type="hidden" id="selectedTileSize" required>
@@ -518,79 +538,73 @@
     </div>
 
     <button type="submit" class="btn-primary" id="calculateBtn">
-      <i class="fas fa-calculator"></i> Hitung kebutuhan
+      <i class="fas fa-calculator"></i> Hitung
     </button>
 
     <div class="alert-error" id="errorAlert">
-      <i class="fas fa-exclamation-circle"></i> Mohon lengkapi semua input dengan benar.
+      <i class="fas fa-exclamation-circle"></i> Lengkapi semua input dengan benar.
     </div>
   </form>
 
-  <!-- HASIL DASHBOARD -->
   <div class="result-dashboard" id="resultDashboard">
     <div class="result-header">
-      <h3>Ringkasan kebutuhan</h3>
+      <h3>Ringkasan</h3>
       <span class="badge-size" id="selectedSizeLabel">—</span>
     </div>
 
     <div class="metric-grid">
       <div class="metric-item">
-        <div class="metric-label">Luas area</div>
+        <div class="metric-label">Luas</div>
         <div class="metric-value" id="totalArea">0 <small>m²</small></div>
       </div>
       <div class="metric-item">
-        <div class="metric-label">Dus (est.)</div>
+        <div class="metric-label">Dus</div>
         <div class="metric-value" id="totalBoxes">0 <small>dus</small></div>
       </div>
       <div class="metric-item metric-buffer">
-        <div class="metric-label">+10% cadangan</div>
+        <div class="metric-label">+10%</div>
         <div class="metric-value" id="totalWithBuffer">0 <small>dus</small></div>
       </div>
     </div>
 
-    <div style="display:flex; justify-content: space-between; font-size:0.8rem; color:#3b5a7f; background:#f2f7fe; padding:0.4rem 0.8rem; border-radius:40px; margin-top:0.2rem;">
-      <span><i class="far fa-square"></i> Total keping: <strong id="totalPieces">0</strong> pcs</span>
-      <span><i class="fas fa-plus-circle" style="opacity:0.5;"></i> +10%: <strong id="totalPiecesWithBuffer">0</strong> pcs</span>
+    <div class="pieces-row">
+      <span><i class="far fa-square"></i> Keping: <strong id="totalPieces">0</strong></span>
+      <span><i class="fas fa-plus-circle" style="opacity:0.4;"></i> +10%: <strong id="totalPiecesWithBuffer">0</strong></span>
     </div>
 
     <div class="action-group">
       <a id="whatsappLink" class="btn-wa" target="_blank" href="#">
-        <i class="fab fa-whatsapp"></i> Konsultasi via WhatsApp
+        <i class="fab fa-whatsapp"></i> Konsultasi WA
       </a>
       <button id="printBtn" class="btn-print" onclick="printResult()">
-        <i class="fas fa-print"></i> Cetak hasil
+        <i class="fas fa-print"></i> Cetak
       </button>
     </div>
 
     <div class="alert-tip">
-      <i class="fas fa-info-circle"></i> Hasil estimasi. Disarankan konsultasi dengan tim ahli.
+      <i class="fas fa-info-circle"></i> Hasil estimasi. Konsultasi dengan tim ahli disarankan.
     </div>
   </div>
 </div>
 
-<!-- footer kecil -->
 <div class="footer-mini">
   <p>SEKAWAN JAYA · Supplier Keramik &amp; Granit · Pemalang</p>
-  <p style="margin-top:0.3rem; opacity:0.6;">&copy; 2025 · <a href="#">Kalkulator interaktif</a></p>
+  <p style="margin-top:0.2rem; opacity:0.6;">&copy; 2025 · <a href="#">Kalkulator interaktif</a></p>
 </div>
 
 <script>
   (function() {
-    // --- DOM refs ---
     const roomLength = document.getElementById('roomLength');
     const roomWidth = document.getElementById('roomWidth');
     const selectedTileSize = document.getElementById('selectedTileSize');
     const selectedTileArea = document.getElementById('selectedTileArea');
     const selectedTilePieces = document.getElementById('selectedTilePieces');
     const dropdownSelected = document.getElementById('dropdownSelected');
-    const dropdownOptions = document.getElementById('dropdownOptions');
     const tileDropdown = document.getElementById('tileDropdown');
     const calcForm = document.getElementById('calcForm');
-    const calculateBtn = document.getElementById('calculateBtn');
     const errorAlert = document.getElementById('errorAlert');
     const resultDashboard = document.getElementById('resultDashboard');
 
-    // result elements
     const totalArea = document.getElementById('totalArea');
     const selectedSizeLabel = document.getElementById('selectedSizeLabel');
     const totalBoxes = document.getElementById('totalBoxes');
@@ -599,44 +613,29 @@
     const totalPiecesWithBuffer = document.getElementById('totalPiecesWithBuffer');
     const whatsappLink = document.getElementById('whatsappLink');
 
-    // --- data tile ---
-    const tileMap = {
-      "25x25": { area: 1.00, pieces: 16 },
-      "25x40": { area: 1.00, pieces: 10 },
-      "30x30": { area: 0.99, pieces: 11 },
-      "30x60": { area: 0.90, pieces: 5 },
-      "40x40": { area: 1.00, pieces: 6 },
-      "50x50": { area: 1.00, pieces: 4 },
-      "60x60": { area: 1.44, pieces: 4 },
-      "60x120": { area: 1.44, pieces: 2 }
-    };
-
-    // --- dropdown events ---
     const options = document.querySelectorAll('.dropdown-option');
+
+    // dropdown
     options.forEach(opt => {
       opt.addEventListener('click', function(e) {
         e.stopPropagation();
         const size = this.dataset.size;
         const area = parseFloat(this.dataset.area);
         const pieces = parseInt(this.dataset.pieces, 10);
-        // update hidden
         selectedTileSize.value = size;
         selectedTileArea.value = area;
         selectedTilePieces.value = pieces;
-        // update tampilan
         dropdownSelected.querySelector('span').textContent = size + ' cm';
         dropdownSelected.classList.remove('placeholder');
         dropdownSelected.classList.add('filled');
         options.forEach(o => o.classList.remove('selected'));
         this.classList.add('selected');
         tileDropdown.classList.remove('dropdown-open');
-        // hide result jika ada
         resultDashboard.classList.remove('show');
-        errorAlert.style.display = 'none';
+        errorAlert.classList.remove('show');
       });
     });
 
-    // toggle dropdown
     dropdownSelected.addEventListener('click', function(e) {
       e.stopPropagation();
       tileDropdown.classList.toggle('dropdown-open');
@@ -645,10 +644,10 @@
       tileDropdown.classList.remove('dropdown-open');
     });
 
-    // --- form submit ---
+    // submit
     calcForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      errorAlert.style.display = 'none';
+      errorAlert.classList.remove('show');
       let valid = true;
 
       const length = parseFloat(roomLength.value);
@@ -660,12 +659,11 @@
       if (!size) { valid = false; dropdownSelected.style.borderColor = '#c73b2b'; } else { dropdownSelected.style.borderColor = ''; }
 
       if (!valid) {
-        errorAlert.style.display = 'flex';
+        errorAlert.classList.add('show');
         errorAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
       }
 
-      // hitung
       const area = parseFloat(selectedTileArea.value);
       const piecesPerBox = parseInt(selectedTilePieces.value, 10);
       const roomArea = length * width;
@@ -674,7 +672,6 @@
       const piecesNeeded = boxesNeeded * piecesPerBox;
       const piecesWithBuffer = boxesWithBuffer * piecesPerBox;
 
-      // update dashboard
       totalArea.innerHTML = roomArea.toFixed(2) + ' <small>m²</small>';
       selectedSizeLabel.textContent = size + ' cm';
       totalBoxes.innerHTML = Math.ceil(boxesNeeded) + ' <small>dus</small>';
@@ -682,7 +679,6 @@
       totalPieces.textContent = Math.ceil(piecesNeeded);
       totalPiecesWithBuffer.textContent = Math.ceil(piecesWithBuffer);
 
-      // whatsapp link
       const msg = `Halo SEKAWAN JAYA, saya mau konsultasi kebutuhan keramik/granit:%0A- Luas: ${roomArea.toFixed(2)} m²%0A- Ukuran: ${size} cm%0A- Estimasi dus (+10%): ${Math.ceil(boxesWithBuffer)} dus%0A- Total keping: ${Math.ceil(piecesWithBuffer)} pcs%0A%0ATerima kasih.`;
       whatsappLink.href = `https://wa.me/6288216124228?text=${msg}`;
 
@@ -690,12 +686,11 @@
       resultDashboard.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
-    // reset error styling on input
-    roomLength.addEventListener('input', function() { this.style.borderColor = ''; errorAlert.style.display = 'none'; resultDashboard.classList.remove('show'); });
-    roomWidth.addEventListener('input', function() { this.style.borderColor = ''; errorAlert.style.display = 'none'; resultDashboard.classList.remove('show'); });
-    selectedTileSize.addEventListener('change', function() { dropdownSelected.style.borderColor = ''; errorAlert.style.display = 'none'; resultDashboard.classList.remove('show'); });
+    // reset
+    roomLength.addEventListener('input', function() { this.style.borderColor = ''; errorAlert.classList.remove('show'); resultDashboard.classList.remove('show'); });
+    roomWidth.addEventListener('input', function() { this.style.borderColor = ''; errorAlert.classList.remove('show'); resultDashboard.classList.remove('show'); });
 
-    // --- print ---
+    // print
     window.printResult = function() {
       const areaText = document.getElementById('totalArea').innerText;
       const sizeText = document.getElementById('selectedSizeLabel').innerText;
@@ -707,26 +702,26 @@
       const printWin = window.open('', '_blank');
       printWin.document.write(`
         <html><head><title>Hasil Kalkulator Keramik</title>
-        <style>body{font-family:Inter,sans-serif;padding:2rem;max-width:500px;margin:auto;color:#0b1a33;}
-        h2{font-family:Poppins,sans-serif;font-weight:600;color:#0b1a33;}
-        .grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;}
-        .item{border:1px solid #dce4ef;border-radius:14px;padding:0.8rem;text-align:center;}
-        .label{font-size:0.7rem;text-transform:uppercase;color:#5d7599;}
-        .value{font-size:1.3rem;font-weight:700;margin-top:0.2rem;}
-        .footer{margin-top:2rem;font-size:0.7rem;color:#7a8fa8;border-top:1px solid #e6ecf5;padding-top:1rem;text-align:center;}
+        <style>body{font-family:Inter,sans-serif;padding:1.5rem;max-width:400px;margin:auto;color:#0b1a33;font-size:13px;}
+        h2{font-family:Poppins,sans-serif;font-weight:600;color:#0b1a33;font-size:1.2rem;}
+        .grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin:1rem 0;}
+        .item{border:1px solid #dce4ef;border-radius:12px;padding:0.6rem;text-align:center;}
+        .label{font-size:0.6rem;text-transform:uppercase;color:#5d7599;}
+        .value{font-size:1.1rem;font-weight:700;margin-top:0.1rem;}
+        .footer{margin-top:1.5rem;font-size:0.6rem;color:#7a8fa8;border-top:1px solid #e6ecf5;padding-top:0.8rem;text-align:center;}
 </style></head>
 <body>
-  <h2>📐 Estimasi Kebutuhan Keramik</h2>
-  <div style="margin-bottom:0.3rem; color:#2b4a73;">SEKAWAN JAYA</div>
+  <h2>📐 Estimasi Kebutuhan</h2>
+  <div style="margin-bottom:0.2rem; color:#2b4a73; font-size:0.8rem;">SEKAWAN JAYA</div>
   <div class="grid">
     <div class="item"><div class="label">Luas area</div><div class="value">${areaText}</div></div>
     <div class="item"><div class="label">Ukuran</div><div class="value">${sizeText}</div></div>
-    <div class="item"><div class="label">Dus (estimasi)</div><div class="value">${dusText}</div></div>
+    <div class="item"><div class="label">Dus</div><div class="value">${dusText}</div></div>
     <div class="item"><div class="label">Dus +10%</div><div class="value">${dusBuffer}</div></div>
-    <div class="item"><div class="label">Total keping</div><div class="value">${pcsText} pcs</div></div>
+    <div class="item"><div class="label">Keping</div><div class="value">${pcsText} pcs</div></div>
     <div class="item"><div class="label">Keping +10%</div><div class="value">${pcsBuffer} pcs</div></div>
   </div>
-  <div style="background:#f2f7fe;padding:0.8rem;border-radius:40px;font-size:0.8rem;text-align:center;">Hasil estimasi · konsultasi dengan tim ahli disarankan</div>
+  <div style="background:#f2f7fe;padding:0.5rem;border-radius:40px;font-size:0.7rem;text-align:center;">Hasil estimasi · konsultasi dengan tim ahli</div>
   <div class="footer">Dicetak dari Kalkulator SEKAWAN JAYA · ${new Date().toLocaleDateString('id-ID')}</div>
 </body></html>
 `);
@@ -734,7 +729,7 @@ printWin.document.close();
 printWin.print();
 };
 
-// inisialisasi: dropdown default kosong
+// inisialisasi
 dropdownSelected.querySelector('span').textContent = 'Pilih ukuran';
 dropdownSelected.classList.add('placeholder');
 selectedTileSize.value = '';
