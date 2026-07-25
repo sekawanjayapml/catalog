@@ -500,6 +500,27 @@
             display: block;
         }
 
+        /* ===== WALL DIMENSION LAYOUT: tinggi full width, panjang+lebar 2 kolom ===== */
+        .wall-dimension-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+        .wall-dimension-grid .full-width {
+            grid-column: 1 / -1;
+        }
+        .wall-dimension-grid .form-group {
+            margin-bottom: 0;
+        }
+
+        /* info luas dinding */
+        .wall-info {
+            font-size: 0.65rem;
+            color: #6a7f9e;
+            margin: 0.2rem 0 0.8rem 0;
+            padding-left: 0.2rem;
+        }
+
         /* responsive */
         @media (max-width: 420px) {
             body {
@@ -535,6 +556,13 @@
             .mode-tab {
                 font-size: 0.72rem;
                 padding: 0.5rem 0.3rem;
+            }
+            /* pada layar kecil, wall dimension jadi 1 kolom */
+            .wall-dimension-grid {
+                grid-template-columns: 1fr;
+            }
+            .wall-dimension-grid .full-width {
+                grid-column: 1;
             }
         }
 
@@ -575,24 +603,6 @@
         }
         input[type=number] {
             -moz-appearance: textfield;
-        }
-
-        /* tambahan untuk wall mode */
-        .wall-dimension-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 0.5rem;
-        }
-        .wall-dimension-grid .form-group {
-            margin-bottom: 0;
-        }
-        @media (max-width: 420px) {
-            .wall-dimension-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .wall-dimension-grid .form-group:last-child {
-                grid-column: span 2;
-            }
         }
     </style>
 </head>
@@ -704,11 +714,11 @@
             </div>
         </div>
 
-        <!-- ============ DINDING (dengan tinggi, panjang, lebar) ============ -->
+        <!-- ============ DINDING (tinggi full, panjang+lebar 2 kolom) ============ -->
         <div id="wallMode" class="mode-panel">
             <form id="wallCalcForm">
                 <div class="wall-dimension-grid">
-                    <div class="form-group">
+                    <div class="form-group full-width">
                         <label for="wallHeight"><i class="fas fa-arrows-up-down"></i> Tinggi (m)</label>
                         <input type="number" id="wallHeight" class="form-control" step="0.01" min="0.1" placeholder="misal 3" required>
                     </div>
@@ -721,8 +731,8 @@
                         <input type="number" id="wallWidth" class="form-control" step="0.01" min="0.1" placeholder="misal 3" required>
                     </div>
                 </div>
-                <div style="font-size:0.65rem;color:#6a7f9e;margin:-0.2rem 0 0.8rem 0;padding-left:0.2rem;">
-                    <i class="fas fa-info-circle"></i> Luas dinding dihitung otomatis = 2 × (panjang + lebar) × tinggi
+                <div class="wall-info">
+                    <i class="fas fa-info-circle"></i> Luas dinding = 2 × (panjang + lebar) × tinggi
                 </div>
 
                 <div class="form-group">
