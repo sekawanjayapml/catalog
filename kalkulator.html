@@ -1,743 +1,1092 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="description" content="Kalkulator Keramik & Granit - Hitung kebutuhan material dengan akurat. SEKAWAN JAYA Supplier Keramik & Granit Berkualitas di Pemalang.">
-  <title>Kalkulator Keramik & Granit · SEKAWAN JAYA</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Kalkulator Keramik & Granit - Hitung kebutuhan material dengan akurat. SEKAWAN JAYA Supplier Keramik & Granit Berkualitas di Pemalang.">
+    <title>Kalkulator Keramik & Granit · SEKAWAN JAYA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      background: #f5f7fc;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      color: #0b1a33;
-      line-height: 1.4;
-      padding: 0 0 1.5rem 0;
-      -webkit-font-smoothing: antialiased;
-      font-size: 13px;
-    }
+        body {
+            background: #f5f7fc;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #0b1a33;
+            line-height: 1.4;
+            padding: 0 0 1.5rem 0;
+            -webkit-font-smoothing: antialiased;
+            font-size: 13px;
+        }
 
-    .container {
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 0 0.7rem;
-    }
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 0.7rem;
+        }
 
-    /* header */
-    .header {
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(6px);
-      padding: 0.5rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      border-bottom: 1px solid rgba(0,0,0,0.03);
-      margin-bottom: 0.3rem;
-    }
-    .header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      color: #0b1a33;
-      text-decoration: none;
-    }
-    .logo img {
-      height: 26px;
-      width: auto;
-      display: block;
-    }
-    .logo span {
-      letter-spacing: -0.3px;
-    }
-    .nav-trigger {
-      background: none;
-      border: none;
-      font-size: 1.1rem;
-      color: #0b1a33;
-      padding: 0.2rem 0.4rem;
-      cursor: pointer;
-    }
+        /* header */
+        .header {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(6px);
+            padding: 0.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+            margin-bottom: 0.3rem;
+        }
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #0b1a33;
+            text-decoration: none;
+        }
+        .logo img {
+            height: 26px;
+            width: auto;
+            display: block;
+        }
+        .logo span {
+            letter-spacing: -0.3px;
+        }
+        .nav-trigger {
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            color: #0b1a33;
+            padding: 0.2rem 0.4rem;
+            cursor: pointer;
+        }
 
-    /* hero mini */
-    .hero-mini {
-      background: linear-gradient(135deg, #0b1a33 0%, #1a3a6b 100%);
-      color: white;
-      padding: 1.2rem 1rem 1.2rem;
-      border-radius: 16px;
-      margin: 0 0.7rem 1rem 0.7rem;
-      box-shadow: 0 6px 16px rgba(11,26,51,0.10);
-      text-align: center;
-    }
-    .hero-mini h1 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: -0.3px;
-      margin-bottom: 0.1rem;
-    }
-    .hero-mini p {
-      font-size: 0.75rem;
-      opacity: 0.85;
-      font-weight: 400;
-    }
+        /* hero mini */
+        .hero-mini {
+            background: linear-gradient(135deg, #0b1a33 0%, #1a3a6b 100%);
+            color: white;
+            padding: 1.2rem 1rem 1.2rem;
+            border-radius: 16px;
+            margin: 0 0.7rem 1rem 0.7rem;
+            box-shadow: 0 6px 16px rgba(11, 26, 51, 0.10);
+            text-align: center;
+        }
+        .hero-mini h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -0.3px;
+            margin-bottom: 0.1rem;
+        }
+        .hero-mini p {
+            font-size: 0.75rem;
+            opacity: 0.85;
+            font-weight: 400;
+        }
 
-    /* card */
-    .card-calc {
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 1.2rem 1rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.02), 0 1px 4px rgba(0,20,40,0.04);
-      margin: 0 0.7rem 1rem 0.7rem;
-      border: 1px solid rgba(0,0,0,0.02);
-    }
+        /* card */
+        .card-calc {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 1.2rem 1rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 20, 40, 0.04);
+            margin: 0 0.7rem 1rem 0.7rem;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
 
-    .form-group {
-      margin-bottom: 0.9rem;
-    }
-    .form-group label {
-      display: block;
-      font-weight: 500;
-      font-size: 0.75rem;
-      color: #1f3a5f;
-      margin-bottom: 0.25rem;
-      letter-spacing: -0.2px;
-    }
-    .form-group label i {
-      margin-right: 0.25rem;
-      opacity: 0.5;
-      font-size: 0.7rem;
-    }
-    .form-control {
-      width: 100%;
-      padding: 0.6rem 0.7rem;
-      border: 1.5px solid #e9edf4;
-      border-radius: 12px;
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      background: #fafcff;
-      transition: 0.2s;
-      color: #0b1a33;
-      appearance: none;
-    }
-    .form-control:focus {
-      border-color: #1a4b8c;
-      outline: none;
-      background: #ffffff;
-      box-shadow: 0 0 0 3px rgba(26,75,140,0.06);
-    }
-    .form-control::placeholder {
-      color: #a0b3cc;
-      font-weight: 400;
-      font-size: 0.85rem;
-    }
+        .form-group {
+            margin-bottom: 0.9rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            font-size: 0.75rem;
+            color: #1f3a5f;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.2px;
+        }
+        .form-group label i {
+            margin-right: 0.25rem;
+            opacity: 0.5;
+            font-size: 0.7rem;
+        }
+        .form-control {
+            width: 100%;
+            padding: 0.6rem 0.7rem;
+            border: 1.5px solid #e9edf4;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            background: #fafcff;
+            transition: 0.2s;
+            color: #0b1a33;
+            appearance: none;
+        }
+        .form-control:focus {
+            border-color: #1a4b8c;
+            outline: none;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(26, 75, 140, 0.06);
+        }
+        .form-control::placeholder {
+            color: #a0b3cc;
+            font-weight: 400;
+            font-size: 0.85rem;
+        }
 
-    /* dropdown */
-    .custom-dropdown {
-      position: relative;
-    }
-    .dropdown-selected {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.6rem 0.7rem;
-      border: 1.5px solid #e9edf4;
-      border-radius: 12px;
-      background: #fafcff;
-      cursor: pointer;
-      font-size: 0.85rem;
-      color: #0b1a33;
-      transition: 0.2s;
-      font-weight: 450;
-      min-height: 42px;
-    }
-    .dropdown-selected.placeholder {
-      color: #8a9fb8;
-    }
-    .dropdown-selected.filled {
-      color: #0b1a33;
-    }
-    .dropdown-arrow {
-      font-size: 0.7rem;
-      opacity: 0.5;
-      transition: 0.25s;
-    }
-    .dropdown-open .dropdown-arrow {
-      transform: rotate(180deg);
-      opacity: 0.8;
-    }
-    .dropdown-options {
-      position: absolute;
-      top: calc(100% + 4px);
-      left: 0;
-      right: 0;
-      background: white;
-      border-radius: 14px;
-      border: 1px solid #eef2f8;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-      max-height: 180px;
-      overflow-y: auto;
-      display: none;
-      z-index: 30;
-      padding: 0.2rem 0;
-    }
-    .dropdown-open .dropdown-options {
-      display: block;
-    }
-    .dropdown-option {
-      padding: 0.5rem 0.8rem;
-      font-size: 0.8rem;
-      border-bottom: 1px solid #f0f4fa;
-      cursor: pointer;
-      transition: 0.1s;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .dropdown-option:last-child {
-      border-bottom: none;
-    }
-    .dropdown-option:hover {
-      background: #f2f6fe;
-    }
-    .dropdown-option.selected {
-      background: #e5edf9;
-      color: #0b1a33;
-      font-weight: 500;
-    }
-    .dropdown-option span {
-      color: #6a7f9e;
-      font-weight: 400;
-      font-size: 0.7rem;
-    }
+        /* dropdown */
+        .custom-dropdown {
+            position: relative;
+        }
+        .dropdown-selected {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 0.7rem;
+            border: 1.5px solid #e9edf4;
+            border-radius: 12px;
+            background: #fafcff;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: #0b1a33;
+            transition: 0.2s;
+            font-weight: 450;
+            min-height: 42px;
+        }
+        .dropdown-selected.placeholder {
+            color: #8a9fb8;
+        }
+        .dropdown-selected.filled {
+            color: #0b1a33;
+        }
+        .dropdown-arrow {
+            font-size: 0.7rem;
+            opacity: 0.5;
+            transition: 0.25s;
+        }
+        .dropdown-open .dropdown-arrow {
+            transform: rotate(180deg);
+            opacity: 0.8;
+        }
+        .dropdown-options {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 14px;
+            border: 1px solid #eef2f8;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+            max-height: 180px;
+            overflow-y: auto;
+            display: none;
+            z-index: 30;
+            padding: 0.2rem 0;
+        }
+        .dropdown-open .dropdown-options {
+            display: block;
+        }
+        .dropdown-option {
+            padding: 0.5rem 0.8rem;
+            font-size: 0.8rem;
+            border-bottom: 1px solid #f0f4fa;
+            cursor: pointer;
+            transition: 0.1s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .dropdown-option:last-child {
+            border-bottom: none;
+        }
+        .dropdown-option:hover {
+            background: #f2f6fe;
+        }
+        .dropdown-option.selected {
+            background: #e5edf9;
+            color: #0b1a33;
+            font-weight: 500;
+        }
+        .dropdown-option span {
+            color: #6a7f9e;
+            font-weight: 400;
+            font-size: 0.7rem;
+        }
 
-    /* tombol */
-    .btn-primary {
-      width: 100%;
-      padding: 0.75rem;
-      background: #1a4b8c;
-      color: white;
-      border: none;
-      border-radius: 40px;
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: 0.85rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      cursor: pointer;
-      transition: 0.2s;
-      box-shadow: 0 3px 8px rgba(26,75,140,0.12);
-      margin-top: 0.3rem;
-      min-height: 44px;
-    }
-    .btn-primary:active {
-      transform: scale(0.97);
-    }
-    .btn-primary:disabled {
-      opacity: 0.6;
-      transform: none;
-      box-shadow: none;
-    }
+        /* tombol */
+        .btn-primary {
+            width: 100%;
+            padding: 0.75rem;
+            background: #1a4b8c;
+            color: white;
+            border: none;
+            border-radius: 40px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 3px 8px rgba(26, 75, 140, 0.12);
+            margin-top: 0.3rem;
+            min-height: 44px;
+        }
+        .btn-primary:active {
+            transform: scale(0.97);
+        }
+        .btn-primary:disabled {
+            opacity: 0.6;
+            transform: none;
+            box-shadow: none;
+        }
 
-    /* alert */
-    .alert-error {
-      background: #fee9e7;
-      border-left: 4px solid #c73b2b;
-      color: #8f2b1f;
-      display: none;
-      padding: 0.6rem 0.8rem;
-      border-radius: 12px;
-      font-size: 0.75rem;
-      margin: 0.6rem 0 0;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .alert-error.show {
-      display: flex;
-    }
+        /* alert */
+        .alert-error {
+            background: #fee9e7;
+            border-left: 4px solid #c73b2b;
+            color: #8f2b1f;
+            display: none;
+            padding: 0.6rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin: 0.6rem 0 0;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .alert-error.show {
+            display: flex;
+        }
 
-    /* result */
-    .result-dashboard {
-      margin-top: 1.2rem;
-      background: #f8faff;
-      border-radius: 14px;
-      padding: 1rem 0.8rem;
-      border: 1px solid #eef2f8;
-      display: none;
-    }
-    .result-dashboard.show {
-      display: block;
-      animation: fadeUp 0.35s ease;
-    }
-    @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(10px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
+        /* result */
+        .result-dashboard {
+            margin-top: 1.2rem;
+            background: #f8faff;
+            border-radius: 14px;
+            padding: 1rem 0.8rem;
+            border: 1px solid #eef2f8;
+            display: none;
+        }
+        .result-dashboard.show {
+            display: block;
+            animation: fadeUp 0.35s ease;
+        }
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .result-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.8rem;
-      border-bottom: 1px solid #e6ecf5;
-      padding-bottom: 0.4rem;
-    }
-    .result-header h3 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: #0b1a33;
-      letter-spacing: -0.3px;
-    }
-    .badge-size {
-      background: #e9eff8;
-      padding: 0.15rem 0.6rem;
-      border-radius: 40px;
-      font-size: 0.65rem;
-      font-weight: 600;
-      color: #1a4b8c;
-    }
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #e6ecf5;
+            padding-bottom: 0.4rem;
+        }
+        .result-header h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #0b1a33;
+            letter-spacing: -0.3px;
+        }
+        .badge-size {
+            background: #e9eff8;
+            padding: 0.15rem 0.6rem;
+            border-radius: 40px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #1a4b8c;
+        }
 
-    .metric-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .metric-item {
-      background: white;
-      border-radius: 12px;
-      padding: 0.5rem 0.2rem;
-      text-align: center;
-      border: 1px solid #f0f4fa;
-    }
-    .metric-label {
-      font-size: 0.55rem;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-      color: #6a7f9e;
-      font-weight: 600;
-    }
-    .metric-value {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #0b1a33;
-      margin-top: 0.05rem;
-      line-height: 1.2;
-    }
-    .metric-value small {
-      font-weight: 400;
-      font-size: 0.6rem;
-      color: #6f87aa;
-      margin-left: 1px;
-    }
-    .metric-buffer {
-      background: #eef5fe;
-      border: 1px solid #dbe7f5;
-    }
-    .metric-buffer .metric-label {
-      color: #1a4b8c;
-    }
-    .metric-buffer .metric-value {
-      color: #0b2a55;
-    }
+        .metric-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .metric-item {
+            background: white;
+            border-radius: 12px;
+            padding: 0.5rem 0.2rem;
+            text-align: center;
+            border: 1px solid #f0f4fa;
+        }
+        .metric-label {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            color: #6a7f9e;
+            font-weight: 600;
+        }
+        .metric-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0b1a33;
+            margin-top: 0.05rem;
+            line-height: 1.2;
+        }
+        .metric-value small {
+            font-weight: 400;
+            font-size: 0.6rem;
+            color: #6f87aa;
+            margin-left: 1px;
+        }
+        .metric-buffer {
+            background: #eef5fe;
+            border: 1px solid #dbe7f5;
+        }
+        .metric-buffer .metric-label {
+            color: #1a4b8c;
+        }
+        .metric-buffer .metric-value {
+            color: #0b2a55;
+        }
 
-    .pieces-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.7rem;
-      color: #3b5a7f;
-      background: #f2f7fe;
-      padding: 0.3rem 0.7rem;
-      border-radius: 40px;
-      margin-top: 0.2rem;
-    }
-    .pieces-row strong {
-      color: #0b1a33;
-    }
+        .pieces-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.7rem;
+            color: #3b5a7f;
+            background: #f2f7fe;
+            padding: 0.3rem 0.7rem;
+            border-radius: 40px;
+            margin-top: 0.2rem;
+        }
+        .pieces-row strong {
+            color: #0b1a33;
+        }
 
-    .action-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      margin-top: 0.8rem;
-    }
-    .btn-wa {
-      background: #25b66b;
-      color: white;
-      border: none;
-      border-radius: 40px;
-      padding: 0.6rem;
-      font-weight: 600;
-      font-size: 0.8rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      text-decoration: none;
-      transition: 0.2s;
-      box-shadow: 0 2px 8px rgba(37,182,107,0.15);
-      min-height: 40px;
-    }
-    .btn-wa:active {
-      transform: scale(0.97);
-    }
-    .btn-print {
-      background: transparent;
-      color: #1f3a5f;
-      border: 1px solid #d0dcec;
-      border-radius: 40px;
-      padding: 0.5rem;
-      font-weight: 500;
-      font-size: 0.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.3rem;
-      cursor: pointer;
-      transition: 0.2s;
-      min-height: 38px;
-    }
-    .btn-print:active {
-      background: #f0f5fe;
-    }
+        .action-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-top: 0.8rem;
+        }
+        .btn-wa {
+            background: #25b66b;
+            color: white;
+            border: none;
+            border-radius: 40px;
+            padding: 0.6rem;
+            font-weight: 600;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            text-decoration: none;
+            transition: 0.2s;
+            box-shadow: 0 2px 8px rgba(37, 182, 107, 0.15);
+            min-height: 40px;
+        }
+        .btn-wa:active {
+            transform: scale(0.97);
+        }
+        .btn-print {
+            background: transparent;
+            color: #1f3a5f;
+            border: 1px solid #d0dcec;
+            border-radius: 40px;
+            padding: 0.5rem;
+            font-weight: 500;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            transition: 0.2s;
+            min-height: 38px;
+        }
+        .btn-print:active {
+            background: #f0f5fe;
+        }
 
-    .alert-tip {
-      background: #eef6fd;
-      border-radius: 12px;
-      padding: 0.5rem 0.7rem;
-      font-size: 0.65rem;
-      color: #1f4a7a;
-      margin: 0.6rem 0 0.2rem 0;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      border-left: 3px solid #1a4b8c;
-    }
-    .alert-tip i {
-      color: #1a4b8c;
-      opacity: 0.7;
-      font-size: 0.7rem;
-    }
+        .alert-tip {
+            background: #eef6fd;
+            border-radius: 12px;
+            padding: 0.5rem 0.7rem;
+            font-size: 0.65rem;
+            color: #1f4a7a;
+            margin: 0.6rem 0 0.2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            border-left: 3px solid #1a4b8c;
+        }
+        .alert-tip i {
+            color: #1a4b8c;
+            opacity: 0.7;
+            font-size: 0.7rem;
+        }
 
-    /* footer */
-    .footer-mini {
-      text-align: center;
-      font-size: 0.6rem;
-      color: #8a9fb8;
-      padding: 1.5rem 0.7rem 0.5rem;
-      border-top: 1px solid #eef2f8;
-      margin: 1rem 0.7rem 0;
-    }
-    .footer-mini a {
-      color: #1a4b8c;
-      text-decoration: none;
-      font-weight: 500;
-    }
+        /* footer */
+        .footer-mini {
+            text-align: center;
+            font-size: 0.6rem;
+            color: #8a9fb8;
+            padding: 1.5rem 0.7rem 0.5rem;
+            border-top: 1px solid #eef2f8;
+            margin: 1rem 0.7rem 0;
+        }
+        .footer-mini a {
+            color: #1a4b8c;
+            text-decoration: none;
+            font-weight: 500;
+        }
 
-    /* responsive */
-    @media (max-width: 420px) {
-      body { font-size: 12px; }
-      .hero-mini { padding: 1rem 0.8rem; }
-      .hero-mini h1 { font-size: 1.05rem; }
-      .card-calc { padding: 1rem 0.8rem; }
-      .metric-grid { gap: 0.35rem; }
-      .metric-item { padding: 0.4rem 0.15rem; }
-      .metric-value { font-size: 0.85rem; }
-      .form-control { font-size: 14px; padding: 0.5rem 0.6rem; }
-      .dropdown-selected { padding: 0.5rem 0.6rem; font-size: 0.8rem; min-height: 38px; }
-    }
+        /* mode switcher (Lantai / Dinding) */
+        .mode-switcher {
+            display: flex;
+            background: #eef2f8;
+            border-radius: 12px;
+            padding: 0.25rem;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        .mode-tab {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.35rem;
+            padding: 0.55rem 0.4rem;
+            border: none;
+            background: transparent;
+            border-radius: 9px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.78rem;
+            color: #6a7f9e;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .mode-tab.active {
+            background: #ffffff;
+            color: #1a4b8c;
+            box-shadow: 0 2px 6px rgba(11, 26, 51, 0.08);
+        }
+        .mode-tab i {
+            font-size: 0.75rem;
+        }
+        .mode-panel {
+            display: none;
+        }
+        .mode-panel.active {
+            display: block;
+        }
 
-    @media (max-width: 360px) {
-      .metric-grid { grid-template-columns: 1fr 1fr; }
-      .metric-item:last-child { grid-column: span 2; }
-      .hero-mini h1 { font-size: 0.95rem; }
-      .hero-mini p { font-size: 0.65rem; }
-      .btn-primary { font-size: 0.75rem; padding: 0.6rem; min-height: 38px; }
-      .btn-wa { font-size: 0.7rem; padding: 0.5rem; min-height: 36px; }
-      .btn-print { font-size: 0.65rem; padding: 0.4rem; min-height: 34px; }
-    }
+        /* responsive */
+        @media (max-width: 420px) {
+            body {
+                font-size: 12px;
+            }
+            .hero-mini {
+                padding: 1rem 0.8rem;
+            }
+            .hero-mini h1 {
+                font-size: 1.05rem;
+            }
+            .card-calc {
+                padding: 1rem 0.8rem;
+            }
+            .metric-grid {
+                gap: 0.35rem;
+            }
+            .metric-item {
+                padding: 0.4rem 0.15rem;
+            }
+            .metric-value {
+                font-size: 0.85rem;
+            }
+            .form-control {
+                font-size: 14px;
+                padding: 0.5rem 0.6rem;
+            }
+            .dropdown-selected {
+                padding: 0.5rem 0.6rem;
+                font-size: 0.8rem;
+                min-height: 38px;
+            }
+            .mode-tab {
+                font-size: 0.72rem;
+                padding: 0.5rem 0.3rem;
+            }
+        }
 
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-    input[type=number] {
-      -moz-appearance: textfield;
-    }
-  </style>
+        @media (max-width: 360px) {
+            .metric-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .metric-item:last-child {
+                grid-column: span 2;
+            }
+            .hero-mini h1 {
+                font-size: 0.95rem;
+            }
+            .hero-mini p {
+                font-size: 0.65rem;
+            }
+            .btn-primary {
+                font-size: 0.75rem;
+                padding: 0.6rem;
+                min-height: 38px;
+            }
+            .btn-wa {
+                font-size: 0.7rem;
+                padding: 0.5rem;
+                min-height: 36px;
+            }
+            .btn-print {
+                font-size: 0.65rem;
+                padding: 0.4rem;
+                min-height: 34px;
+            }
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        /* tambahan untuk wall mode */
+        .wall-dimension-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.5rem;
+        }
+        .wall-dimension-grid .form-group {
+            margin-bottom: 0;
+        }
+        @media (max-width: 420px) {
+            .wall-dimension-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .wall-dimension-grid .form-group:last-child {
+                grid-column: span 2;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header class="header">
-  <div class="container">
-    <a href="#" class="logo">
-      <img src="https://i.imgur.com/PmXnLr1.png" alt="SEKAWAN JAYA" loading="lazy">
-      <span>SEKAWAN JAYA</span>
-    </a>
-    <button class="nav-trigger" aria-label="menu"><i class="fas fa-bars"></i></button>
-  </div>
-</header>
-
-<div class="hero-mini">
-  <h1>Kalkulator Keramik &amp; Granit</h1>
-  <p>Hitung kebutuhan material dengan cepat</p>
-</div>
-
-<div class="card-calc">
-  <form id="calcForm">
-    <div class="form-group">
-      <label for="roomLength"><i class="fas fa-arrows-left-right"></i> Panjang (m)</label>
-      <input type="number" id="roomLength" class="form-control" step="0.01" min="0.1" placeholder="contoh: 4.5" required>
-    </div>
-    <div class="form-group">
-      <label for="roomWidth"><i class="fas fa-arrows-up-down"></i> Lebar (m)</label>
-      <input type="number" id="roomWidth" class="form-control" step="0.01" min="0.1" placeholder="contoh: 3.2" required>
-    </div>
-
-    <div class="form-group">
-      <label><i class="fas fa-border-all"></i> Ukuran keramik</label>
-      <div class="custom-dropdown" id="tileDropdown">
-        <div class="dropdown-selected placeholder" id="dropdownSelected">
-          <span>Pilih ukuran</span>
-          <i class="fas fa-chevron-down dropdown-arrow"></i>
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="https://i.imgur.com/PmXnLr1.png" alt="SEKAWAN JAYA" loading="lazy">
+                <span>SEKAWAN JAYA</span>
+            </a>
+            <button class="nav-trigger" aria-label="menu"><i class="fas fa-bars"></i></button>
         </div>
-        <div class="dropdown-options" id="dropdownOptions">
-          <div class="dropdown-option" data-size="25x25" data-area="1.00" data-pieces="16">25×25 cm <span>1.00 m²/dus</span></div>
-          <div class="dropdown-option" data-size="25x40" data-area="1.00" data-pieces="10">25×40 cm <span>1.00 m²/dus</span></div>
-          <div class="dropdown-option" data-size="30x30" data-area="0.99" data-pieces="11">30×30 cm <span>0.99 m²/dus</span></div>
-          <div class="dropdown-option" data-size="30x60" data-area="0.90" data-pieces="5">30×60 cm <span>0.90 m²/dus</span></div>
-          <div class="dropdown-option" data-size="40x40" data-area="1.00" data-pieces="6">40×40 cm <span>1.00 m²/dus</span></div>
-          <div class="dropdown-option" data-size="50x50" data-area="1.00" data-pieces="4">50×50 cm <span>1.00 m²/dus</span></div>
-          <div class="dropdown-option" data-size="60x60" data-area="1.44" data-pieces="4">60×60 cm <span>1.44 m²/dus</span></div>
-          <div class="dropdown-option" data-size="60x120" data-area="1.44" data-pieces="2">60×120 cm <span>1.44 m²/dus</span></div>
+    </header>
+
+    <div class="hero-mini">
+        <h1>Kalkulator Keramik &amp; Granit</h1>
+        <p>Hitung kebutuhan material dengan cepat</p>
+    </div>
+
+    <div class="card-calc">
+        <div class="mode-switcher">
+            <button type="button" class="mode-tab active" data-mode="floor"><i class="fas fa-vector-square"></i> Lantai</button>
+            <button type="button" class="mode-tab" data-mode="wall"><i class="fas fa-align-justify"></i> Dinding</button>
         </div>
-      </div>
-      <input type="hidden" id="selectedTileSize" required>
-      <input type="hidden" id="selectedTileArea">
-      <input type="hidden" id="selectedTilePieces">
+
+        <!-- ============ LANTAI ============ -->
+        <div id="floorMode" class="mode-panel active">
+            <form id="calcForm">
+                <div class="form-group">
+                    <label for="roomLength"><i class="fas fa-arrows-left-right"></i> Panjang (m)</label>
+                    <input type="number" id="roomLength" class="form-control" step="0.01" min="0.1" placeholder="contoh: 4.5" required>
+                </div>
+                <div class="form-group">
+                    <label for="roomWidth"><i class="fas fa-arrows-up-down"></i> Lebar (m)</label>
+                    <input type="number" id="roomWidth" class="form-control" step="0.01" min="0.1" placeholder="contoh: 3.2" required>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-border-all"></i> Ukuran keramik</label>
+                    <div class="custom-dropdown" id="tileDropdown">
+                        <div class="dropdown-selected placeholder" id="dropdownSelected">
+                            <span>Pilih ukuran</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </div>
+                        <div class="dropdown-options" id="dropdownOptions">
+                            <div class="dropdown-option" data-size="25x25" data-area="1.00" data-pieces="16">25×25 cm <span>1.00 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="25x40" data-area="1.00" data-pieces="10">25×40 cm <span>1.00 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="30x30" data-area="0.99" data-pieces="11">30×30 cm <span>0.99 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="30x60" data-area="0.90" data-pieces="5">30×60 cm <span>0.90 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="40x40" data-area="1.00" data-pieces="6">40×40 cm <span>1.00 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="50x50" data-area="1.00" data-pieces="4">50×50 cm <span>1.00 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="60x60" data-area="1.44" data-pieces="4">60×60 cm <span>1.44 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="60x120" data-area="1.44" data-pieces="2">60×120 cm <span>1.44 m²/dus</span></div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="selectedTileSize" required>
+                    <input type="hidden" id="selectedTileArea">
+                    <input type="hidden" id="selectedTilePieces">
+                </div>
+
+                <button type="submit" class="btn-primary" id="calculateBtn">
+                    <i class="fas fa-calculator"></i> Hitung
+                </button>
+
+                <div class="alert-error" id="errorAlert">
+                    <i class="fas fa-exclamation-circle"></i> Lengkapi semua input dengan benar.
+                </div>
+            </form>
+
+            <div class="result-dashboard" id="resultDashboard">
+                <div class="result-header">
+                    <h3>Ringkasan</h3>
+                    <span class="badge-size" id="selectedSizeLabel">—</span>
+                </div>
+
+                <div class="metric-grid">
+                    <div class="metric-item">
+                        <div class="metric-label">Luas</div>
+                        <div class="metric-value" id="totalArea">0 <small>m²</small></div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Dus</div>
+                        <div class="metric-value" id="totalBoxes">0 <small>dus</small></div>
+                    </div>
+                    <div class="metric-item metric-buffer">
+                        <div class="metric-label">+10%</div>
+                        <div class="metric-value" id="totalWithBuffer">0 <small>dus</small></div>
+                    </div>
+                </div>
+
+                <div class="pieces-row">
+                    <span><i class="far fa-square"></i> Keping: <strong id="totalPieces">0</strong></span>
+                    <span><i class="fas fa-plus-circle" style="opacity:0.4;"></i> +10%: <strong id="totalPiecesWithBuffer">0</strong></span>
+                </div>
+
+                <div class="action-group">
+                    <a id="whatsappLink" class="btn-wa" target="_blank" href="#">
+                        <i class="fab fa-whatsapp"></i> Konsultasi WA
+                    </a>
+                    <button id="printBtn" class="btn-print" onclick="printResult('floor')">
+                        <i class="fas fa-print"></i> Cetak
+                    </button>
+                </div>
+
+                <div class="alert-tip">
+                    <i class="fas fa-info-circle"></i> Hasil estimasi. Konsultasi dengan tim ahli disarankan.
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ DINDING (dengan tinggi, panjang, lebar) ============ -->
+        <div id="wallMode" class="mode-panel">
+            <form id="wallCalcForm">
+                <div class="wall-dimension-grid">
+                    <div class="form-group">
+                        <label for="wallHeight"><i class="fas fa-arrows-up-down"></i> Tinggi (m)</label>
+                        <input type="number" id="wallHeight" class="form-control" step="0.01" min="0.1" placeholder="misal 3" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wallLength"><i class="fas fa-arrows-left-right"></i> Panjang (m)</label>
+                        <input type="number" id="wallLength" class="form-control" step="0.01" min="0.1" placeholder="misal 4" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="wallWidth"><i class="fas fa-arrows-up-down"></i> Lebar (m)</label>
+                        <input type="number" id="wallWidth" class="form-control" step="0.01" min="0.1" placeholder="misal 3" required>
+                    </div>
+                </div>
+                <div style="font-size:0.65rem;color:#6a7f9e;margin:-0.2rem 0 0.8rem 0;padding-left:0.2rem;">
+                    <i class="fas fa-info-circle"></i> Luas dinding dihitung otomatis = 2 × (panjang + lebar) × tinggi
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fas fa-border-all"></i> Ukuran keramik</label>
+                    <div class="custom-dropdown" id="tileDropdownWall">
+                        <div class="dropdown-selected placeholder" id="dropdownSelectedWall">
+                            <span>Pilih ukuran</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </div>
+                        <div class="dropdown-options">
+                            <div class="dropdown-option" data-size="25x25" data-area="1.00" data-pieces="16">25×25 cm <span>1.00 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="25x40" data-area="1.00" data-pieces="10">25×40 cm <span>1.00 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="30x30" data-area="0.99" data-pieces="11">30×30 cm <span>0.99 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="30x60" data-area="0.90" data-pieces="5">30×60 cm <span>0.90 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="40x40" data-area="1.00" data-pieces="6">40×40 cm <span>1.00 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="50x50" data-area="1.00" data-pieces="4">50×50 cm <span>1.00 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="60x60" data-area="1.44" data-pieces="4">60×60 cm <span>1.44 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="60x120" data-area="1.44" data-pieces="2">60×120 cm <span>1.44 m²/dus</span></div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="selectedTileSizeWall" required>
+                    <input type="hidden" id="selectedTileAreaWall">
+                    <input type="hidden" id="selectedTilePiecesWall">
+                </div>
+
+                <button type="submit" class="btn-primary" id="calculateBtnWall">
+                    <i class="fas fa-calculator"></i> Hitung
+                </button>
+
+                <div class="alert-error" id="errorAlertWall">
+                    <i class="fas fa-exclamation-circle"></i> Lengkapi semua input dengan benar.
+                </div>
+            </form>
+
+            <div class="result-dashboard" id="resultDashboardWall">
+                <div class="result-header">
+                    <h3>Ringkasan</h3>
+                    <span class="badge-size" id="selectedSizeLabelWall">—</span>
+                </div>
+
+                <div class="metric-grid">
+                    <div class="metric-item">
+                        <div class="metric-label">Luas</div>
+                        <div class="metric-value" id="totalAreaWall">0 <small>m²</small></div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-label">Dus</div>
+                        <div class="metric-value" id="totalBoxesWall">0 <small>dus</small></div>
+                    </div>
+                    <div class="metric-item metric-buffer">
+                        <div class="metric-label">+10%</div>
+                        <div class="metric-value" id="totalWithBufferWall">0 <small>dus</small></div>
+                    </div>
+                </div>
+
+                <div class="pieces-row">
+                    <span><i class="far fa-square"></i> Keping: <strong id="totalPiecesWall">0</strong></span>
+                    <span><i class="fas fa-plus-circle" style="opacity:0.4;"></i> +10%: <strong id="totalPiecesWithBufferWall">0</strong></span>
+                </div>
+
+                <div class="action-group">
+                    <a id="whatsappLinkWall" class="btn-wa" target="_blank" href="#">
+                        <i class="fab fa-whatsapp"></i> Konsultasi WA
+                    </a>
+                    <button type="button" class="btn-print" onclick="printResult('wall')">
+                        <i class="fas fa-print"></i> Cetak
+                    </button>
+                </div>
+
+                <div class="alert-tip">
+                    <i class="fas fa-info-circle"></i> Hasil estimasi. Konsultasi dengan tim ahli disarankan.
+                </div>
+            </div>
+        </div>
     </div>
 
-    <button type="submit" class="btn-primary" id="calculateBtn">
-      <i class="fas fa-calculator"></i> Hitung
-    </button>
-
-    <div class="alert-error" id="errorAlert">
-      <i class="fas fa-exclamation-circle"></i> Lengkapi semua input dengan benar.
-    </div>
-  </form>
-
-  <div class="result-dashboard" id="resultDashboard">
-    <div class="result-header">
-      <h3>Ringkasan</h3>
-      <span class="badge-size" id="selectedSizeLabel">—</span>
+    <div class="footer-mini">
+        <p>SEKAWAN JAYA · Supplier Keramik &amp; Granit · Pemalang</p>
+        <p style="margin-top:0.2rem; opacity:0.6;">&copy; 2025 · <a href="#">Kalkulator interaktif</a></p>
     </div>
 
-    <div class="metric-grid">
-      <div class="metric-item">
-        <div class="metric-label">Luas</div>
-        <div class="metric-value" id="totalArea">0 <small>m²</small></div>
-      </div>
-      <div class="metric-item">
-        <div class="metric-label">Dus</div>
-        <div class="metric-value" id="totalBoxes">0 <small>dus</small></div>
-      </div>
-      <div class="metric-item metric-buffer">
-        <div class="metric-label">+10%</div>
-        <div class="metric-value" id="totalWithBuffer">0 <small>dus</small></div>
-      </div>
-    </div>
+    <script>
+        (function() {
+            // ===== mode switcher (Lantai / Dinding) =====
+            const modeTabs = document.querySelectorAll('.mode-tab');
+            const floorModeEl = document.getElementById('floorMode');
+            const wallModeEl = document.getElementById('wallMode');
 
-    <div class="pieces-row">
-      <span><i class="far fa-square"></i> Keping: <strong id="totalPieces">0</strong></span>
-      <span><i class="fas fa-plus-circle" style="opacity:0.4;"></i> +10%: <strong id="totalPiecesWithBuffer">0</strong></span>
-    </div>
+            modeTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    modeTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    if (this.dataset.mode === 'wall') {
+                        wallModeEl.classList.add('active');
+                        floorModeEl.classList.remove('active');
+                    } else {
+                        floorModeEl.classList.add('active');
+                        wallModeEl.classList.remove('active');
+                    }
+                });
+            });
 
-    <div class="action-group">
-      <a id="whatsappLink" class="btn-wa" target="_blank" href="#">
-        <i class="fab fa-whatsapp"></i> Konsultasi WA
-      </a>
-      <button id="printBtn" class="btn-print" onclick="printResult()">
-        <i class="fas fa-print"></i> Cetak
-      </button>
-    </div>
+            // ===== reusable dropdown =====
+            function setupDropdown(containerId, selectedId, sizeInputId, areaInputId, piecesInputId, onPick) {
+                const container = document.getElementById(containerId);
+                const selected = document.getElementById(selectedId);
+                const sizeInput = document.getElementById(sizeInputId);
+                const areaInput = document.getElementById(areaInputId);
+                const piecesInput = document.getElementById(piecesInputId);
+                const opts = container.querySelectorAll('.dropdown-option');
 
-    <div class="alert-tip">
-      <i class="fas fa-info-circle"></i> Hasil estimasi. Konsultasi dengan tim ahli disarankan.
-    </div>
-  </div>
-</div>
+                opts.forEach(opt => {
+                    opt.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        const size = this.dataset.size;
+                        sizeInput.value = size;
+                        areaInput.value = parseFloat(this.dataset.area);
+                        piecesInput.value = parseInt(this.dataset.pieces, 10);
+                        selected.querySelector('span').textContent = size + ' cm';
+                        selected.classList.remove('placeholder');
+                        selected.classList.add('filled');
+                        selected.style.borderColor = '';
+                        opts.forEach(o => o.classList.remove('selected'));
+                        this.classList.add('selected');
+                        container.classList.remove('dropdown-open');
+                        if (onPick) onPick();
+                    });
+                });
 
-<div class="footer-mini">
-  <p>SEKAWAN JAYA · Supplier Keramik &amp; Granit · Pemalang</p>
-  <p style="margin-top:0.2rem; opacity:0.6;">&copy; 2025 · <a href="#">Kalkulator interaktif</a></p>
-</div>
+                selected.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    container.classList.toggle('dropdown-open');
+                });
 
-<script>
-  (function() {
-    const roomLength = document.getElementById('roomLength');
-    const roomWidth = document.getElementById('roomWidth');
-    const selectedTileSize = document.getElementById('selectedTileSize');
-    const selectedTileArea = document.getElementById('selectedTileArea');
-    const selectedTilePieces = document.getElementById('selectedTilePieces');
-    const dropdownSelected = document.getElementById('dropdownSelected');
-    const tileDropdown = document.getElementById('tileDropdown');
-    const calcForm = document.getElementById('calcForm');
-    const errorAlert = document.getElementById('errorAlert');
-    const resultDashboard = document.getElementById('resultDashboard');
+                // reset
+                selected.querySelector('span').textContent = 'Pilih ukuran';
+                selected.classList.add('placeholder');
+                selected.classList.remove('filled');
+                sizeInput.value = '';
+                areaInput.value = '';
+                piecesInput.value = '';
+            }
 
-    const totalArea = document.getElementById('totalArea');
-    const selectedSizeLabel = document.getElementById('selectedSizeLabel');
-    const totalBoxes = document.getElementById('totalBoxes');
-    const totalWithBuffer = document.getElementById('totalWithBuffer');
-    const totalPieces = document.getElementById('totalPieces');
-    const totalPiecesWithBuffer = document.getElementById('totalPiecesWithBuffer');
-    const whatsappLink = document.getElementById('whatsappLink');
+            document.addEventListener('click', function() {
+                document.querySelectorAll('.custom-dropdown').forEach(d => d.classList.remove('dropdown-open'));
+            });
 
-    const options = document.querySelectorAll('.dropdown-option');
+            // ================= KALKULATOR LANTAI =================
+            const roomLength = document.getElementById('roomLength');
+            const roomWidth = document.getElementById('roomWidth');
+            const selectedTileSize = document.getElementById('selectedTileSize');
+            const selectedTileArea = document.getElementById('selectedTileArea');
+            const selectedTilePieces = document.getElementById('selectedTilePieces');
+            const dropdownSelected = document.getElementById('dropdownSelected');
+            const calcForm = document.getElementById('calcForm');
+            const errorAlert = document.getElementById('errorAlert');
+            const resultDashboard = document.getElementById('resultDashboard');
 
-    // dropdown
-    options.forEach(opt => {
-      opt.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const size = this.dataset.size;
-        const area = parseFloat(this.dataset.area);
-        const pieces = parseInt(this.dataset.pieces, 10);
-        selectedTileSize.value = size;
-        selectedTileArea.value = area;
-        selectedTilePieces.value = pieces;
-        dropdownSelected.querySelector('span').textContent = size + ' cm';
-        dropdownSelected.classList.remove('placeholder');
-        dropdownSelected.classList.add('filled');
-        options.forEach(o => o.classList.remove('selected'));
-        this.classList.add('selected');
-        tileDropdown.classList.remove('dropdown-open');
-        resultDashboard.classList.remove('show');
-        errorAlert.classList.remove('show');
-      });
-    });
+            const totalArea = document.getElementById('totalArea');
+            const selectedSizeLabel = document.getElementById('selectedSizeLabel');
+            const totalBoxes = document.getElementById('totalBoxes');
+            const totalWithBuffer = document.getElementById('totalWithBuffer');
+            const totalPieces = document.getElementById('totalPieces');
+            const totalPiecesWithBuffer = document.getElementById('totalPiecesWithBuffer');
+            const whatsappLink = document.getElementById('whatsappLink');
 
-    dropdownSelected.addEventListener('click', function(e) {
-      e.stopPropagation();
-      tileDropdown.classList.toggle('dropdown-open');
-    });
-    document.addEventListener('click', function() {
-      tileDropdown.classList.remove('dropdown-open');
-    });
+            setupDropdown('tileDropdown', 'dropdownSelected', 'selectedTileSize', 'selectedTileArea', 'selectedTilePieces',
+                function() {
+                    resultDashboard.classList.remove('show');
+                    errorAlert.classList.remove('show');
+                });
 
-    // submit
-    calcForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      errorAlert.classList.remove('show');
-      let valid = true;
+            calcForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                errorAlert.classList.remove('show');
+                let valid = true;
 
-      const length = parseFloat(roomLength.value);
-      const width = parseFloat(roomWidth.value);
-      if (!length || length <= 0) { valid = false; roomLength.style.borderColor = '#c73b2b'; } else { roomLength.style.borderColor = ''; }
-      if (!width || width <= 0) { valid = false; roomWidth.style.borderColor = '#c73b2b'; } else { roomWidth.style.borderColor = ''; }
+                const length = parseFloat(roomLength.value);
+                const width = parseFloat(roomWidth.value);
+                if (!length || length <= 0) { valid = false;
+                    roomLength.style.borderColor = '#c73b2b'; } else { roomLength.style.borderColor = ''; }
+                if (!width || width <= 0) { valid = false;
+                    roomWidth.style.borderColor = '#c73b2b'; } else { roomWidth.style.borderColor = ''; }
 
-      const size = selectedTileSize.value;
-      if (!size) { valid = false; dropdownSelected.style.borderColor = '#c73b2b'; } else { dropdownSelected.style.borderColor = ''; }
+                const size = selectedTileSize.value;
+                if (!size) { valid = false;
+                    dropdownSelected.style.borderColor = '#c73b2b'; } else { dropdownSelected.style.borderColor = ''; }
 
-      if (!valid) {
-        errorAlert.classList.add('show');
-        errorAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return;
-      }
+                if (!valid) {
+                    errorAlert.classList.add('show');
+                    errorAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    return;
+                }
 
-      const area = parseFloat(selectedTileArea.value);
-      const piecesPerBox = parseInt(selectedTilePieces.value, 10);
-      const roomArea = length * width;
-      const boxesNeeded = roomArea / area;
-      const boxesWithBuffer = boxesNeeded * 1.1;
-      const piecesNeeded = boxesNeeded * piecesPerBox;
-      const piecesWithBuffer = boxesWithBuffer * piecesPerBox;
+                const area = parseFloat(selectedTileArea.value);
+                const piecesPerBox = parseInt(selectedTilePieces.value, 10);
+                const roomArea = length * width;
+                const boxesNeeded = roomArea / area;
+                const boxesWithBuffer = boxesNeeded * 1.1;
+                const piecesNeeded = boxesNeeded * piecesPerBox;
+                const piecesWithBuffer = boxesWithBuffer * piecesPerBox;
 
-      totalArea.innerHTML = roomArea.toFixed(2) + ' <small>m²</small>';
-      selectedSizeLabel.textContent = size + ' cm';
-      totalBoxes.innerHTML = Math.ceil(boxesNeeded) + ' <small>dus</small>';
-      totalWithBuffer.innerHTML = Math.ceil(boxesWithBuffer) + ' <small>dus</small>';
-      totalPieces.textContent = Math.ceil(piecesNeeded);
-      totalPiecesWithBuffer.textContent = Math.ceil(piecesWithBuffer);
+                totalArea.innerHTML = roomArea.toFixed(2) + ' <small>m²</small>';
+                selectedSizeLabel.textContent = size + ' cm';
+                totalBoxes.innerHTML = Math.ceil(boxesNeeded) + ' <small>dus</small>';
+                totalWithBuffer.innerHTML = Math.ceil(boxesWithBuffer) + ' <small>dus</small>';
+                totalPieces.textContent = Math.ceil(piecesNeeded);
+                totalPiecesWithBuffer.textContent = Math.ceil(piecesWithBuffer);
 
-      const msg = `Halo SEKAWAN JAYA, saya mau konsultasi kebutuhan keramik/granit:%0A- Luas: ${roomArea.toFixed(2)} m²%0A- Ukuran: ${size} cm%0A- Estimasi dus (+10%): ${Math.ceil(boxesWithBuffer)} dus%0A- Total keping: ${Math.ceil(piecesWithBuffer)} pcs%0A%0ATerima kasih.`;
-      whatsappLink.href = `https://wa.me/6288216124228?text=${msg}`;
+                const msg =
+                    `Halo SEKAWAN JAYA, saya mau konsultasi kebutuhan keramik/granit:%0A- Luas: ${roomArea.toFixed(2)} m²%0A- Ukuran: ${size} cm%0A- Estimasi dus (+10%): ${Math.ceil(boxesWithBuffer)} dus%0A- Total keping: ${Math.ceil(piecesWithBuffer)} pcs%0A%0ATerima kasih.`;
+                whatsappLink.href = `https://wa.me/6288216124228?text=${msg}`;
 
-      resultDashboard.classList.add('show');
-      resultDashboard.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
+                resultDashboard.classList.add('show');
+                resultDashboard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
 
-    // reset
-    roomLength.addEventListener('input', function() { this.style.borderColor = ''; errorAlert.classList.remove('show'); resultDashboard.classList.remove('show'); });
-    roomWidth.addEventListener('input', function() { this.style.borderColor = ''; errorAlert.classList.remove('show'); resultDashboard.classList.remove('show'); });
+            roomLength.addEventListener('input', function() { this.style.borderColor = '';
+                errorAlert.classList.remove('show');
+                resultDashboard.classList.remove('show'); });
+            roomWidth.addEventListener('input', function() { this.style.borderColor = '';
+                errorAlert.classList.remove('show');
+                resultDashboard.classList.remove('show'); });
 
-    // print
-    window.printResult = function() {
-      const areaText = document.getElementById('totalArea').innerText;
-      const sizeText = document.getElementById('selectedSizeLabel').innerText;
-      const dusText = document.getElementById('totalBoxes').innerText;
-      const dusBuffer = document.getElementById('totalWithBuffer').innerText;
-      const pcsText = document.getElementById('totalPieces').innerText;
-      const pcsBuffer = document.getElementById('totalPiecesWithBuffer').innerText;
+            // ================= KALKULATOR DINDING (tinggi, panjang, lebar) =================
+            const wallHeight = document.getElementById('wallHeight');
+            const wallLength = document.getElementById('wallLength');
+            const wallWidth = document.getElementById('wallWidth');
+            const selectedTileSizeWall = document.getElementById('selectedTileSizeWall');
+            const selectedTileAreaWall = document.getElementById('selectedTileAreaWall');
+            const selectedTilePiecesWall = document.getElementById('selectedTilePiecesWall');
+            const dropdownSelectedWall = document.getElementById('dropdownSelectedWall');
+            const wallCalcForm = document.getElementById('wallCalcForm');
+            const errorAlertWall = document.getElementById('errorAlertWall');
+            const resultDashboardWall = document.getElementById('resultDashboardWall');
 
-      const printWin = window.open('', '_blank');
-      printWin.document.write(`
-        <html><head><title>Hasil Kalkulator Keramik</title>
-        <style>body{font-family:Inter,sans-serif;padding:1.5rem;max-width:400px;margin:auto;color:#0b1a33;font-size:13px;}
-        h2{font-family:Poppins,sans-serif;font-weight:600;color:#0b1a33;font-size:1.2rem;}
-        .grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin:1rem 0;}
-        .item{border:1px solid #dce4ef;border-radius:12px;padding:0.6rem;text-align:center;}
-        .label{font-size:0.6rem;text-transform:uppercase;color:#5d7599;}
-        .value{font-size:1.1rem;font-weight:700;margin-top:0.1rem;}
-        .footer{margin-top:1.5rem;font-size:0.6rem;color:#7a8fa8;border-top:1px solid #e6ecf5;padding-top:0.8rem;text-align:center;}
-</style></head>
-<body>
-  <h2>📐 Estimasi Kebutuhan</h2>
-  <div style="margin-bottom:0.2rem; color:#2b4a73; font-size:0.8rem;">SEKAWAN JAYA</div>
-  <div class="grid">
-    <div class="item"><div class="label">Luas area</div><div class="value">${areaText}</div></div>
-    <div class="item"><div class="label">Ukuran</div><div class="value">${sizeText}</div></div>
-    <div class="item"><div class="label">Dus</div><div class="value">${dusText}</div></div>
-    <div class="item"><div class="label">Dus +10%</div><div class="value">${dusBuffer}</div></div>
-    <div class="item"><div class="label">Keping</div><div class="value">${pcsText} pcs</div></div>
-    <div class="item"><div class="label">Keping +10%</div><div class="value">${pcsBuffer} pcs</div></div>
-  </div>
-  <div style="background:#f2f7fe;padding:0.5rem;border-radius:40px;font-size:0.7rem;text-align:center;">Hasil estimasi · konsultasi dengan tim ahli</div>
-  <div class="footer">Dicetak dari Kalkulator SEKAWAN JAYA · ${new Date().toLocaleDateString('id-ID')}</div>
-</body></html>
-`);
-printWin.document.close();
-printWin.print();
-};
+            const totalAreaWall = document.getElementById('totalAreaWall');
+            const selectedSizeLabelWall = document.getElementById('selectedSizeLabelWall');
+            const totalBoxesWall = document.getElementById('totalBoxesWall');
+            const totalWithBufferWall = document.getElementById('totalWithBufferWall');
+            const totalPiecesWall = document.getElementById('totalPiecesWall');
+            const totalPiecesWithBufferWall = document.getElementById('totalPiecesWithBufferWall');
+            const whatsappLinkWall = document.getElementById('whatsappLinkWall');
+            const errorAlertWallDefaultMsg = errorAlertWall.innerHTML;
 
-// inisialisasi
-dropdownSelected.querySelector('span').textContent = 'Pilih ukuran';
-dropdownSelected.classList.add('placeholder');
-selectedTileSize.value = '';
-selectedTileArea.value = '';
-selectedTilePieces.value = '';
-options.forEach(o => o.classList.remove('selected'));
+            setupDropdown('tileDropdownWall', 'dropdownSelectedWall', 'selectedTileSizeWall', 'selectedTileAreaWall',
+                'selectedTilePiecesWall', function() {
+                    resultDashboardWall.classList.remove('show');
+                    errorAlertWall.classList.remove('show');
+                });
 
-})();
-</script>
+            wallCalcForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                errorAlertWall.innerHTML = errorAlertWallDefaultMsg;
+                errorAlertWall.classList.remove('show');
+                let valid = true;
+
+                const height = parseFloat(wallHeight.value);
+                const length = parseFloat(wallLength.value);
+                const width = parseFloat(wallWidth.value);
+                if (!height || height <= 0) { valid = false;
+                    wallHeight.style.borderColor = '#c73b2b'; } else { wallHeight.style.borderColor = ''; }
+                if (!length || length <= 0) { valid = false;
+                    wallLength.style.borderColor = '#c73b2b'; } else { wallLength.style.borderColor = ''; }
+                if (!width || width <= 0) { valid = false;
+                    wallWidth.style.borderColor = '#c73b2b'; } else { wallWidth.style.borderColor = ''; }
+
+                const size = selectedTileSizeWall.value;
+                if (!size) { valid = false;
+                    dropdownSelectedWall.style.borderColor = '#c73b2b'; } else { dropdownSelectedWall.style.borderColor =
+                        ''; }
+
+                if (!valid) {
+                    errorAlertWall.classList.add('show');
+                    errorAlertWall.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    return;
+                }
+
+                // Hitung luas dinding: 2 * (panjang + lebar) * tinggi
+                const wallArea = 2 * (length + width) * height;
+                const area = parseFloat(selectedTileAreaWall.value);
+                const piecesPerBox = parseInt(selectedTilePiecesWall.value, 10);
+                const boxesNeeded = wallArea / area;
+                const boxesWithBuffer = boxesNeeded * 1.1;
+                const piecesNeeded = boxesNeeded * piecesPerBox;
+                const piecesWithBuffer = boxesWithBuffer * piecesPerBox;
+
+                totalAreaWall.innerHTML = wallArea.toFixed(2) + ' <small>m²</small>';
+                selectedSizeLabelWall.textContent = size + ' cm';
+                totalBoxesWall.innerHTML = Math.ceil(boxesNeeded) + ' <small>dus</small>';
+                totalWithBufferWall.innerHTML = Math.ceil(boxesWithBuffer) + ' <small>dus</small>';
+                totalPiecesWall.textContent = Math.ceil(piecesNeeded);
+                totalPiecesWithBufferWall.textContent = Math.ceil(piecesWithBuffer);
+
+                const msg =
+                    `Halo SEKAWAN JAYA, saya mau konsultasi kebutuhan keramik/granit dinding:%0A- Tinggi: ${height} m, Panjang: ${length} m, Lebar: ${width} m%0A- Luas dinding: ${wallArea.toFixed(2)} m²%0A- Ukuran: ${size} cm%0A- Estimasi dus (+10%): ${Math.ceil(boxesWithBuffer)} dus%0A- Total keping: ${Math.ceil(piecesWithBuffer)} pcs%0A%0ATerima kasih.`;
+                whatsappLinkWall.href = `https://wa.me/6288216124228?text=${msg}`;
+
+                resultDashboardWall.classList.add('show');
+                resultDashboardWall.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+
+            wallHeight.addEventListener('input', function() { this.style.borderColor = '';
+                errorAlertWall.classList.remove('show');
+                resultDashboardWall.classList.remove('show'); });
+            wallLength.addEventListener('input', function() { this.style.borderColor = '';
+                errorAlertWall.classList.remove('show');
+                resultDashboardWall.classList.remove('show'); });
+            wallWidth.addEventListener('input', function() { this.style.borderColor = '';
+                errorAlertWall.classList.remove('show');
+                resultDashboardWall.classList.remove('show'); });
+
+            // ================= PRINT =================
+            window.printResult = function(mode) {
+                let areaText, sizeText, dusText, dusBuffer, pcsText, pcsBuffer, extraRow = '';
+                if (mode === 'wall') {
+                    areaText = totalAreaWall.innerText;
+                    sizeText = selectedSizeLabelWall.innerText;
+                    dusText = totalBoxesWall.innerText;
+                    dusBuffer = totalWithBufferWall.innerText;
+                    pcsText = totalPiecesWall.innerText;
+                    pcsBuffer = totalPiecesWithBufferWall.innerText;
+                } else {
+                    areaText = totalArea.innerText;
+                    sizeText = selectedSizeLabel.innerText;
+                    dusText = totalBoxes.innerText;
+                    dusBuffer = totalWithBuffer.innerText;
+                    pcsText = totalPieces.innerText;
+                    pcsBuffer = totalPiecesWithBuffer.innerText;
+                }
+
+                const printWin = window.open('', '_blank');
+                printWin.document.write(`
+                    <html><head><title>Hasil Kalkulator Keramik</title>
+                    <style>
+                        body{font-family:Inter,sans-serif;padding:1.5rem;max-width:400px;margin:auto;color:#0b1a33;font-size:13px;}
+                        h2{font-family:Poppins,sans-serif;font-weight:600;color:#0b1a33;font-size:1.2rem;}
+                        .grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin:1rem 0;}
+                        .item{border:1px solid #dce4ef;border-radius:12px;padding:0.6rem;text-align:center;}
+                        .label{font-size:0.6rem;text-transform:uppercase;color:#5d7599;}
+                        .value{font-size:1.1rem;font-weight:700;margin-top:0.1rem;}
+                        .footer{margin-top:1.5rem;font-size:0.6rem;color:#7a8fa8;border-top:1px solid #e6ecf5;padding-top:0.8rem;text-align:center;}
+                    </style>
+                    </head><body>
+                    <h2>📐 Estimasi Kebutuhan ${mode === 'wall' ? '(Dinding)' : '(Lantai)'}</h2>
+                    <div style="margin-bottom:0.2rem;color:#2b4a73;font-size:0.8rem;">SEKAWAN JAYA</div>
+                    <div class="grid">
+                        <div class="item"><div class="label">Luas</div><div class="value">${areaText}</div></div>
+                        <div class="item"><div class="label">Ukuran</div><div class="value">${sizeText}</div></div>
+                        <div class="item"><div class="label">Dus</div><div class="value">${dusText}</div></div>
+                        <div class="item"><div class="label">Dus +10%</div><div class="value">${dusBuffer}</div></div>
+                        <div class="item"><div class="label">Keping</div><div class="value">${pcsText} pcs</div></div>
+                        <div class="item"><div class="label">Keping +10%</div><div class="value">${pcsBuffer} pcs</div></div>
+                        ${extraRow}
+                    </div>
+                    <div style="background:#f2f7fe;padding:0.5rem;border-radius:40px;font-size:0.7rem;text-align:center;">Hasil estimasi · konsultasi dengan tim ahli</div>
+                    <div class="footer">Dicetak dari Kalkulator SEKAWAN JAYA · ${new Date().toLocaleDateString('id-ID')}</div>
+                    </body></html>
+                `);
+                printWin.document.close();
+                printWin.print();
+            };
+
+        })();
+    </script>
 </body>
 </html>
