@@ -521,7 +521,7 @@
             padding-left: 0.2rem;
         }
 
-        /* responsive */
+        /* responsive: pada layar kecil tetap pertahankan 2 kolom untuk panjang & lebar */
         @media (max-width: 420px) {
             body {
                 font-size: 12px;
@@ -557,12 +557,9 @@
                 font-size: 0.72rem;
                 padding: 0.5rem 0.3rem;
             }
-            /* pada layar kecil, wall dimension jadi 1 kolom */
+            /* pertahankan 2 kolom, hanya perkecil gap */
             .wall-dimension-grid {
-                grid-template-columns: 1fr;
-            }
-            .wall-dimension-grid .full-width {
-                grid-column: 1;
+                gap: 0.3rem;
             }
         }
 
@@ -593,6 +590,10 @@
                 font-size: 0.65rem;
                 padding: 0.4rem;
                 min-height: 34px;
+            }
+            /* tetap pertahankan 2 kolom untuk panjang & lebar */
+            .wall-dimension-grid {
+                gap: 0.2rem;
             }
         }
 
