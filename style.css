@@ -1226,7 +1226,7 @@ input:checked + .preference-slider::before {
         text-align: center;
     }
     .about-content p {
-        text-align: center;
+        text-align: left; /* PARAGRAF RATA KIRI */
     }
     .about-features {
         justify-content: center;
@@ -1409,7 +1409,7 @@ input:checked + .preference-slider::before {
         font-size: 1.1rem;
     }
     .about-content p {
-        text-align: center;
+        text-align: left; /* RATA KIRI DI MOBILE JUGA */
     }
 
     .contact-container {
@@ -1554,6 +1554,9 @@ input:checked + .preference-slider::before {
     .about-feature {
         font-size: 0.5rem;
         padding: 0.1rem 0.2rem;
+    }
+    .about-content p {
+        text-align: left;
     }
 
     .footer-links-contact-wrapper {
