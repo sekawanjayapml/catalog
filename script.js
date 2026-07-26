@@ -1,6 +1,6 @@
 // ============================================================
 // SCRIPT.JS - TERINTEGRASI DENGAN GOOGLE SHEETS
-// DENGAN FORMAT HARGA OTOMATIS + UKURAN
+// FLEKSIBEL: SEMUA KOLOM BISA KOSONG, DROPDOWN TETAP TERBACA
 // ============================================================
 
 // ===== KONFIGURASI =====
@@ -20,7 +20,7 @@ function formatPrice(value) {
 }
 
 // ============================================================
-// 1. AMBIL DATA DARI GOOGLE SHEETS (termasuk kolom size)
+// 1. AMBIL DATA DARI GOOGLE SHEETS (otomatis semua kolom)
 // ============================================================
 let allProducts = [];
 let currentPage = 1;
@@ -35,12 +35,13 @@ async function fetchProductsFromSheet() {
         const rows = csvText.split('\n').filter(row => row.trim() !== '');
         
         const headers = rows[0].split(',').map(h => h.trim().toLowerCase());
-        // Kolom yang dibutuhkan: name, price, description, image, category, badge, features, size (baru)
-        const required = ['name', 'price', 'description', 'image', 'category', 'badge', 'features', 'size'];
+        // Kolom wajib: name (sisanya opsional)
+        // Tapi kita tetap periksa agar tidak error jika ada kolom tambahan
+        const required = ['name'];
         const missing = required.filter(col => !headers.includes(col));
         if (missing.length > 0) {
             console.error('Kolom yang hilang di Sheets:', missing.join(', '));
-            alert('Error: Kolom di Google Sheets tidak lengkap. Pastikan ada: ' + required.join(', '));
+            alert('Error: Kolom "name" tidak ditemukan di Google Sheets. Pastikan ada kolom bernama "name".');
             return [];
         }
 
@@ -53,12 +54,14 @@ async function fetchProductsFromSheet() {
             headers.forEach((header, index) => {
                 let val = values[index] || '';
                 if (header === 'features') {
+                    // features bisa diisi dengan koma, misal "A,B,C"
                     obj[header] = val ? val.split(',').map(f => f.trim()) : [];
                 } else {
                     obj[header] = val;
                 }
             });
             
+            // Hanya wajibkan name
             if (obj.name) {
                 products.push(obj);
             }
@@ -72,7 +75,7 @@ async function fetchProductsFromSheet() {
 }
 
 // ============================================================
-// 2. RENDER PRODUK (dengan ukuran)
+// 2. RENDER PRODUK (semua kolom fleksibel)
 // ============================================================
 function renderProducts(productsToRender, page = 1) {
     const startIndex = (page - 1) * productsPerPage;
