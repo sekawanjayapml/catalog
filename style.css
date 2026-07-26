@@ -740,7 +740,7 @@ textarea.form-control {
 }
 
 /* ============================================================
-   FOOTER - TATA LETAK BARU (DESKTOP + MOBILE)
+   FOOTER - TATA LETAK (DESKTOP + MOBILE)
    ============================================================ */
 .footer {
     background: var(--biru-gelap);
@@ -1411,13 +1411,13 @@ input:checked + .preference-slider::before {
 
     /* ===== FOOTER MOBILE: DESKRIPSI DI ATAS, LINK CEPAT & KONTAK BERSANDINGAN ===== */
     .footer-container {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
     }
     .footer-links-contact-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
     }
     .footer-col h4 {
         font-size: 0.8rem;
@@ -1558,8 +1558,8 @@ input:checked + .preference-slider::before {
         font-size: 0.6rem;
     }
     .footer-links-contact-wrapper {
-        grid-template-columns: 1fr;
-        gap: 0.3rem;
+        grid-template-columns: 1fr !important;
+        gap: 0.3rem !important;
     }
     .modal-content {
         padding: 0.6rem;
