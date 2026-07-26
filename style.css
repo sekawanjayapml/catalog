@@ -739,7 +739,9 @@ textarea.form-control {
     background: var(--biru-gelap);
 }
 
-/* ===== FOOTER ===== */
+/* ============================================================
+   FOOTER - TATA LETAK BARU (DESKTOP + MOBILE)
+   ============================================================ */
 .footer {
     background: var(--biru-gelap);
     color: var(--putih);
@@ -1407,15 +1409,15 @@ input:checked + .preference-slider::before {
         min-height: 30px;
     }
 
+    /* ===== FOOTER MOBILE: DESKRIPSI DI ATAS, LINK CEPAT & KONTAK BERSANDINGAN ===== */
     .footer-container {
         grid-template-columns: 1fr;
         gap: 1rem;
-        text-align: left;
     }
     .footer-links-contact-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 0.6rem;
+        gap: 1rem;
     }
     .footer-col h4 {
         font-size: 0.8rem;
