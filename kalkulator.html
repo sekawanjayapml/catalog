@@ -1,214 +1,1606 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <meta name="description" content="Kalkulator Keramik & Granit - Hitung kebutuhan material dengan akurat. SEKAWAN JAYA Supplier Keramik & Granit Berkualitas di Pemalang.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description" content="Kalkulator Keramik & Granit - Hitung kebutuhan material dengan akurat. SEKAWAN JAYA Supplier Keramik & Granit Berkualitas di Pemalang." />
     <title>Kalkulator Keramik & Granit · SEKAWAN JAYA</title>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; script-src 'unsafe-inline'; img-src https://i.imgur.com data:;">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; script-src 'unsafe-inline'; img-src https://i.imgur.com data:;" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* ===== CSS MINIFIED ===== (sama seperti sebelumnya) */
-        *{margin:0;padding:0;box-sizing:border-box}body{background:#f5f7fc;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:#0b1a33;line-height:1.4;padding:0 0 1.5rem;-webkit-font-smoothing:antialiased;font-size:13px}.container{max-width:480px;margin:0 auto;padding:0 .7rem}.header{background:rgba(255,255,255,.92);backdrop-filter:blur(6px);padding:.5rem 0;position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(0,0,0,.03);margin-bottom:.3rem}.header .container{display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;gap:.4rem;font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;color:#0b1a33;text-decoration:none}.logo img{height:26px;width:auto;display:block}.logo span{letter-spacing:-.3px}.nav-trigger{background:0 0;border:none;font-size:1.1rem;color:#0b1a33;padding:.2rem .4rem;cursor:pointer}.hero-mini{background:linear-gradient(135deg,#0b1a33 0,#1a3a6b 100%);color:#fff;padding:1.2rem 1rem 1.2rem;border-radius:16px;margin:0 .7rem 1rem;box-shadow:0 6px 16px rgba(11,26,51,.10);text-align:center}.hero-mini h1{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.2rem;letter-spacing:-.3px;margin-bottom:.1rem}.hero-mini p{font-size:.75rem;opacity:.85;font-weight:400}.card-calc{background:#fff;border-radius:14px;padding:1.2rem 1rem;box-shadow:0 2px 12px rgba(0,0,0,.02),0 1px 4px rgba(0,20,40,.04);margin:0 .7rem 1rem;border:1px solid rgba(0,0,0,.02)}.form-group{margin-bottom:.9rem}.form-group label{display:block;font-weight:500;font-size:.75rem;color:#1f3a5f;margin-bottom:.25rem;letter-spacing:-.2px}.form-group label i{margin-right:.25rem;opacity:.5;font-size:.7rem}.form-control{width:100%;padding:.6rem .7rem;border:1.5px solid #e9edf4;border-radius:12px;font-family:'Inter',sans-serif;font-size:15px;background:#fafcff;transition:.2s;color:#0b1a33;appearance:none}.form-control:focus{border-color:#1a4b8c;outline:0;background:#fff;box-shadow:0 0 0 3px rgba(26,75,140,.06)}.form-control::placeholder{color:#a0b3cc;font-weight:400;font-size:.85rem}.custom-dropdown{position:relative}.dropdown-selected{display:flex;justify-content:space-between;align-items:center;padding:.6rem .7rem;border:1.5px solid #e9edf4;border-radius:12px;background:#fafcff;cursor:pointer;font-size:.85rem;color:#0b1a33;transition:.2s;font-weight:450;min-height:42px}.dropdown-selected.placeholder{color:#8a9fb8}.dropdown-selected.filled{color:#0b1a33}.dropdown-arrow{font-size:.7rem;opacity:.5;transition:.25s}.dropdown-open .dropdown-arrow{transform:rotate(180deg);opacity:.8}.dropdown-options{position:absolute;top:calc(100% + 4px);left:0;right:0;background:#fff;border-radius:14px;border:1px solid #eef2f8;box-shadow:0 10px 24px rgba(0,0,0,.08);max-height:180px;overflow-y:auto;display:none;z-index:30;padding:.2rem 0}.dropdown-open .dropdown-options{display:block}.dropdown-option{padding:.5rem .8rem;font-size:.8rem;border-bottom:1px solid #f0f4fa;cursor:pointer;transition:.1s;display:flex;justify-content:space-between;align-items:center}.dropdown-option:last-child{border-bottom:0}.dropdown-option:hover{background:#f2f6fe}.dropdown-option.selected{background:#e5edf9;color:#0b1a33;font-weight:500}.dropdown-option span{color:#6a7f9e;font-weight:400;font-size:.7rem}.btn-primary{width:100%;padding:.75rem;background:#1a4b8c;color:#fff;border:0;border-radius:40px;font-family:'Inter',sans-serif;font-weight:600;font-size:.85rem;display:inline-flex;align-items:center;justify-content:center;gap:.4rem;cursor:pointer;transition:.2s;box-shadow:0 3px 8px rgba(26,75,140,.12);margin-top:.3rem;min-height:44px}.btn-primary:active{transform:scale(.97)}.btn-primary:disabled{opacity:.6;transform:none;box-shadow:none}.alert-error{background:#fee9e7;border-left:4px solid #c73b2b;color:#8f2b1f;display:none;padding:.6rem .8rem;border-radius:12px;font-size:.75rem;margin:.6rem 0 0;align-items:center;gap:.4rem}.alert-error.show{display:flex}.result-dashboard{margin-top:1.2rem;background:#f8faff;border-radius:14px;padding:1rem .8rem;border:1px solid #eef2f8;display:none}.result-dashboard.show{display:block;animation:fadeUp .35s ease}@keyframes fadeUp{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}.result-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem;border-bottom:1px solid #e6ecf5;padding-bottom:.4rem}.result-header h3{font-family:'Poppins',sans-serif;font-weight:600;font-size:.95rem;color:#0b1a33;letter-spacing:-.3px}.badge-size{background:#e9eff8;padding:.15rem .6rem;border-radius:40px;font-size:.65rem;font-weight:600;color:#1a4b8c}.metric-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5rem;margin-bottom:.5rem}.metric-item{background:#fff;border-radius:12px;padding:.5rem .2rem;text-align:center;border:1px solid #f0f4fa}.metric-label{font-size:.55rem;text-transform:uppercase;letter-spacing:.3px;color:#6a7f9e;font-weight:600}.metric-value{font-size:1rem;font-weight:700;color:#0b1a33;margin-top:.05rem;line-height:1.2}.metric-value small{font-weight:400;font-size:.6rem;color:#6f87aa;margin-left:1px}.metric-buffer{background:#eef5fe;border:1px solid #dbe7f5}.metric-buffer .metric-label{color:#1a4b8c}.metric-buffer .metric-value{color:#0b2a55}.pieces-row{display:flex;justify-content:space-between;font-size:.7rem;color:#3b5a7f;background:#f2f7fe;padding:.3rem .7rem;border-radius:40px;margin-top:.2rem}.pieces-row strong{color:#0b1a33}.action-group{display:flex;flex-direction:column;gap:.4rem;margin-top:.8rem}.btn-wa{background:#25b66b;color:#fff;border:0;border-radius:40px;padding:.6rem;font-weight:600;font-size:.8rem;display:flex;align-items:center;justify-content:center;gap:.4rem;text-decoration:none;transition:.2s;box-shadow:0 2px 8px rgba(37,182,107,.15);min-height:40px}.btn-wa:active{transform:scale(.97)}.btn-print{background:0 0;color:#1f3a5f;border:1px solid #d0dcec;border-radius:40px;padding:.5rem;font-weight:500;font-size:.75rem;display:flex;align-items:center;justify-content:center;gap:.3rem;cursor:pointer;transition:.2s;min-height:38px}.btn-print:active{background:#f0f5fe}.alert-tip{background:#eef6fd;border-radius:12px;padding:.5rem .7rem;font-size:.65rem;color:#1f4a7a;margin:.6rem 0 .2rem;display:flex;align-items:center;gap:.4rem;border-left:3px solid #1a4b8c}.alert-tip i{color:#1a4b8c;opacity:.7;font-size:.7rem}.footer-mini{text-align:center;font-size:.6rem;color:#8a9fb8;padding:1.5rem .7rem .5rem;border-top:1px solid #eef2f8;margin:1rem .7rem 0}.footer-mini a{color:#1a4b8c;text-decoration:none;font-weight:500}.mode-switcher{display:flex;background:#eef2f8;border-radius:12px;padding:.25rem;gap:.25rem;margin-bottom:1rem}.mode-tab{flex:1;display:flex;align-items:center;justify-content:center;gap:.35rem;padding:.55rem .4rem;border:0;background:0 0;border-radius:9px;font-family:'Inter',sans-serif;font-weight:600;font-size:.78rem;color:#6a7f9e;cursor:pointer;transition:.2s}.mode-tab.active{background:#fff;color:#1a4b8c;box-shadow:0 2px 6px rgba(11,26,51,.08)}.mode-tab i{font-size:.75rem}.mode-panel{display:none}.mode-panel.active{display:block}.wall-dimension-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}.wall-dimension-grid .full-width{grid-column:1/-1}.wall-dimension-grid .form-group{margin-bottom:0}.wall-info{font-size:.65rem;color:#6a7f9e;margin:.2rem 0 .8rem;padding-left:.2rem}.room-row{display:flex;flex-wrap:wrap;gap:.3rem;align-items:center;padding:.4rem .2rem;border-bottom:1px solid #f0f4fa;background:#fafcff;border-radius:8px;margin-bottom:.3rem}.room-row input,.room-row select{font-family:'Inter',sans-serif;font-size:.7rem;background:#fff;border:1.5px solid #e9edf4;border-radius:8px;padding:.3rem .4rem;min-height:32px;transition:.15s;color:#0b1a33}.room-row input:focus,.room-row select:focus{border-color:#1a4b8c;outline:0;box-shadow:0 0 0 2px rgba(26,75,140,.08)}.room-row .room-name{flex:1 1 80px;min-width:60px}.room-row .room-length,.room-row .room-width{flex:0 1 60px;min-width:50px}.room-row .room-area{flex:0 1 50px;font-weight:600;font-size:.7rem;text-align:center;color:#0b1a33;min-width:40px}.room-row .room-tile-select{flex:1 1 90px;min-width:80px}.room-row .room-dus{flex:0 1 40px;font-weight:700;font-size:.75rem;text-align:center;color:#1a4b8c;min-width:30px}.room-row .room-delete{flex:0 0 24px;background:0 0;border:0;color:#b0b8c8;cursor:pointer;font-size:.7rem;padding:0;transition:.15s;min-height:28px;display:flex;align-items:center;justify-content:center}.room-row .room-delete:hover{color:#c73b2b}.btn-add-room{width:100%;padding:.5rem;border:1.5px dashed #b0c8e0;border-radius:12px;background:0 0;color:#1a4b8c;font-weight:600;font-size:.8rem;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:.4rem;margin-top:.2rem;font-family:'Inter',sans-serif}.btn-add-room:hover{background:#f2f6fe;border-color:#1a4b8c}.summary-multi{display:none;margin-top:1rem;background:#f8faff;border-radius:14px;padding:1rem;border:1px solid #eef2f8}.summary-multi.show{display:block;animation:fadeUp .35s ease}.summary-multi .detail-list{background:#f2f7fe;border-radius:8px;padding:.4rem .6rem;font-size:.65rem;white-space:pre-wrap;max-height:120px;overflow-y:auto;margin:.4rem 0;font-family:'Inter',monospace;line-height:1.5}@media(max-width:420px){body{font-size:12px}.hero-mini{padding:1rem .8rem}.hero-mini h1{font-size:1.05rem}.card-calc{padding:1rem .8rem}.metric-grid{gap:.35rem}.metric-item{padding:.4rem .15rem}.metric-value{font-size:.85rem}.form-control{font-size:14px;padding:.5rem .6rem}.dropdown-selected{padding:.5rem .6rem;font-size:.8rem;min-height:38px}.mode-tab{font-size:.72rem;padding:.5rem .3rem}.wall-dimension-grid{gap:.3rem}.room-row input,.room-row select{font-size:.65rem;padding:.25rem .3rem;min-height:28px}.room-row .room-name{flex:1 1 70px;min-width:50px}.room-row .room-length,.room-row .room-width{flex:0 1 50px;min-width:40px}.room-row .room-area{flex:0 1 40px;font-size:.65rem;min-width:30px}.room-row .room-tile-select{flex:1 1 70px;min-width:60px}.room-row .room-dus{flex:0 1 32px;font-size:.65rem;min-width:24px}.room-row .room-delete{flex:0 0 20px;font-size:.6rem}}@media(max-width:360px){.metric-grid{grid-template-columns:1fr 1fr}.metric-item:last-child{grid-column:span 2}.hero-mini h1{font-size:.95rem}.hero-mini p{font-size:.65rem}.btn-primary{font-size:.75rem;padding:.6rem;min-height:38px}.btn-wa{font-size:.7rem;padding:.5rem;min-height:36px}.btn-print{font-size:.65rem;padding:.4rem;min-height:34px}.wall-dimension-grid{gap:.2rem}}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}input[type=number]{-moz-appearance:textfield}
+        /* ===== BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+        body {
+            background: #f5f7fc;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #0b1a33;
+            line-height: 1.4;
+            padding: 0 0 1.5rem;
+            -webkit-font-smoothing: antialiased;
+            font-size: 13px
+        }
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 .7rem
+        }
+        .header {
+            background: rgba(255, 255, 255, .92);
+            backdrop-filter: blur(6px);
+            padding: .5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            border-bottom: 1px solid rgba(0, 0, 0, .03);
+            margin-bottom: .3rem
+        }
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #0b1a33;
+            text-decoration: none
+        }
+        .logo img {
+            height: 26px;
+            width: auto;
+            display: block
+        }
+        .logo span {
+            letter-spacing: -.3px
+        }
+        .nav-trigger {
+            background: 0 0;
+            border: none;
+            font-size: 1.1rem;
+            color: #0b1a33;
+            padding: .2rem .4rem;
+            cursor: pointer
+        }
+        .hero-mini {
+            background: linear-gradient(135deg, #0b1a33 0, #1a3a6b 100%);
+            color: #fff;
+            padding: 1.2rem 1rem 1.2rem;
+            border-radius: 16px;
+            margin: 0 .7rem 1rem;
+            box-shadow: 0 6px 16px rgba(11, 26, 51, .10);
+            text-align: center
+        }
+        .hero-mini h1 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -.3px;
+            margin-bottom: .1rem
+        }
+        .hero-mini p {
+            font-size: .75rem;
+            opacity: .85;
+            font-weight: 400
+        }
+        .card-calc {
+            background: #fff;
+            border-radius: 14px;
+            padding: 1.2rem 1rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .02), 0 1px 4px rgba(0, 20, 40, .04);
+            margin: 0 .7rem 1rem;
+            border: 1px solid rgba(0, 0, 0, .02)
+        }
+        .form-group {
+            margin-bottom: .9rem
+        }
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            font-size: .75rem;
+            color: #1f3a5f;
+            margin-bottom: .25rem;
+            letter-spacing: -.2px
+        }
+        .form-group label i {
+            margin-right: .25rem;
+            opacity: .5;
+            font-size: .7rem
+        }
+        .form-control {
+            width: 100%;
+            padding: .6rem .7rem;
+            border: 1.5px solid #e9edf4;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            background: #fafcff;
+            transition: .2s;
+            color: #0b1a33;
+            appearance: none
+        }
+        .form-control:focus {
+            border-color: #1a4b8c;
+            outline: 0;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(26, 75, 140, .06)
+        }
+        .form-control::placeholder {
+            color: #a0b3cc;
+            font-weight: 400;
+            font-size: .85rem
+        }
+        .custom-dropdown {
+            position: relative
+        }
+        .dropdown-selected {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: .6rem .7rem;
+            border: 1.5px solid #e9edf4;
+            border-radius: 12px;
+            background: #fafcff;
+            cursor: pointer;
+            font-size: .85rem;
+            color: #0b1a33;
+            transition: .2s;
+            font-weight: 450;
+            min-height: 42px
+        }
+        .dropdown-selected.placeholder {
+            color: #8a9fb8
+        }
+        .dropdown-selected.filled {
+            color: #0b1a33
+        }
+        .dropdown-arrow {
+            font-size: .7rem;
+            opacity: .5;
+            transition: .25s
+        }
+        .dropdown-open .dropdown-arrow {
+            transform: rotate(180deg);
+            opacity: .8
+        }
+        .dropdown-options {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-radius: 14px;
+            border: 1px solid #eef2f8;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
+            max-height: 180px;
+            overflow-y: auto;
+            display: none;
+            z-index: 30;
+            padding: .2rem 0
+        }
+        .dropdown-open .dropdown-options {
+            display: block
+        }
+        .dropdown-option {
+            padding: .5rem .8rem;
+            font-size: .8rem;
+            border-bottom: 1px solid #f0f4fa;
+            cursor: pointer;
+            transition: .1s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+        .dropdown-option:last-child {
+            border-bottom: 0
+        }
+        .dropdown-option:hover {
+            background: #f2f6fe
+        }
+        .dropdown-option.selected {
+            background: #e5edf9;
+            color: #0b1a33;
+            font-weight: 500
+        }
+        .dropdown-option span {
+            color: #6a7f9e;
+            font-weight: 400;
+            font-size: .7rem
+        }
+        .btn-primary {
+            width: 100%;
+            padding: .75rem;
+            background: #1a4b8c;
+            color: #fff;
+            border: 0;
+            border-radius: 40px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: .85rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: .4rem;
+            cursor: pointer;
+            transition: .2s;
+            box-shadow: 0 3px 8px rgba(26, 75, 140, .12);
+            margin-top: .3rem;
+            min-height: 44px
+        }
+        .btn-primary:active {
+            transform: scale(.97)
+        }
+        .btn-primary:disabled {
+            opacity: .6;
+            transform: none;
+            box-shadow: none
+        }
+        .alert-error {
+            background: #fee9e7;
+            border-left: 4px solid #c73b2b;
+            color: #8f2b1f;
+            display: none;
+            padding: .6rem .8rem;
+            border-radius: 12px;
+            font-size: .75rem;
+            margin: .6rem 0 0;
+            align-items: center;
+            gap: .4rem
+        }
+        .alert-error.show {
+            display: flex
+        }
+        .result-dashboard {
+            margin-top: 1.2rem;
+            background: #f8faff;
+            border-radius: 14px;
+            padding: 1rem .8rem;
+            border: 1px solid #eef2f8;
+            display: none
+        }
+        .result-dashboard.show {
+            display: block;
+            animation: fadeUp .35s ease
+        }
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(10px)
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: .8rem;
+            border-bottom: 1px solid #e6ecf5;
+            padding-bottom: .4rem
+        }
+        .result-header h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: .95rem;
+            color: #0b1a33;
+            letter-spacing: -.3px
+        }
+        .badge-size {
+            background: #e9eff8;
+            padding: .15rem .6rem;
+            border-radius: 40px;
+            font-size: .65rem;
+            font-weight: 600;
+            color: #1a4b8c
+        }
+        .metric-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: .5rem;
+            margin-bottom: .5rem
+        }
+        .metric-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: .5rem .2rem;
+            text-align: center;
+            border: 1px solid #f0f4fa
+        }
+        .metric-label {
+            font-size: .55rem;
+            text-transform: uppercase;
+            letter-spacing: .3px;
+            color: #6a7f9e;
+            font-weight: 600
+        }
+        .metric-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0b1a33;
+            margin-top: .05rem;
+            line-height: 1.2
+        }
+        .metric-value small {
+            font-weight: 400;
+            font-size: .6rem;
+            color: #6f87aa;
+            margin-left: 1px
+        }
+        .metric-buffer {
+            background: #eef5fe;
+            border: 1px solid #dbe7f5
+        }
+        .metric-buffer .metric-label {
+            color: #1a4b8c
+        }
+        .metric-buffer .metric-value {
+            color: #0b2a55
+        }
+        .pieces-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: .7rem;
+            color: #3b5a7f;
+            background: #f2f7fe;
+            padding: .3rem .7rem;
+            border-radius: 40px;
+            margin-top: .2rem
+        }
+        .pieces-row strong {
+            color: #0b1a33
+        }
+        .action-group {
+            display: flex;
+            flex-direction: column;
+            gap: .4rem;
+            margin-top: .8rem
+        }
+        .btn-wa {
+            background: #25b66b;
+            color: #fff;
+            border: 0;
+            border-radius: 40px;
+            padding: .6rem;
+            font-weight: 600;
+            font-size: .8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .4rem;
+            text-decoration: none;
+            transition: .2s;
+            box-shadow: 0 2px 8px rgba(37, 182, 107, .15);
+            min-height: 40px
+        }
+        .btn-wa:active {
+            transform: scale(.97)
+        }
+        .btn-print {
+            background: 0 0;
+            color: #1f3a5f;
+            border: 1px solid #d0dcec;
+            border-radius: 40px;
+            padding: .5rem;
+            font-weight: 500;
+            font-size: .75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .3rem;
+            cursor: pointer;
+            transition: .2s;
+            min-height: 38px
+        }
+        .btn-print:active {
+            background: #f0f5fe
+        }
+        .alert-tip {
+            background: #eef6fd;
+            border-radius: 12px;
+            padding: .5rem .7rem;
+            font-size: .65rem;
+            color: #1f4a7a;
+            margin: .6rem 0 .2rem;
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            border-left: 3px solid #1a4b8c
+        }
+        .alert-tip i {
+            color: #1a4b8c;
+            opacity: .7;
+            font-size: .7rem
+        }
+        .footer-mini {
+            text-align: center;
+            font-size: .6rem;
+            color: #8a9fb8;
+            padding: 1.5rem .7rem .5rem;
+            border-top: 1px solid #eef2f8;
+            margin: 1rem .7rem 0
+        }
+        .footer-mini a {
+            color: #1a4b8c;
+            text-decoration: none;
+            font-weight: 500
+        }
+        .mode-switcher {
+            display: flex;
+            background: #eef2f8;
+            border-radius: 12px;
+            padding: .25rem;
+            gap: .25rem;
+            margin-bottom: 1rem
+        }
+        .mode-tab {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .35rem;
+            padding: .55rem .4rem;
+            border: 0;
+            background: 0 0;
+            border-radius: 9px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: .78rem;
+            color: #6a7f9e;
+            cursor: pointer;
+            transition: .2s
+        }
+        .mode-tab.active {
+            background: #fff;
+            color: #1a4b8c;
+            box-shadow: 0 2px 6px rgba(11, 26, 51, .08)
+        }
+        .mode-tab i {
+            font-size: .75rem
+        }
+        .mode-panel {
+            display: none
+        }
+        .mode-panel.active {
+            display: block
+        }
+        .wall-dimension-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: .5rem
+        }
+        .wall-dimension-grid .full-width {
+            grid-column: 1/-1
+        }
+        .wall-dimension-grid .form-group {
+            margin-bottom: 0
+        }
+        .wall-info {
+            font-size: .65rem;
+            color: #6a7f9e;
+            margin: .2rem 0 .8rem;
+            padding-left: .2rem
+        }
+        /* ===== ROOM ROW ===== */
+        .room-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .3rem;
+            align-items: center;
+            padding: .4rem .2rem;
+            border-bottom: 1px solid #f0f4fa;
+            background: #fafcff;
+            border-radius: 8px;
+            margin-bottom: .3rem
+        }
+        .room-row input,
+        .room-row select {
+            font-family: 'Inter', sans-serif;
+            font-size: .7rem;
+            background: #fff;
+            border: 1.5px solid #e9edf4;
+            border-radius: 8px;
+            padding: .3rem .4rem;
+            min-height: 32px;
+            transition: .15s;
+            color: #0b1a33
+        }
+        .room-row input:focus,
+        .room-row select:focus {
+            border-color: #1a4b8c;
+            outline: 0;
+            box-shadow: 0 0 0 2px rgba(26, 75, 140, .08)
+        }
+        .room-row .room-name {
+            flex: 1 1 80px;
+            min-width: 60px
+        }
+        .room-row .room-length,
+        .room-row .room-width {
+            flex: 0 1 60px;
+            min-width: 50px
+        }
+        .room-row .room-area {
+            flex: 0 1 50px;
+            font-weight: 600;
+            font-size: .7rem;
+            text-align: center;
+            color: #0b1a33;
+            min-width: 40px
+        }
+        .room-row .room-tile-select {
+            flex: 1 1 90px;
+            min-width: 80px
+        }
+        .room-row .room-dus {
+            flex: 0 1 40px;
+            font-weight: 700;
+            font-size: .75rem;
+            text-align: center;
+            color: #1a4b8c;
+            min-width: 30px
+        }
+        .room-row .room-delete {
+            flex: 0 0 24px;
+            background: 0 0;
+            border: 0;
+            color: #b0b8c8;
+            cursor: pointer;
+            font-size: .7rem;
+            padding: 0;
+            transition: .15s;
+            min-height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+        .room-row .room-delete:hover {
+            color: #c73b2b
+        }
+        .btn-add-room {
+            width: 100%;
+            padding: .5rem;
+            border: 1.5px dashed #b0c8e0;
+            border-radius: 12px;
+            background: 0 0;
+            color: #1a4b8c;
+            font-weight: 600;
+            font-size: .8rem;
+            cursor: pointer;
+            transition: .2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .4rem;
+            margin-top: .2rem;
+            font-family: 'Inter', sans-serif
+        }
+        .btn-add-room:hover {
+            background: #f2f6fe;
+            border-color: #1a4b8c
+        }
+        /* ===== MULTI SUMMARY (TABLE STYLE) ===== */
+        .summary-multi {
+            display: none;
+            margin-top: 1rem;
+            background: #f8faff;
+            border-radius: 14px;
+            padding: 1rem;
+            border: 1px solid #eef2f8
+        }
+        .summary-multi.show {
+            display: block;
+            animation: fadeUp .35s ease
+        }
+        .summary-multi .table-wrap {
+            overflow-x: auto;
+            margin: .5rem 0 .3rem;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0
+        }
+        .summary-multi table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: .7rem;
+            min-width: 480px;
+            font-family: 'Inter', sans-serif
+        }
+        .summary-multi table th {
+            background: #1a3a6b;
+            color: #fff;
+            font-weight: 600;
+            padding: .5rem .4rem;
+            text-align: left;
+            white-space: nowrap;
+            font-size: .65rem;
+            letter-spacing: .2px;
+            border: 1px solid #1a3a6b
+        }
+        .summary-multi table td {
+            padding: .4rem .4rem;
+            border: 1px solid #e2e8f0;
+            vertical-align: middle;
+            background: #fff
+        }
+        .summary-multi table tr:nth-child(even) td {
+            background: #f8faff
+        }
+        .summary-multi table .num {
+            text-align: right;
+            font-feature-settings: "tnum"
+        }
+        .summary-multi table .total-row td {
+            background: #e9eff8 !important;
+            font-weight: 700;
+            border-top: 2px solid #1a3a6b;
+            font-size: .7rem
+        }
+        .summary-multi table .total-row td:first-child {
+            text-align: center
+        }
+        .summary-multi .table-caption {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: .7rem;
+            color: #3b5a7f;
+            padding: .2rem 0 .4rem;
+            flex-wrap: wrap;
+            gap: .3rem
+        }
+        .summary-multi .table-caption .badge-total {
+            background: #1a4b8c;
+            color: #fff;
+            padding: .15rem .7rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: .65rem
+        }
+        .summary-multi .empty-state {
+            color: #6a7f9e;
+            font-size: .8rem;
+            text-align: center;
+            padding: .5rem
+        }
+        .summary-multi .action-group-multi {
+            display: flex;
+            flex-direction: column;
+            gap: .4rem;
+            margin-top: .6rem
+        }
+        @media(max-width:420px) {
+            body {
+                font-size: 12px
+            }
+            .hero-mini {
+                padding: 1rem .8rem
+            }
+            .hero-mini h1 {
+                font-size: 1.05rem
+            }
+            .card-calc {
+                padding: 1rem .8rem
+            }
+            .metric-grid {
+                gap: .35rem
+            }
+            .metric-item {
+                padding: .4rem .15rem
+            }
+            .metric-value {
+                font-size: .85rem
+            }
+            .form-control {
+                font-size: 14px;
+                padding: .5rem .6rem
+            }
+            .dropdown-selected {
+                padding: .5rem .6rem;
+                font-size: .8rem;
+                min-height: 38px
+            }
+            .mode-tab {
+                font-size: .72rem;
+                padding: .5rem .3rem
+            }
+            .wall-dimension-grid {
+                gap: .3rem
+            }
+            .room-row input,
+            .room-row select {
+                font-size: .65rem;
+                padding: .25rem .3rem;
+                min-height: 28px
+            }
+            .room-row .room-name {
+                flex: 1 1 70px;
+                min-width: 50px
+            }
+            .room-row .room-length,
+            .room-row .room-width {
+                flex: 0 1 50px;
+                min-width: 40px
+            }
+            .room-row .room-area {
+                flex: 0 1 40px;
+                font-size: .65rem;
+                min-width: 30px
+            }
+            .room-row .room-tile-select {
+                flex: 1 1 70px;
+                min-width: 60px
+            }
+            .room-row .room-dus {
+                flex: 0 1 32px;
+                font-size: .65rem;
+                min-width: 24px
+            }
+            .room-row .room-delete {
+                flex: 0 0 20px;
+                font-size: .6rem
+            }
+            .summary-multi table {
+                font-size: .6rem;
+                min-width: 360px
+            }
+            .summary-multi table th,
+            .summary-multi table td {
+                padding: .3rem .25rem
+            }
+        }
+        @media(max-width:360px) {
+            .metric-grid {
+                grid-template-columns: 1fr 1fr
+            }
+            .metric-item:last-child {
+                grid-column: span 2
+            }
+            .hero-mini h1 {
+                font-size: .95rem
+            }
+            .hero-mini p {
+                font-size: .65rem
+            }
+            .btn-primary {
+                font-size: .75rem;
+                padding: .6rem;
+                min-height: 38px
+            }
+            .btn-wa {
+                font-size: .7rem;
+                padding: .5rem;
+                min-height: 36px
+            }
+            .btn-print {
+                font-size: .65rem;
+                padding: .4rem;
+                min-height: 34px
+            }
+            .wall-dimension-grid {
+                gap: .2rem
+            }
+            .summary-multi table {
+                min-width: 300px;
+                font-size: .55rem
+            }
+        }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0
+        }
+        input[type=number] {
+            -moz-appearance: textfield
+        }
     </style>
 </head>
 <body>
-<header class="header"><div class="container"><a href="#" class="logo"><img src="https://i.imgur.com/PmXnLr1.png" alt="SEKAWAN JAYA" loading="lazy"><span>SEKAWAN JAYA</span></a><button class="nav-trigger" aria-label="menu"><i class="fas fa-bars"></i></button></div></header>
-<div class="hero-mini"><h1>Kalkulator Keramik &amp; Granit</h1><p>Hitung kebutuhan material dengan cepat</p></div>
-<div class="card-calc">
-    <div class="mode-switcher"><button type="button" class="mode-tab active" data-mode="floor"><i class="fas fa-vector-square"></i> Lantai</button><button type="button" class="mode-tab" data-mode="wall"><i class="fas fa-align-justify"></i> Dinding</button><button type="button" class="mode-tab" data-mode="multi"><i class="fas fa-house"></i> Rumah</button></div>
-    <!-- LANTAI -->
-    <div id="floorMode" class="mode-panel active">
-        <form id="calcForm">
-            <div class="form-group"><label for="roomLength"><i class="fas fa-arrows-left-right"></i> Panjang (m)</label><input type="number" id="roomLength" class="form-control" step="0.01" min="0.1" placeholder="contoh: 4.5" required></div>
-            <div class="form-group"><label for="roomWidth"><i class="fas fa-arrows-up-down"></i> Lebar (m)</label><input type="number" id="roomWidth" class="form-control" step="0.01" min="0.1" placeholder="contoh: 3.2" required></div>
-            <div class="form-group"><label><i class="fas fa-border-all"></i> Ukuran keramik</label>
-                <div class="custom-dropdown" id="tileDropdown">
-                    <div class="dropdown-selected placeholder" id="dropdownSelected"><span>Pilih ukuran</span><i class="fas fa-chevron-down dropdown-arrow"></i></div>
-                    <div class="dropdown-options" id="dropdownOptions">
-                        <div class="dropdown-option" data-size="25x25" data-area="1.00" data-pieces="16">25×25 cm <span>1.00 m²/dus</span></div>
-                        <div class="dropdown-option" data-size="25x40" data-area="1.00" data-pieces="10">25×40 cm <span>1.00 m²/dus</span></div>
-                        <div class="dropdown-option" data-size="30x30" data-area="0.99" data-pieces="11">30×30 cm <span>0.99 m²/dus</span></div>
-                        <div class="dropdown-option" data-size="30x60" data-area="0.90" data-pieces="5">30×60 cm <span>0.90 m²/dus</span></div>
-                        <div class="dropdown-option" data-size="40x40" data-area="1.00" data-pieces="6">40×40 cm <span>1.00 m²/dus</span></div>
-                        <div class="dropdown-option" data-size="50x50" data-area="1.00" data-pieces="4">50×50 cm <span>1.00 m²/dus</span></div>
-                        <div class="dropdown-option" data-size="60x60" data-area="1.44" data-pieces="4">60×60 cm <span>1.44 m²/dus</span></div>
-                        <div class="dropdown-option" data-size="60x120" data-area="1.44" data-pieces="2">60×120 cm <span>1.44 m²/dus</span></div>
-                    </div>
-                </div>
-                <input type="hidden" id="selectedTileSize" required>
-                <input type="hidden" id="selectedTileArea">
-                <input type="hidden" id="selectedTilePieces">
-            </div>
-            <button type="submit" class="btn-primary" id="calculateBtn"><i class="fas fa-calculator"></i> Hitung</button>
-            <div class="alert-error" id="errorAlert"><i class="fas fa-exclamation-circle"></i> Lengkapi semua input dengan benar.</div>
-        </form>
-        <div class="result-dashboard" id="resultDashboard">
-            <div class="result-header"><h3>Ringkasan</h3><span class="badge-size" id="selectedSizeLabel">—</span></div>
-            <div class="metric-grid">
-                <div class="metric-item"><div class="metric-label">Luas</div><div class="metric-value" id="totalArea">0 <small>m²</small></div></div>
-                <div class="metric-item"><div class="metric-label">Dus</div><div class="metric-value" id="totalBoxes">0 <small>dus</small></div></div>
-                <div class="metric-item metric-buffer"><div class="metric-label">+10%</div><div class="metric-value" id="totalWithBuffer">0 <small>dus</small></div></div>
-            </div>
-            <div class="pieces-row"><span><i class="far fa-square"></i> Keping: <strong id="totalPieces">0</strong></span><span><i class="fas fa-plus-circle" style="opacity:0.4;"></i> +10%: <strong id="totalPiecesWithBuffer">0</strong></span></div>
-            <div class="action-group"><a id="whatsappLink" class="btn-wa" target="_blank" href="#"><i class="fab fa-whatsapp"></i> Konsultasi WA</a><button id="printBtn" class="btn-print" onclick="printResult('floor')"><i class="fas fa-print"></i> Cetak</button></div>
-            <div class="alert-tip"><i class="fas fa-info-circle"></i> Hasil estimasi. Konsultasi dengan tim ahli disarankan.</div>
-        </div>
-    </div>
-    <!-- DINDING -->
-    <div id="wallMode" class="mode-panel">
-        <form id="wallCalcForm">
-            <div class="wall-dimension-grid">
-                <div class="form-group full-width"><label for="wallHeight"><i class="fas fa-arrows-up-down"></i> Tinggi (m)</label><input type="number" id="wallHeight" class="form-control" step="0.01" min="0.1" placeholder="misal 3" required></div>
-                <div class="form-group"><label for="wallLength"><i class="fas fa-arrows-left-right"></i> Panjang (m)</label><input type="number" id="wallLength" class="form-control" step="0.01" min="0.1" placeholder="misal 4" required></div>
-                <div class="form-group"><label for="wallWidth"><i class="fas fa-arrows-up-down"></i> Lebar (m)</label><input type="number" id="wallWidth" class="form-control" step="0.01" min="0.1" placeholder="misal 3" required></div>
-            </div>
-            <div class="wall-info"><i class="fas fa-info-circle"></i> Luas dinding = 2 × (panjang + lebar) × tinggi</div>
-            <div class="form-group"><label><i class="fas fa-border-all"></i> Ukuran keramik</label>
-                <div class="custom-dropdown" id="tileDropdownWall">
-                    <div class="dropdown-selected placeholder" id="dropdownSelectedWall"><span>Pilih ukuran</span><i class="fas fa-chevron-down dropdown-arrow"></i></div>
-                    <div class="dropdown-options">
-                        <div class="dropdown-option" data-size="25x25" data-area="1.00" data-pieces="16">25×25 cm <span>1.00 m²/dus</span></div>
-                        <div class="dropdown-option" data-size="25x40" data-area="1.00" data-pieces="10">25×40 cm <span>1.00 m²/dus</span></div>
-                        <div class="dropdown-option" data-size="30x30" data-area="0.99" data-pieces="11">30×30 cm <span>0.99 m²/dus</span></div>
-                        <div class="dropdown-option" data-size="30x60" data-area="0.90" data-pieces="5">30×60 cm <span>0.90 m²/dus</span></div>
-                        <div class="dropdown-option" data-size="40x40" data-area="1.00" data-pieces="6">40×40 cm <span>1.00 m²/dus</span></div>
-                        <div class="dropdown-option" data-size="50x50" data-area="1.00" data-pieces="4">50×50 cm <span>1.00 m²/dus</span></div>
-                        <div class="dropdown-option" data-size="60x60" data-area="1.44" data-pieces="4">60×60 cm <span>1.44 m²/dus</span></div>
-                        <div class="dropdown-option" data-size="60x120" data-area="1.44" data-pieces="2">60×120 cm <span>1.44 m²/dus</span></div>
-                    </div>
-                </div>
-                <input type="hidden" id="selectedTileSizeWall" required>
-                <input type="hidden" id="selectedTileAreaWall">
-                <input type="hidden" id="selectedTilePiecesWall">
-            </div>
-            <button type="submit" class="btn-primary" id="calculateBtnWall"><i class="fas fa-calculator"></i> Hitung</button>
-            <div class="alert-error" id="errorAlertWall"><i class="fas fa-exclamation-circle"></i> Lengkapi semua input dengan benar.</div>
-        </form>
-        <div class="result-dashboard" id="resultDashboardWall">
-            <div class="result-header"><h3>Ringkasan</h3><span class="badge-size" id="selectedSizeLabelWall">—</span></div>
-            <div class="metric-grid">
-                <div class="metric-item"><div class="metric-label">Luas</div><div class="metric-value" id="totalAreaWall">0 <small>m²</small></div></div>
-                <div class="metric-item"><div class="metric-label">Dus</div><div class="metric-value" id="totalBoxesWall">0 <small>dus</small></div></div>
-                <div class="metric-item metric-buffer"><div class="metric-label">+10%</div><div class="metric-value" id="totalWithBufferWall">0 <small>dus</small></div></div>
-            </div>
-            <div class="pieces-row"><span><i class="far fa-square"></i> Keping: <strong id="totalPiecesWall">0</strong></span><span><i class="fas fa-plus-circle" style="opacity:0.4;"></i> +10%: <strong id="totalPiecesWithBufferWall">0</strong></span></div>
-            <div class="action-group"><a id="whatsappLinkWall" class="btn-wa" target="_blank" href="#"><i class="fab fa-whatsapp"></i> Konsultasi WA</a><button type="button" class="btn-print" onclick="printResult('wall')"><i class="fas fa-print"></i> Cetak</button></div>
-            <div class="alert-tip"><i class="fas fa-info-circle"></i> Hasil estimasi. Konsultasi dengan tim ahli disarankan.</div>
-        </div>
-    </div>
-    <!-- RUMAH -->
-    <div id="multiMode" class="mode-panel">
-        <div style="font-size:.75rem;color:#3b5a7f;margin-bottom:.6rem;"><i class="fas fa-info-circle"></i> Tambahkan ruangan satu per satu. Isi panjang &amp; lebar, pilih ukuran keramik.</div>
-        <div id="roomContainer"></div>
-        <button id="addRoomBtn" class="btn-add-room"><i class="fas fa-plus-circle"></i> Tambah Ruangan</button>
-        <button id="finishBtn" class="btn-primary" style="margin-top:.5rem;"><i class="fas fa-check-circle"></i> Selesai</button>
-        <div id="summaryMulti" class="summary-multi"></div>
-    </div>
-</div>
-<div class="footer-mini"><p>SEKAWAN JAYA · Supplier Keramik &amp; Granit · Pemalang</p><p style="margin-top:.2rem;opacity:.6;">&copy; 2025 · <a href="#">Kalkulator interaktif</a></p></div>
 
-<script>
-// ===== PROTEKSI DASAR =====
-(function(){
-    document.addEventListener('contextmenu',function(e){e.preventDefault();});
-    document.addEventListener('keydown',function(e){
-        if(e.key==='F12'||(e.ctrlKey&&(e.key==='u'||e.key==='U'||e.key==='i'||e.key==='I'||e.key==='j'||e.key==='J'||e.key==='s'||e.key==='S'))){
-            e.preventDefault();
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo"><img src="https://i.imgur.com/PmXnLr1.png" alt="SEKAWAN JAYA" loading="lazy" /><span>SEKAWAN JAYA</span></a>
+            <button class="nav-trigger" aria-label="menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div class="hero-mini">
+        <h1>Kalkulator Keramik &amp; Granit</h1>
+        <p>Hitung kebutuhan material dengan cepat</p>
+    </div>
+
+    <div class="card-calc">
+        <!-- MODE TABS -->
+        <div class="mode-switcher">
+            <button type="button" class="mode-tab active" data-mode="floor"><i class="fas fa-vector-square"></i> Lantai</button>
+            <button type="button" class="mode-tab" data-mode="wall"><i class="fas fa-align-justify"></i> Dinding</button>
+            <button type="button" class="mode-tab" data-mode="multi"><i class="fas fa-house"></i> Rumah</button>
+        </div>
+
+        <!-- ===== LANTAI ===== -->
+        <div id="floorMode" class="mode-panel active">
+            <form id="calcForm">
+                <div class="form-group"><label for="roomLength"><i class="fas fa-arrows-left-right"></i> Panjang (m)</label><input type="number" id="roomLength" class="form-control" step="0.01" min="0.1" placeholder="contoh: 4.5" required /></div>
+                <div class="form-group"><label for="roomWidth"><i class="fas fa-arrows-up-down"></i> Lebar (m)</label><input type="number" id="roomWidth" class="form-control" step="0.01" min="0.1" placeholder="contoh: 3.2" required /></div>
+                <div class="form-group">
+                    <label><i class="fas fa-border-all"></i> Ukuran keramik</label>
+                    <div class="custom-dropdown" id="tileDropdown">
+                        <div class="dropdown-selected placeholder" id="dropdownSelected"><span>Pilih ukuran</span><i class="fas fa-chevron-down dropdown-arrow"></i></div>
+                        <div class="dropdown-options" id="dropdownOptions">
+                            <div class="dropdown-option" data-size="25x25" data-area="1.00" data-pieces="16">25×25 cm <span>1.00 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="25x40" data-area="1.00" data-pieces="10">25×40 cm <span>1.00 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="30x30" data-area="0.99" data-pieces="11">30×30 cm <span>0.99 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="30x60" data-area="0.90" data-pieces="5">30×60 cm <span>0.90 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="40x40" data-area="1.00" data-pieces="6">40×40 cm <span>1.00 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="50x50" data-area="1.00" data-pieces="4">50×50 cm <span>1.00 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="60x60" data-area="1.44" data-pieces="4">60×60 cm <span>1.44 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="60x120" data-area="1.44" data-pieces="2">60×120 cm <span>1.44 m²/dus</span></div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="selectedTileSize" required />
+                    <input type="hidden" id="selectedTileArea" />
+                    <input type="hidden" id="selectedTilePieces" />
+                </div>
+                <button type="submit" class="btn-primary" id="calculateBtn"><i class="fas fa-calculator"></i> Hitung</button>
+                <div class="alert-error" id="errorAlert"><i class="fas fa-exclamation-circle"></i> Lengkapi semua input dengan benar.</div>
+            </form>
+            <div class="result-dashboard" id="resultDashboard">
+                <div class="result-header"><h3>Ringkasan</h3><span class="badge-size" id="selectedSizeLabel">—</span></div>
+                <div class="metric-grid">
+                    <div class="metric-item"><div class="metric-label">Luas</div><div class="metric-value" id="totalArea">0 <small>m²</small></div></div>
+                    <div class="metric-item"><div class="metric-label">Dus</div><div class="metric-value" id="totalBoxes">0 <small>dus</small></div></div>
+                    <div class="metric-item metric-buffer"><div class="metric-label">+10%</div><div class="metric-value" id="totalWithBuffer">0 <small>dus</small></div></div>
+                </div>
+                <div class="pieces-row"><span><i class="far fa-square"></i> Keping: <strong id="totalPieces">0</strong></span><span><i class="fas fa-plus-circle" style="opacity:0.4;"></i> +10%: <strong id="totalPiecesWithBuffer">0</strong></span></div>
+                <div class="action-group"><a id="whatsappLink" class="btn-wa" target="_blank" href="#"><i class="fab fa-whatsapp"></i> Konsultasi WA</a><button id="printBtn" class="btn-print" onclick="printResult('floor')"><i class="fas fa-print"></i> Cetak</button></div>
+                <div class="alert-tip"><i class="fas fa-info-circle"></i> Hasil estimasi. Konsultasi dengan tim ahli disarankan.</div>
+            </div>
+        </div>
+
+        <!-- ===== DINDING ===== -->
+        <div id="wallMode" class="mode-panel">
+            <form id="wallCalcForm">
+                <div class="wall-dimension-grid">
+                    <div class="form-group full-width"><label for="wallHeight"><i class="fas fa-arrows-up-down"></i> Tinggi (m)</label><input type="number" id="wallHeight" class="form-control" step="0.01" min="0.1" placeholder="misal 3" required /></div>
+                    <div class="form-group"><label for="wallLength"><i class="fas fa-arrows-left-right"></i> Panjang (m)</label><input type="number" id="wallLength" class="form-control" step="0.01" min="0.1" placeholder="misal 4" required /></div>
+                    <div class="form-group"><label for="wallWidth"><i class="fas fa-arrows-up-down"></i> Lebar (m)</label><input type="number" id="wallWidth" class="form-control" step="0.01" min="0.1" placeholder="misal 3" required /></div>
+                </div>
+                <div class="wall-info"><i class="fas fa-info-circle"></i> Luas dinding = 2 × (panjang + lebar) × tinggi</div>
+                <div class="form-group">
+                    <label><i class="fas fa-border-all"></i> Ukuran keramik</label>
+                    <div class="custom-dropdown" id="tileDropdownWall">
+                        <div class="dropdown-selected placeholder" id="dropdownSelectedWall"><span>Pilih ukuran</span><i class="fas fa-chevron-down dropdown-arrow"></i></div>
+                        <div class="dropdown-options">
+                            <div class="dropdown-option" data-size="25x25" data-area="1.00" data-pieces="16">25×25 cm <span>1.00 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="25x40" data-area="1.00" data-pieces="10">25×40 cm <span>1.00 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="30x30" data-area="0.99" data-pieces="11">30×30 cm <span>0.99 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="30x60" data-area="0.90" data-pieces="5">30×60 cm <span>0.90 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="40x40" data-area="1.00" data-pieces="6">40×40 cm <span>1.00 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="50x50" data-area="1.00" data-pieces="4">50×50 cm <span>1.00 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="60x60" data-area="1.44" data-pieces="4">60×60 cm <span>1.44 m²/dus</span></div>
+                            <div class="dropdown-option" data-size="60x120" data-area="1.44" data-pieces="2">60×120 cm <span>1.44 m²/dus</span></div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="selectedTileSizeWall" required />
+                    <input type="hidden" id="selectedTileAreaWall" />
+                    <input type="hidden" id="selectedTilePiecesWall" />
+                </div>
+                <button type="submit" class="btn-primary" id="calculateBtnWall"><i class="fas fa-calculator"></i> Hitung</button>
+                <div class="alert-error" id="errorAlertWall"><i class="fas fa-exclamation-circle"></i> Lengkapi semua input dengan benar.</div>
+            </form>
+            <div class="result-dashboard" id="resultDashboardWall">
+                <div class="result-header"><h3>Ringkasan</h3><span class="badge-size" id="selectedSizeLabelWall">—</span></div>
+                <div class="metric-grid">
+                    <div class="metric-item"><div class="metric-label">Luas</div><div class="metric-value" id="totalAreaWall">0 <small>m²</small></div></div>
+                    <div class="metric-item"><div class="metric-label">Dus</div><div class="metric-value" id="totalBoxesWall">0 <small>dus</small></div></div>
+                    <div class="metric-item metric-buffer"><div class="metric-label">+10%</div><div class="metric-value" id="totalWithBufferWall">0 <small>dus</small></div></div>
+                </div>
+                <div class="pieces-row"><span><i class="far fa-square"></i> Keping: <strong id="totalPiecesWall">0</strong></span><span><i class="fas fa-plus-circle" style="opacity:0.4;"></i> +10%: <strong id="totalPiecesWithBufferWall">0</strong></span></div>
+                <div class="action-group"><a id="whatsappLinkWall" class="btn-wa" target="_blank" href="#"><i class="fab fa-whatsapp"></i> Konsultasi WA</a><button type="button" class="btn-print" onclick="printResult('wall')"><i class="fas fa-print"></i> Cetak</button></div>
+                <div class="alert-tip"><i class="fas fa-info-circle"></i> Hasil estimasi. Konsultasi dengan tim ahli disarankan.</div>
+            </div>
+        </div>
+
+        <!-- ===== RUMAH (MULTI ROOM) ===== -->
+        <div id="multiMode" class="mode-panel">
+            <div style="font-size:.75rem;color:#3b5a7f;margin-bottom:.6rem;">
+                <i class="fas fa-info-circle"></i> Tambahkan ruangan satu per satu. Isi panjang &amp; lebar, pilih ukuran keramik.
+            </div>
+            <div id="roomContainer"></div>
+            <button id="addRoomBtn" class="btn-add-room"><i class="fas fa-plus-circle"></i> Tambah Ruangan</button>
+            <button id="finishBtn" class="btn-primary" style="margin-top:.5rem;"><i class="fas fa-check-circle"></i> Selesai</button>
+            <div id="summaryMulti" class="summary-multi"></div>
+        </div>
+    </div>
+
+    <div class="footer-mini">
+        <p>SEKAWAN JAYA · Supplier Keramik &amp; Granit · Pemalang</p>
+        <p style="margin-top:.2rem;opacity:.6;">&copy; 2025 · <a href="#">Kalkulator interaktif</a></p>
+    </div>
+
+    <script>
+        // ============================================================
+        // PROTEKSI DASAR
+        // ============================================================
+        (function() {
+            document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'F12' || (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 'i' || e.key === 'I' ||
+                        e.key === 'j' || e.key === 'J' || e.key === 's' || e.key === 'S'))) {
+                    e.preventDefault();
+                }
+            });
+            var antiDebug = function() {
+                var start = new Date();
+                debugger;
+                var end = new Date();
+                if (end - start > 100) { document.body.innerHTML =
+                    '<h1 style="text-align:center;margin-top:2rem;">Akses ditolak</h1>'; }
+            };
+            setInterval(antiDebug, 1000);
+        })();
+
+        // ============================================================
+        // OBFUSCATED STRINGS
+        // ============================================================
+        var _0x1a2b = [
+            'wa.me/6288216124228',
+            'Halo SEKAWAN JAYA, saya mau konsultasi kebutuhan keramik/granit:%0A- Luas: ',
+            ' m²%0A- Ukuran: ',
+            ' cm%0A- Estimasi dus (+10%): ',
+            ' dus%0A- Total keping: ',
+            ' pcs%0A%0ATerima kasih.',
+            'Halo SEKAWAN JAYA, saya mau konsultasi kebutuhan keramik/granit dinding:%0A- Tinggi: ',
+            ' m, Panjang: ',
+            ' m, Lebar: ',
+            ' m%0A- Luas dinding: ',
+            ' m²%0A- Ukuran: ',
+            ' cm%0A- Estimasi dus (+10%): ',
+            ' dus%0A- Total keping: ',
+            ' pcs%0A%0ATerima kasih.',
+            'Halo SEKAWAN JAYA, saya mau konsultasi kebutuhan keramik/granit untuk seluruh rumah (tanpa buffer):%0A%0A',
+            '%0ATotal luas: ',
+            ' m²%0ATotal dus (pembulatan ke atas): ',
+            ' dus%0A%0ATerima kasih.'
+        ];
+
+        function _0x2b3c(a) { return _0x1a2b[a] || ''; }
+
+        // ============================================================
+        // MODE SWITCHER
+        // ============================================================
+        var tabs = document.querySelectorAll('.mode-tab'),
+            floorMode = document.getElementById('floorMode'),
+            wallMode = document.getElementById('wallMode'),
+            multiMode = document.getElementById('multiMode');
+        tabs.forEach(function(t) {
+            t.addEventListener('click', function() {
+                tabs.forEach(function(t2) { t2.classList.remove('active'); });
+                this.classList.add('active');
+                var m = this.dataset.mode;
+                floorMode.classList.toggle('active', m === 'floor');
+                wallMode.classList.toggle('active', m === 'wall');
+                multiMode.classList.toggle('active', m === 'multi');
+            });
+        });
+
+        // ============================================================
+        // DROPDOWN GENERIC (untuk Lantai & Dinding)
+        // ============================================================
+        function setupDropdown(c, s, si, ai, pi, cb) {
+            var container = document.getElementById(c),
+                selected = document.getElementById(s),
+                sizeInput = document.getElementById(si),
+                areaInput = document.getElementById(ai),
+                piecesInput = document.getElementById(pi),
+                opts = container.querySelectorAll('.dropdown-option');
+            opts.forEach(function(o) {
+                o.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    var sz = this.dataset.size;
+                    sizeInput.value = sz;
+                    areaInput.value = parseFloat(this.dataset.area);
+                    piecesInput.value = parseInt(this.dataset.pieces, 10);
+                    selected.querySelector('span').textContent = sz + ' cm';
+                    selected.classList.remove('placeholder');
+                    selected.classList.add('filled');
+                    selected.style.borderColor = '';
+                    opts.forEach(function(o2) { o2.classList.remove('selected'); });
+                    this.classList.add('selected');
+                    container.classList.remove('dropdown-open');
+                    if (cb) cb();
+                });
+            });
+            selected.addEventListener('click', function(e) {
+                e.stopPropagation();
+                container.classList.toggle('dropdown-open');
+            });
+            selected.querySelector('span').textContent = 'Pilih ukuran';
+            selected.classList.add('placeholder');
+            selected.classList.remove('filled');
+            sizeInput.value = '';
+            areaInput.value = '';
+            piecesInput.value = '';
         }
-    });
-    var antiDebug=function(){
-        var start=new Date();
-        debugger;
-        var end=new Date();
-        if(end-start>100){document.body.innerHTML='<h1 style="text-align:center;margin-top:2rem;">Akses ditolak</h1>';}
-    };
-    setInterval(antiDebug,1000);
-})();
+        document.addEventListener('click', function() {
+            document.querySelectorAll('.custom-dropdown').forEach(function(d) { d.classList.remove('dropdown-open'); });
+        });
 
-// ===== OBFUSCATED LOGIC =====
-var _0x1a2b=['wa.me/6288216124228','Halo SEKAWAN JAYA, saya mau konsultasi kebutuhan keramik/granit:%0A- Luas: ',' m²%0A- Ukuran: ',' cm%0A- Estimasi dus (+10%): ',' dus%0A- Total keping: ',' pcs%0A%0ATerima kasih.','Halo SEKAWAN JAYA, saya mau konsultasi kebutuhan keramik/granit dinding:%0A- Tinggi: ',' m, Panjang: ',' m, Lebar: ',' m%0A- Luas dinding: ',' m²%0A- Ukuran: ',' cm%0A- Estimasi dus (+10%): ',' dus%0A- Total keping: ',' pcs%0A%0ATerima kasih.','Halo SEKAWAN JAYA, saya mau konsultasi kebutuhan keramik/granit untuk seluruh rumah (tanpa buffer):%0A%0A','%0ATotal luas: ',' m²%0ATotal dus (pembulatan ke atas): ',' dus%0A%0ATerima kasih.'];
-function _0x2b3c(a){return _0x1a2b[a]||'';}
+        // ============================================================
+        // LANTAI
+        // ============================================================
+        var rL = document.getElementById('roomLength'),
+            rW = document.getElementById('roomWidth'),
+            sTS = document.getElementById('selectedTileSize'),
+            sTA = document.getElementById('selectedTileArea'),
+            sTP = document.getElementById('selectedTilePieces'),
+            dS = document.getElementById('dropdownSelected'),
+            cF = document.getElementById('calcForm'),
+            eA = document.getElementById('errorAlert'),
+            rD = document.getElementById('resultDashboard');
+        var tA = document.getElementById('totalArea'),
+            sSL = document.getElementById('selectedSizeLabel'),
+            tB = document.getElementById('totalBoxes'),
+            tWB = document.getElementById('totalWithBuffer'),
+            tP = document.getElementById('totalPieces'),
+            tPWB = document.getElementById('totalPiecesWithBuffer'),
+            wAL = document.getElementById('whatsappLink');
 
-// MODE SWITCHER
-var tabs=document.querySelectorAll('.mode-tab'),floorMode=document.getElementById('floorMode'),wallMode=document.getElementById('wallMode'),multiMode=document.getElementById('multiMode');
-tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(t2){t2.classList.remove('active');});this.classList.add('active');var m=this.dataset.mode;floorMode.classList.toggle('active',m==='floor');wallMode.classList.toggle('active',m==='wall');multiMode.classList.toggle('active',m==='multi');});});
+        setupDropdown('tileDropdown', 'dropdownSelected', 'selectedTileSize', 'selectedTileArea', 'selectedTilePieces',
+            function() { rD.classList.remove('show');
+                eA.classList.remove('show'); });
 
-// DROPDOWN GENERIC
-function setupDropdown(c,s,si,ai,pi,cb){var container=document.getElementById(c),selected=document.getElementById(s),sizeInput=document.getElementById(si),areaInput=document.getElementById(ai),piecesInput=document.getElementById(pi),opts=container.querySelectorAll('.dropdown-option');opts.forEach(function(o){o.addEventListener('click',function(e){e.stopPropagation();var sz=this.dataset.size;sizeInput.value=sz;areaInput.value=parseFloat(this.dataset.area);piecesInput.value=parseInt(this.dataset.pieces,10);selected.querySelector('span').textContent=sz+' cm';selected.classList.remove('placeholder');selected.classList.add('filled');selected.style.borderColor='';opts.forEach(function(o2){o2.classList.remove('selected');});this.classList.add('selected');container.classList.remove('dropdown-open');if(cb)cb();});});selected.addEventListener('click',function(e){e.stopPropagation();container.classList.toggle('dropdown-open');});selected.querySelector('span').textContent='Pilih ukuran';selected.classList.add('placeholder');selected.classList.remove('filled');sizeInput.value='';areaInput.value='';piecesInput.value='';}
-document.addEventListener('click',function(){document.querySelectorAll('.custom-dropdown').forEach(function(d){d.classList.remove('dropdown-open');});});
+        cF.addEventListener('submit', function(e) {
+            e.preventDefault();
+            eA.classList.remove('show');
+            var valid = true;
+            var length = parseFloat(rL.value),
+                width = parseFloat(rW.value);
+            if (!length || length <= 0) { valid = false;
+                rL.style.borderColor = '#c73b2b'; } else { rL.style.borderColor = ''; }
+            if (!width || width <= 0) { valid = false;
+                rW.style.borderColor = '#c73b2b'; } else { rW.style.borderColor = ''; }
+            var size = sTS.value;
+            if (!size) { valid = false;
+                dS.style.borderColor = '#c73b2b'; } else { dS.style.borderColor = ''; }
+            if (!valid) { eA.classList.add('show');
+                eA.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+            var area = parseFloat(sTA.value),
+                piecesPerBox = parseInt(sTP.value, 10),
+                roomArea = length * width,
+                boxesNeeded = roomArea / area,
+                boxesWithBuffer = boxesNeeded * 1.1,
+                piecesNeeded = boxesNeeded * piecesPerBox,
+                piecesWithBuffer = boxesWithBuffer * piecesPerBox;
+            tA.innerHTML = roomArea.toFixed(2) + ' <small>m²</small>';
+            sSL.textContent = size + ' cm';
+            tB.innerHTML = Math.ceil(boxesNeeded) + ' <small>dus</small>';
+            tWB.innerHTML = Math.ceil(boxesWithBuffer) + ' <small>dus</small>';
+            tP.textContent = Math.ceil(piecesNeeded);
+            tPWB.textContent = Math.ceil(piecesWithBuffer);
+            var msg = 'Halo SEKAWAN JAYA, saya mau konsultasi kebutuhan keramik/granit:%0A- Luas: ' + roomArea.toFixed(2) +
+                ' m²%0A- Ukuran: ' + size + ' cm%0A- Estimasi dus (+10%): ' + Math.ceil(boxesWithBuffer) +
+                ' dus%0A- Total keping: ' + Math.ceil(piecesWithBuffer) + ' pcs%0A%0ATerima kasih.';
+            wAL.href = 'https://' + _0x2b3c(0) + '?text=' + encodeURIComponent(msg);
+            rD.classList.add('show');
+            rD.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        rL.addEventListener('input', function() { this.style.borderColor = '';
+            eA.classList.remove('show');
+            rD.classList.remove('show'); });
+        rW.addEventListener('input', function() { this.style.borderColor = '';
+            eA.classList.remove('show');
+            rD.classList.remove('show'); });
 
-// LANTAI
-var rL=document.getElementById('roomLength'),rW=document.getElementById('roomWidth'),sTS=document.getElementById('selectedTileSize'),sTA=document.getElementById('selectedTileArea'),sTP=document.getElementById('selectedTilePieces'),dS=document.getElementById('dropdownSelected'),cF=document.getElementById('calcForm'),eA=document.getElementById('errorAlert'),rD=document.getElementById('resultDashboard');
-var tA=document.getElementById('totalArea'),sSL=document.getElementById('selectedSizeLabel'),tB=document.getElementById('totalBoxes'),tWB=document.getElementById('totalWithBuffer'),tP=document.getElementById('totalPieces'),tPWB=document.getElementById('totalPiecesWithBuffer'),wAL=document.getElementById('whatsappLink');
-setupDropdown('tileDropdown','dropdownSelected','selectedTileSize','selectedTileArea','selectedTilePieces',function(){rD.classList.remove('show');eA.classList.remove('show');});
-cF.addEventListener('submit',function(e){e.preventDefault();eA.classList.remove('show');var valid=true;var length=parseFloat(rL.value),width=parseFloat(rW.value);if(!length||length<=0){valid=false;rL.style.borderColor='#c73b2b';}else{rL.style.borderColor='';}if(!width||width<=0){valid=false;rW.style.borderColor='#c73b2b';}else{rW.style.borderColor='';}var size=sTS.value;if(!size){valid=false;dS.style.borderColor='#c73b2b';}else{dS.style.borderColor='';}if(!valid){eA.classList.add('show');eA.scrollIntoView({behavior:'smooth',block:'center'});return;}var area=parseFloat(sTA.value),piecesPerBox=parseInt(sTP.value,10),roomArea=length*width,boxesNeeded=roomArea/area,boxesWithBuffer=boxesNeeded*1.1,piecesNeeded=boxesNeeded*piecesPerBox,piecesWithBuffer=boxesWithBuffer*piecesPerBox;tA.innerHTML=roomArea.toFixed(2)+' <small>m²</small>';sSL.textContent=size+' cm';tB.innerHTML=Math.ceil(boxesNeeded)+' <small>dus</small>';tWB.innerHTML=Math.ceil(boxesWithBuffer)+' <small>dus</small>';tP.textContent=Math.ceil(piecesNeeded);tPWB.textContent=Math.ceil(piecesWithBuffer);var msg='Halo SEKAWAN JAYA, saya mau konsultasi kebutuhan keramik/granit:%0A- Luas: '+roomArea.toFixed(2)+' m²%0A- Ukuran: '+size+' cm%0A- Estimasi dus (+10%): '+Math.ceil(boxesWithBuffer)+' dus%0A- Total keping: '+Math.ceil(piecesWithBuffer)+' pcs%0A%0ATerima kasih.';wAL.href='https://'+_0x2b3c(0)+'?text='+encodeURIComponent(msg);rD.classList.add('show');rD.scrollIntoView({behavior:'smooth',block:'start'});});
-rL.addEventListener('input',function(){this.style.borderColor='';eA.classList.remove('show');rD.classList.remove('show');});
-rW.addEventListener('input',function(){this.style.borderColor='';eA.classList.remove('show');rD.classList.remove('show');});
+        // ============================================================
+        // DINDING
+        // ============================================================
+        var wH = document.getElementById('wallHeight'),
+            wL = document.getElementById('wallLength'),
+            wW = document.getElementById('wallWidth'),
+            sTSW = document.getElementById('selectedTileSizeWall'),
+            sTAW = document.getElementById('selectedTileAreaWall'),
+            sTPW = document.getElementById('selectedTilePiecesWall'),
+            dSW = document.getElementById('dropdownSelectedWall'),
+            wCF = document.getElementById('wallCalcForm'),
+            eAW = document.getElementById('errorAlertWall'),
+            rDW = document.getElementById('resultDashboardWall');
+        var tAW = document.getElementById('totalAreaWall'),
+            sSLW = document.getElementById('selectedSizeLabelWall'),
+            tBW = document.getElementById('totalBoxesWall'),
+            tWBW = document.getElementById('totalWithBufferWall'),
+            tPW = document.getElementById('totalPiecesWall'),
+            tPWBW = document.getElementById('totalPiecesWithBufferWall'),
+            wALW = document.getElementById('whatsappLinkWall');
 
-// DINDING
-var wH=document.getElementById('wallHeight'),wL=document.getElementById('wallLength'),wW=document.getElementById('wallWidth'),sTSW=document.getElementById('selectedTileSizeWall'),sTAW=document.getElementById('selectedTileAreaWall'),sTPW=document.getElementById('selectedTilePiecesWall'),dSW=document.getElementById('dropdownSelectedWall'),wCF=document.getElementById('wallCalcForm'),eAW=document.getElementById('errorAlertWall'),rDW=document.getElementById('resultDashboardWall');
-var tAW=document.getElementById('totalAreaWall'),sSLW=document.getElementById('selectedSizeLabelWall'),tBW=document.getElementById('totalBoxesWall'),tWBW=document.getElementById('totalWithBufferWall'),tPW=document.getElementById('totalPiecesWall'),tPWBW=document.getElementById('totalPiecesWithBufferWall'),wALW=document.getElementById('whatsappLinkWall');
-setupDropdown('tileDropdownWall','dropdownSelectedWall','selectedTileSizeWall','selectedTileAreaWall','selectedTilePiecesWall',function(){rDW.classList.remove('show');eAW.classList.remove('show');});
-wCF.addEventListener('submit',function(e){e.preventDefault();eAW.classList.remove('show');var valid=true;var height=parseFloat(wH.value),length=parseFloat(wL.value),width=parseFloat(wW.value);if(!height||height<=0){valid=false;wH.style.borderColor='#c73b2b';}else{wH.style.borderColor='';}if(!length||length<=0){valid=false;wL.style.borderColor='#c73b2b';}else{wL.style.borderColor='';}if(!width||width<=0){valid=false;wW.style.borderColor='#c73b2b';}else{wW.style.borderColor='';}var size=sTSW.value;if(!size){valid=false;dSW.style.borderColor='#c73b2b';}else{dSW.style.borderColor='';}if(!valid){eAW.classList.add('show');eAW.scrollIntoView({behavior:'smooth',block:'center'});return;}var wallArea=2*(length+width)*height,area=parseFloat(sTAW.value),piecesPerBox=parseInt(sTPW.value,10),boxesNeeded=wallArea/area,boxesWithBuffer=boxesNeeded*1.1,piecesNeeded=boxesNeeded*piecesPerBox,piecesWithBuffer=boxesWithBuffer*piecesPerBox;tAW.innerHTML=wallArea.toFixed(2)+' <small>m²</small>';sSLW.textContent=size+' cm';tBW.innerHTML=Math.ceil(boxesNeeded)+' <small>dus</small>';tWBW.innerHTML=Math.ceil(boxesWithBuffer)+' <small>dus</small>';tPW.textContent=Math.ceil(piecesNeeded);tPWBW.textContent=Math.ceil(piecesWithBuffer);var msg='Halo SEKAWAN JAYA, saya mau konsultasi kebutuhan keramik/granit dinding:%0A- Tinggi: '+height+' m, Panjang: '+length+' m, Lebar: '+width+' m%0A- Luas dinding: '+wallArea.toFixed(2)+' m²%0A- Ukuran: '+size+' cm%0A- Estimasi dus (+10%): '+Math.ceil(boxesWithBuffer)+' dus%0A- Total keping: '+Math.ceil(piecesWithBuffer)+' pcs%0A%0ATerima kasih.';wALW.href='https://'+_0x2b3c(0)+'?text='+encodeURIComponent(msg);rDW.classList.add('show');rDW.scrollIntoView({behavior:'smooth',block:'start'});});
-wH.addEventListener('input',function(){this.style.borderColor='';eAW.classList.remove('show');rDW.classList.remove('show');});
-wL.addEventListener('input',function(){this.style.borderColor='';eAW.classList.remove('show');rDW.classList.remove('show');});
-wW.addEventListener('input',function(){this.style.borderColor='';eAW.classList.remove('show');rDW.classList.remove('show');});
+        setupDropdown('tileDropdownWall', 'dropdownSelectedWall', 'selectedTileSizeWall', 'selectedTileAreaWall',
+            'selectedTilePiecesWall', function() { rDW.classList.remove('show');
+                eAW.classList.remove('show'); });
 
-// ===== PRINT (LANTAI & DINDING) dengan DIMENSI =====
-window.printResult=function(mode){
-    var aT,sT,dT,dB,pT,pB,dims;
-    if(mode==='wall'){
-        aT=tAW.innerText;
-        sT=sSLW.innerText;
-        dT=tBW.innerText;
-        dB=tWBW.innerText;
-        pT=tPW.innerText;
-        pB=tPWBW.innerText;
-        var h = parseFloat(wH.value) || 0;
-        var p = parseFloat(wL.value) || 0;
-        var l = parseFloat(wW.value) || 0;
-        dims = 'Tinggi: '+h.toFixed(2)+' m, Panjang: '+p.toFixed(2)+' m, Lebar: '+l.toFixed(2)+' m';
-    } else {
-        aT=tA.innerText;
-        sT=sSL.innerText;
-        dT=tB.innerText;
-        dB=tWB.innerText;
-        pT=tP.innerText;
-        pB=tPWB.innerText;
-        var p2 = parseFloat(rL.value) || 0;
-        var l2 = parseFloat(rW.value) || 0;
-        dims = 'Panjang: '+p2.toFixed(2)+' m, Lebar: '+l2.toFixed(2)+' m';
-    }
-    var win=window.open('','_blank');
-    win.document.write('<html><head><title>Hasil Kalkulator Keramik</title><style>body{font-family:Inter,sans-serif;padding:1.5rem;max-width:400px;margin:auto;color:#0b1a33;font-size:13px;}h2{font-family:Poppins,sans-serif;font-weight:600;color:#0b1a33;font-size:1.2rem;}.dims{background:#f2f7fe;padding:0.4rem 0.7rem;border-radius:30px;font-size:0.7rem;margin-bottom:0.5rem;text-align:center;}.grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin:1rem 0;}.item{border:1px solid #dce4ef;border-radius:12px;padding:0.6rem;text-align:center;}.label{font-size:0.6rem;text-transform:uppercase;color:#5d7599;}.value{font-size:1.1rem;font-weight:700;margin-top:0.1rem;}.footer{margin-top:1.5rem;font-size:0.6rem;color:#7a8fa8;border-top:1px solid #e6ecf5;padding-top:0.8rem;text-align:center;}</style></head><body><h2>📐 Estimasi Kebutuhan '+(mode==='wall'?'(Dinding)':'(Lantai)')+'</h2><div style="margin-bottom:0.2rem;color:#2b4a73;font-size:0.8rem;">SEKAWAN JAYA</div><div class="dims">'+dims+'</div><div class="grid"><div class="item"><div class="label">Luas</div><div class="value">'+aT+'</div></div><div class="item"><div class="label">Ukuran</div><div class="value">'+sT+'</div></div><div class="item"><div class="label">Dus</div><div class="value">'+dT+'</div></div><div class="item"><div class="label">Dus +10%</div><div class="value">'+dB+'</div></div><div class="item"><div class="label">Keping</div><div class="value">'+pT+' pcs</div></div><div class="item"><div class="label">Keping +10%</div><div class="value">'+pB+' pcs</div></div></div><div style="background:#f2f7fe;padding:0.5rem;border-radius:40px;font-size:0.7rem;text-align:center;">Hasil estimasi · konsultasi dengan tim ahli</div><div class="footer">Dicetak dari Kalkulator SEKAWAN JAYA · '+new Date().toLocaleDateString('id-ID')+'</div></body></html>');
-    win.document.close();
-    win.print();
-};
+        wCF.addEventListener('submit', function(e) {
+            e.preventDefault();
+            eAW.classList.remove('show');
+            var valid = true;
+            var height = parseFloat(wH.value),
+                length = parseFloat(wL.value),
+                width = parseFloat(wW.value);
+            if (!height || height <= 0) { valid = false;
+                wH.style.borderColor = '#c73b2b'; } else { wH.style.borderColor = ''; }
+            if (!length || length <= 0) { valid = false;
+                wL.style.borderColor = '#c73b2b'; } else { wL.style.borderColor = ''; }
+            if (!width || width <= 0) { valid = false;
+                wW.style.borderColor = '#c73b2b'; } else { wW.style.borderColor = ''; }
+            var size = sTSW.value;
+            if (!size) { valid = false;
+                dSW.style.borderColor = '#c73b2b'; } else { dSW.style.borderColor = ''; }
+            if (!valid) { eAW.classList.add('show');
+                eAW.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+            var wallArea = 2 * (length + width) * height,
+                area = parseFloat(sTAW.value),
+                piecesPerBox = parseInt(sTPW.value, 10),
+                boxesNeeded = wallArea / area,
+                boxesWithBuffer = boxesNeeded * 1.1,
+                piecesNeeded = boxesNeeded * piecesPerBox,
+                piecesWithBuffer = boxesWithBuffer * piecesPerBox;
+            tAW.innerHTML = wallArea.toFixed(2) + ' <small>m²</small>';
+            sSLW.textContent = size + ' cm';
+            tBW.innerHTML = Math.ceil(boxesNeeded) + ' <small>dus</small>';
+            tWBW.innerHTML = Math.ceil(boxesWithBuffer) + ' <small>dus</small>';
+            tPW.textContent = Math.ceil(piecesNeeded);
+            tPWBW.textContent = Math.ceil(piecesWithBuffer);
+            var msg = 'Halo SEKAWAN JAYA, saya mau konsultasi kebutuhan keramik/granit dinding:%0A- Tinggi: ' + height +
+                ' m, Panjang: ' + length + ' m, Lebar: ' + width + ' m%0A- Luas dinding: ' + wallArea.toFixed(2) +
+                ' m²%0A- Ukuran: ' + size + ' cm%0A- Estimasi dus (+10%): ' + Math.ceil(boxesWithBuffer) +
+                ' dus%0A- Total keping: ' + Math.ceil(piecesWithBuffer) + ' pcs%0A%0ATerima kasih.';
+            wALW.href = 'https://' + _0x2b3c(0) + '?text=' + encodeURIComponent(msg);
+            rDW.classList.add('show');
+            rDW.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        wH.addEventListener('input', function() { this.style.borderColor = '';
+            eAW.classList.remove('show');
+            rDW.classList.remove('show'); });
+        wL.addEventListener('input', function() { this.style.borderColor = '';
+            eAW.classList.remove('show');
+            rDW.classList.remove('show'); });
+        wW.addEventListener('input', function() { this.style.borderColor = '';
+            eAW.classList.remove('show');
+            rDW.classList.remove('show'); });
 
-// MULTI RUANGAN
-var roomContainer=document.getElementById('roomContainer'),addRoomBtn=document.getElementById('addRoomBtn'),finishBtn=document.getElementById('finishBtn'),summaryMulti=document.getElementById('summaryMulti');
-var tileData=[{size:'25x25',area:1.00,pieces:16},{size:'25x40',area:1.00,pieces:10},{size:'30x30',area:0.99,pieces:11},{size:'30x60',area:0.90,pieces:5},{size:'40x40',area:1.00,pieces:6},{size:'50x50',area:1.00,pieces:4},{size:'60x60',area:1.44,pieces:4},{size:'60x120',area:1.44,pieces:2}];
-function createRow(){var row=document.createElement('div');row.className='room-row';var name=document.createElement('input');name.type='text';name.className='room-name';name.placeholder='Nama';row.appendChild(name);var length=document.createElement('input');length.type='number';length.className='room-length';length.step='0.01';length.min='0.1';length.placeholder='P';row.appendChild(length);var width=document.createElement('input');width.type='number';width.className='room-width';width.step='0.01';width.min='0.1';width.placeholder='L';row.appendChild(width);var area=document.createElement('span');area.className='room-area';area.textContent='0 m²';row.appendChild(area);var select=document.createElement('select');select.className='room-tile-select';tileData.forEach(function(t){var opt=document.createElement('option');opt.value=t.size;opt.dataset.area=t.area;opt.dataset.pieces=t.pieces;opt.textContent=t.size+' cm ('+t.area.toFixed(2)+' m²)';select.appendChild(opt);});select.selectedIndex=0;row.appendChild(select);var dus=document.createElement('span');dus.className='room-dus';dus.textContent='0';row.appendChild(dus);var del=document.createElement('button');del.className='room-delete';del.type='button';del.innerHTML='<i class="fas fa-times"></i>';del.addEventListener('click',function(){if(roomContainer.children.length>1){row.remove();updateAll();}else{var ni=row.querySelector('.room-name');if(ni)ni.focus();}});row.appendChild(del);[length,width].forEach(function(inp){inp.addEventListener('input',function(){updateRow(row);});});select.addEventListener('change',function(){updateRow(row);});return row;}
-function updateRow(row){var length=parseFloat(row.querySelector('.room-length').value)||0,width=parseFloat(row.querySelector('.room-width').value)||0,areaVal=length*width;var areaSpan=row.querySelector('.room-area');areaSpan.textContent=areaVal>0?areaVal.toFixed(2)+' m²':'0 m²';var select=row.querySelector('.room-tile-select'),selected=select.options[select.selectedIndex],tileArea=parseFloat(selected.dataset.area)||0;var dusVal=0;if(areaVal>0&&tileArea>0){dusVal=Math.ceil(areaVal/tileArea);}row.querySelector('.room-dus').textContent=dusVal;}
-function updateAll(){var rows=roomContainer.querySelectorAll('.room-row');rows.forEach(function(row){updateRow(row);});}
-addRoomBtn.addEventListener('click',function(){var row=createRow();roomContainer.appendChild(row);updateRow(row);row.scrollIntoView({behavior:'smooth',block:'center'});var ni=row.querySelector('.room-name');if(ni)ni.focus();});
-finishBtn.addEventListener('click',function(){var rows=roomContainer.querySelectorAll('.room-row'),totalAreaVal=0,totalDusVal=0,details='',hasData=false;rows.forEach(function(row,index){var name=row.querySelector('.room-name').value.trim()||'Ruangan '+(index+1);var lenVal=parseFloat(row.querySelector('.room-length').value)||0;var widVal=parseFloat(row.querySelector('.room-width').value)||0;var areaText=row.querySelector('.room-area').textContent,areaVal=parseFloat(areaText)||0;var dusText=row.querySelector('.room-dus').textContent,dusVal=parseInt(dusText,10)||0;var size=row.querySelector('.room-tile-select').value;if(areaVal>0)hasData=true;totalAreaVal+=areaVal;totalDusVal+=dusVal;details+=name+': '+lenVal.toFixed(2)+'m × '+widVal.toFixed(2)+'m = '+areaVal.toFixed(2)+' m², '+size+' cm, '+dusVal+' dus\n';});if(!hasData){summaryMulti.classList.add('show');summaryMulti.innerHTML='<div style="color:#6a7f9e;font-size:0.8rem;text-align:center;padding:0.5rem;"><i class="fas fa-info-circle"></i> Silakan isi panjang &amp; lebar ruangan terlebih dahulu.</div>';summaryMulti.scrollIntoView({behavior:'smooth',block:'start'});return;}var waMsg='Halo SEKAWAN JAYA, saya mau konsultasi kebutuhan keramik/granit untuk seluruh rumah (tanpa buffer):%0A%0A'+details+'%0ATotal luas: '+totalAreaVal.toFixed(2)+' m²%0ATotal dus (pembulatan ke atas): '+totalDusVal+' dus%0A%0ATerima kasih.';summaryMulti.classList.add('show');summaryMulti.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.3rem;"><h4 style="font-family:Poppins,sans-serif;font-weight:600;font-size:0.95rem;color:#0b1a33;">🏠 Ringkasan Seluruh Ruangan</h4></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin:0.4rem 0;"><div style="background:white;border-radius:10px;padding:0.5rem;text-align:center;border:1px solid #eef2f8;"><div style="font-size:0.6rem;color:#6a7f9e;">Total Luas</div><div style="font-weight:700;font-size:1rem;">'+totalAreaVal.toFixed(2)+' m²</div></div><div style="background:white;border-radius:10px;padding:0.5rem;text-align:center;border:1px solid #eef2f8;"><div style="font-size:0.6rem;color:#6a7f9e;">Total Dus</div><div style="font-weight:700;font-size:1rem;">'+totalDusVal+' dus</div></div></div><div class="detail-list">'+details+'</div><a class="btn-wa" target="_blank" href="https://'+_0x2b3c(0)+'?text='+encodeURIComponent(waMsg)+'" style="display:flex;align-items:center;justify-content:center;gap:0.4rem;background:#25b66b;color:white;border:none;border-radius:40px;padding:0.6rem;font-weight:600;font-size:0.8rem;text-decoration:none;min-height:40px;margin-top:0.4rem;"><i class="fab fa-whatsapp"></i> Konsultasi WA</a><button class="btn-print" onclick="printMultiResult()" style="margin-top:0.3rem;background:transparent;color:#1f3a5f;border:1px solid #d0dcec;border-radius:40px;padding:0.5rem;font-weight:500;font-size:0.75rem;display:flex;align-items:center;justify-content:center;gap:0.3rem;cursor:pointer;width:100%;min-height:38px;"><i class="fas fa-print"></i> Cetak</button>';summaryMulti.scrollIntoView({behavior:'smooth',block:'start'});});
-var initRow=createRow();roomContainer.appendChild(initRow);updateRow(initRow);
+        // ============================================================
+        // PRINT (LANTAI & DINDING)
+        // ============================================================
+        window.printResult = function(mode) {
+            var aT, sT, dT, dB, pT, pB, dims;
+            if (mode === 'wall') {
+                aT = tAW.innerText;
+                sT = sSLW.innerText;
+                dT = tBW.innerText;
+                dB = tWBW.innerText;
+                pT = tPW.innerText;
+                pB = tPWBW.innerText;
+                var h = parseFloat(wH.value) || 0;
+                var p = parseFloat(wL.value) || 0;
+                var l = parseFloat(wW.value) || 0;
+                dims = 'Tinggi: ' + h.toFixed(2) + ' m, Panjang: ' + p.toFixed(2) + ' m, Lebar: ' + l.toFixed(2) + ' m';
+            } else {
+                aT = tA.innerText;
+                sT = sSL.innerText;
+                dT = tB.innerText;
+                dB = tWB.innerText;
+                pT = tP.innerText;
+                pB = tPWB.innerText;
+                var p2 = parseFloat(rL.value) || 0;
+                var l2 = parseFloat(rW.value) || 0;
+                dims = 'Panjang: ' + p2.toFixed(2) + ' m, Lebar: ' + l2.toFixed(2) + ' m';
+            }
+            var win = window.open('', '_blank');
+            win.document.write(
+                '<html><head><title>Hasil Kalkulator Keramik</title><style>body{font-family:Inter,sans-serif;padding:1.5rem;max-width:400px;margin:auto;color:#0b1a33;font-size:13px;}h2{font-family:Poppins,sans-serif;font-weight:600;color:#0b1a33;font-size:1.2rem;}.dims{background:#f2f7fe;padding:0.4rem 0.7rem;border-radius:30px;font-size:0.7rem;margin-bottom:0.5rem;text-align:center;}.grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin:1rem 0;}.item{border:1px solid #dce4ef;border-radius:12px;padding:0.6rem;text-align:center;}.label{font-size:0.6rem;text-transform:uppercase;color:#5d7599;}.value{font-size:1.1rem;font-weight:700;margin-top:0.1rem;}.footer{margin-top:1.5rem;font-size:0.6rem;color:#7a8fa8;border-top:1px solid #e6ecf5;padding-top:0.8rem;text-align:center;}</style></head><body><h2>📐 Estimasi Kebutuhan ' +
+                (mode === 'wall' ? '(Dinding)' : '(Lantai)') +
+                '</h2><div style="margin-bottom:0.2rem;color:#2b4a73;font-size:0.8rem;">SEKAWAN JAYA</div><div class="dims">' +
+                dims +
+                '</div><div class="grid"><div class="item"><div class="label">Luas</div><div class="value">' + aT +
+                '</div></div><div class="item"><div class="label">Ukuran</div><div class="value">' + sT +
+                '</div></div><div class="item"><div class="label">Dus</div><div class="value">' + dT +
+                '</div></div><div class="item"><div class="label">Dus +10%</div><div class="value">' + dB +
+                '</div></div><div class="item"><div class="label">Keping</div><div class="value">' + pT +
+                ' pcs</div></div><div class="item"><div class="label">Keping +10%</div><div class="value">' + pB +
+                ' pcs</div></div></div><div style="background:#f2f7fe;padding:0.5rem;border-radius:40px;font-size:0.7rem;text-align:center;">Hasil estimasi · konsultasi dengan tim ahli</div><div class="footer">Dicetak dari Kalkulator SEKAWAN JAYA · ' +
+                new Date().toLocaleDateString('id-ID') +
+                '</div></body></html>'
+            );
+            win.document.close();
+            win.print();
+        };
 
-// PRINT MULTI (sudah otomatis menampilkan dimensi karena detail list sudah diperbarui)
-window.printMultiResult=function(){
-    var win=window.open('','_blank');
-    var detailText = document.querySelector('#summaryMulti .detail-list') ? document.querySelector('#summaryMulti .detail-list').textContent : '';
-    var totalLuas = document.querySelector('#summaryMulti .metric-value') ? document.querySelector('#summaryMulti .metric-value').textContent : '0';
-    var totalDus = document.querySelector('#summaryMulti .metric-value:last-child') ? document.querySelector('#summaryMulti .metric-value:last-child').textContent : '0';
-    win.document.write('<html><head><title>Hasil Kalkulator Seluruh Rumah</title><style>body{font-family:Inter,sans-serif;padding:1.5rem;max-width:400px;margin:auto;color:#0b1a33;font-size:13px;}h2{font-family:Poppins,sans-serif;font-weight:600;color:#0b1a33;font-size:1.2rem;}.detail{background:#f2f7fe;padding:0.5rem;border-radius:8px;font-size:0.7rem;white-space:pre-wrap;margin:0.5rem 0;}.grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin:0.5rem 0;}.item{border:1px solid #dce4ef;border-radius:12px;padding:0.6rem;text-align:center;}.label{font-size:0.6rem;text-transform:uppercase;color:#5d7599;}.value{font-size:1.1rem;font-weight:700;margin-top:0.1rem;}.footer{margin-top:1.5rem;font-size:0.6rem;color:#7a8fa8;border-top:1px solid #e6ecf5;padding-top:0.8rem;text-align:center;}</style></head><body><h2>🏠 Estimasi Kebutuhan Seluruh Rumah</h2><div style="margin-bottom:0.2rem;color:#2b4a73;font-size:0.8rem;">SEKAWAN JAYA</div><div class="grid"><div class="item"><div class="label">Total Luas</div><div class="value">'+totalLuas+'</div></div><div class="item"><div class="label">Total Dus</div><div class="value">'+totalDus+'</div></div></div><div class="detail">'+detailText+'</div><div class="footer">Dicetak dari Kalkulator SEKAWAN JAYA · '+new Date().toLocaleDateString('id-ID')+'</div></body></html>');
-    win.document.close();
-    win.print();
-};
-</script>
+        // ============================================================
+        // RUMAH (MULTI ROOM) — dengan opsi "Belum diketahui"
+        // ============================================================
+        var roomContainer = document.getElementById('roomContainer'),
+            addRoomBtn = document.getElementById('addRoomBtn'),
+            finishBtn = document.getElementById('finishBtn'),
+            summaryMulti = document.getElementById('summaryMulti');
+
+        // Data ukuran keramik, ditambah opsi "Belum diketahui" di awal
+        var tileDataWithUnknown = [
+            { size: '', label: 'Belum diketahui', area: 0, pieces: 0 },
+            { size: '25x25', label: '25×25 cm', area: 1.00, pieces: 16 },
+            { size: '25x40', label: '25×40 cm', area: 1.00, pieces: 10 },
+            { size: '30x30', label: '30×30 cm', area: 0.99, pieces: 11 },
+            { size: '30x60', label: '30×60 cm', area: 0.90, pieces: 5 },
+            { size: '40x40', label: '40×40 cm', area: 1.00, pieces: 6 },
+            { size: '50x50', label: '50×50 cm', area: 1.00, pieces: 4 },
+            { size: '60x60', label: '60×60 cm', area: 1.44, pieces: 4 },
+            { size: '60x120', label: '60×120 cm', area: 1.44, pieces: 2 }
+        ];
+
+        // --- Buat baris ruangan baru ---
+        function createRow() {
+            var row = document.createElement('div');
+            row.className = 'room-row';
+
+            var name = document.createElement('input');
+            name.type = 'text';
+            name.className = 'room-name';
+            name.placeholder = 'Nama';
+            row.appendChild(name);
+
+            var length = document.createElement('input');
+            length.type = 'number';
+            length.className = 'room-length';
+            length.step = '0.01';
+            length.min = '0.1';
+            length.placeholder = 'P';
+            row.appendChild(length);
+
+            var width = document.createElement('input');
+            width.type = 'number';
+            width.className = 'room-width';
+            width.step = '0.01';
+            width.min = '0.1';
+            width.placeholder = 'L';
+            row.appendChild(width);
+
+            var area = document.createElement('span');
+            area.className = 'room-area';
+            area.textContent = '0 m²';
+            row.appendChild(area);
+
+            var select = document.createElement('select');
+            select.className = 'room-tile-select';
+            // Tambahkan opsi dari tileDataWithUnknown
+            tileDataWithUnknown.forEach(function(t) {
+                var opt = document.createElement('option');
+                opt.value = t.size;
+                opt.dataset.area = t.area;
+                opt.dataset.pieces = t.pieces;
+                opt.textContent = t.label + (t.size ? ' (' + t.area.toFixed(2) + ' m²)' : '');
+                select.appendChild(opt);
+            });
+            // Default pilih indeks 0 ("Belum diketahui")
+            select.selectedIndex = 0;
+            row.appendChild(select);
+
+            var dus = document.createElement('span');
+            dus.className = 'room-dus';
+            dus.textContent = '0';
+            row.appendChild(dus);
+
+            var del = document.createElement('button');
+            del.className = 'room-delete';
+            del.type = 'button';
+            del.innerHTML = '<i class="fas fa-times"></i>';
+            del.addEventListener('click', function() {
+                if (roomContainer.children.length > 1) {
+                    row.remove();
+                    updateAll();
+                    summaryMulti.classList.remove('show');
+                } else {
+                    var ni = row.querySelector('.room-name');
+                    if (ni) ni.focus();
+                }
+            });
+            row.appendChild(del);
+
+            [length, width].forEach(function(inp) {
+                inp.addEventListener('input', function() {
+                    updateRow(row);
+                    summaryMulti.classList.remove('show');
+                });
+            });
+            select.addEventListener('change', function() {
+                updateRow(row);
+                summaryMulti.classList.remove('show');
+            });
+
+            return row;
+        }
+
+        // --- Update satu baris ---
+        function updateRow(row) {
+            var length = parseFloat(row.querySelector('.room-length').value) || 0;
+            var width = parseFloat(row.querySelector('.room-width').value) || 0;
+            var areaVal = length * width;
+            var areaSpan = row.querySelector('.room-area');
+            areaSpan.textContent = areaVal > 0 ? areaVal.toFixed(2) + ' m²' : '0 m²';
+
+            var select = row.querySelector('.room-tile-select');
+            var selected = select.options[select.selectedIndex];
+            var tileArea = parseFloat(selected.dataset.area) || 0;
+            var dusVal = 0;
+            // Jika ukuran belum diketahui (area = 0) atau luas 0, dus = 0
+            if (areaVal > 0 && tileArea > 0) {
+                dusVal = Math.ceil(areaVal / tileArea);
+            }
+            row.querySelector('.room-dus').textContent = dusVal;
+        }
+
+        // --- Update semua baris ---
+        function updateAll() {
+            var rows = roomContainer.querySelectorAll('.room-row');
+            rows.forEach(function(row) { updateRow(row); });
+        }
+
+        // --- Tambah ruangan ---
+        addRoomBtn.addEventListener('click', function() {
+            var row = createRow();
+            roomContainer.appendChild(row);
+            updateRow(row);
+            row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            var ni = row.querySelector('.room-name');
+            if (ni) ni.focus();
+            summaryMulti.classList.remove('show');
+        });
+
+        // --- Kumpulkan data ruangan ---
+        function collectRoomData() {
+            var rows = roomContainer.querySelectorAll('.room-row');
+            var data = [];
+            var totalArea = 0;
+            var totalDus = 0;
+            rows.forEach(function(row, index) {
+                var name = row.querySelector('.room-name').value.trim() || 'Ruangan ' + (index + 1);
+                var length = parseFloat(row.querySelector('.room-length').value) || 0;
+                var width = parseFloat(row.querySelector('.room-width').value) || 0;
+                var areaVal = length * width;
+                var select = row.querySelector('.room-tile-select');
+                var selected = select.options[select.selectedIndex];
+                var size = selected.value;
+                var tileArea = parseFloat(selected.dataset.area) || 0;
+                var dusVal = 0;
+                if (areaVal > 0 && tileArea > 0) {
+                    dusVal = Math.ceil(areaVal / tileArea);
+                }
+                data.push({
+                    name: name,
+                    length: length,
+                    width: width,
+                    area: areaVal,
+                    size: size,
+                    dus: dusVal,
+                    tileArea: tileArea,
+                    sizeLabel: selected.textContent
+                });
+                totalArea += areaVal;
+                totalDus += dusVal;
+            });
+            return { rows: data, totalArea: totalArea, totalDus: totalDus };
+        }
+
+        // --- Render tabel Excel-like ---
+        function renderTable(summaryData) {
+            var data = summaryData.rows;
+            var totalArea = summaryData.totalArea;
+            var totalDus = summaryData.totalDus;
+
+            // Jika belum ada ruangan yang diisi luasnya, tampilkan pesan
+            var hasData = data.some(function(r) { return r.area > 0; });
+            if (data.length === 0 || !hasData) {
+                summaryMulti.innerHTML =
+                    '<div class="empty-state"><i class="fas fa-info-circle"></i> Silakan isi panjang &amp; lebar ruangan terlebih dahulu.</div>';
+                summaryMulti.classList.add('show');
+                return;
+            }
+
+            var html = '';
+            html += '<div class="table-caption">';
+            html += '<span><i class="fas fa-table"></i> <strong>Rincian Ruangan</strong></span>';
+            html += '<span class="badge-total">Total ' + totalDus + ' dus</span>';
+            html += '</div>';
+
+            html += '<div class="table-wrap">';
+            html += '<table>';
+            html += '<thead><tr>';
+            html += '<th>No</th>';
+            html += '<th>Nama Ruangan</th>';
+            html += '<th>Panjang (m)</th>';
+            html += '<th>Lebar (m)</th>';
+            html += '<th>Luas (m²)</th>';
+            html += '<th>Ukuran (cm)</th>';
+            html += '<th>Kebutuhan (dus)</th>';
+            html += '</tr></thead>';
+            html += '<tbody>';
+
+            var no = 0;
+            data.forEach(function(r) {
+                // tetap tampilkan semua ruangan, meskipun luas 0
+                no++;
+                var sizeDisplay = r.size || '—';
+                var dusDisplay = (r.area > 0 && r.tileArea > 0) ? r.dus : '—';
+                html += '<tr>';
+                html += '<td class="num">' + no + '</td>';
+                html += '<td>' + r.name + '</td>';
+                html += '<td class="num">' + r.length.toFixed(2) + '</td>';
+                html += '<td class="num">' + r.width.toFixed(2) + '</td>';
+                html += '<td class="num">' + r.area.toFixed(2) + '</td>';
+                html += '<td>' + sizeDisplay + '</td>';
+                html += '<td class="num"><strong>' + dusDisplay + '</strong></td>';
+                html += '</tr>';
+            });
+
+            // Total row (hanya jika ada luas > 0)
+            if (totalArea > 0) {
+                html += '<tr class="total-row">';
+                html += '<td colspan="4" style="text-align:right;">TOTAL</td>';
+                html += '<td class="num"><strong>' + totalArea.toFixed(2) + '</strong></td>';
+                html += '<td></td>';
+                html += '<td class="num"><strong>' + totalDus + '</strong></td>';
+                html += '</tr>';
+            }
+
+            html += '</tbody></table>';
+            html += '</div>';
+
+            // WA + Print buttons
+            var waMsg =
+                'Halo SEKAWAN JAYA, saya mau konsultasi kebutuhan keramik/granit untuk seluruh rumah (tanpa buffer):%0A%0A';
+            data.forEach(function(r) {
+                if (r.area > 0 && r.tileArea > 0) {
+                    waMsg += r.name + ': ' + r.length.toFixed(2) + 'm × ' + r.width.toFixed(2) + 'm = ' + r.area
+                        .toFixed(2) + ' m², ' + (r.size || 'belum diketahui') + ' cm, ' + r.dus + ' dus%0A';
+                } else {
+                    waMsg += r.name + ': ' + r.length.toFixed(2) + 'm × ' + r.width.toFixed(2) + 'm = ' + r.area
+                        .toFixed(2) + ' m², (ukuran belum dipilih)%0A';
+                }
+            });
+            waMsg += '%0ATotal luas: ' + totalArea.toFixed(2) + ' m²%0ATotal dus (pembulatan ke atas): ' + totalDus +
+                ' dus%0A%0ATerima kasih.';
+
+            html += '<div class="action-group-multi">';
+            html +=
+                '<a class="btn-wa" target="_blank" href="https://' + _0x2b3c(0) + '?text=' + encodeURIComponent(waMsg) +
+                '" style="display:flex;align-items:center;justify-content:center;gap:0.4rem;background:#25b66b;color:white;border:none;border-radius:40px;padding:0.6rem;font-weight:600;font-size:0.8rem;text-decoration:none;min-height:40px;"><i class="fab fa-whatsapp"></i> Konsultasi WA</a>';
+            html +=
+                '<button class="btn-print" onclick="printMultiResult()" style="margin-top:0.3rem;background:transparent;color:#1f3a5f;border:1px solid #d0dcec;border-radius:40px;padding:0.5rem;font-weight:500;font-size:0.75rem;display:flex;align-items:center;justify-content:center;gap:0.3rem;cursor:pointer;width:100%;min-height:38px;"><i class="fas fa-file-pdf"></i> Export PDF</button>';
+            html += '</div>';
+
+            summaryMulti.innerHTML = html;
+            summaryMulti.classList.add('show');
+            summaryMulti.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // --- Tombol Selesai ---
+        finishBtn.addEventListener('click', function() {
+            var summaryData = collectRoomData();
+            renderTable(summaryData);
+        });
+
+        // --- Print / Export PDF untuk Multi (Excel-like) ---
+        window.printMultiResult = function() {
+            var summaryData = collectRoomData();
+            var data = summaryData.rows;
+            var totalArea = summaryData.totalArea;
+            var totalDus = summaryData.totalDus;
+
+            var hasData = data.some(function(r) { return r.area > 0; });
+            if (!hasData) {
+                alert('Tidak ada data ruangan yang valid untuk dicetak.');
+                return;
+            }
+
+            var win = window.open('', '_blank');
+            var tableRows = '';
+            var no = 0;
+            data.forEach(function(r) {
+                no++;
+                var sizeDisplay = r.size || '—';
+                var dusDisplay = (r.area > 0 && r.tileArea > 0) ? r.dus : '—';
+                tableRows += '<tr>';
+                tableRows += '<td style="text-align:right;padding:5px 8px;border:1px solid #d0d8e4;">' + no + '</td>';
+                tableRows += '<td style="padding:5px 8px;border:1px solid #d0d8e4;">' + r.name + '</td>';
+                tableRows += '<td style="text-align:right;padding:5px 8px;border:1px solid #d0d8e4;">' + r.length
+                    .toFixed(2) + '</td>';
+                tableRows += '<td style="text-align:right;padding:5px 8px;border:1px solid #d0d8e4;">' + r.width
+                    .toFixed(2) + '</td>';
+                tableRows += '<td style="text-align:right;padding:5px 8px;border:1px solid #d0d8e4;">' + r.area
+                    .toFixed(2) + '</td>';
+                tableRows += '<td style="padding:5px 8px;border:1px solid #d0d8e4;">' + sizeDisplay + '</td>';
+                tableRows += '<td style="text-align:right;padding:5px 8px;border:1px solid #d0d8e4;font-weight:700;">' +
+                    dusDisplay + '</td>';
+                tableRows += '</tr>';
+            });
+
+            // Total row
+            if (totalArea > 0) {
+                tableRows += '<tr style="background:#e9eff8;font-weight:700;">';
+                tableRows += '<td colspan="4" style="text-align:right;padding:6px 8px;border:1px solid #d0d8e4;border-top:2px solid #1a3a6b;">TOTAL</td>';
+                tableRows += '<td style="text-align:right;padding:6px 8px;border:1px solid #d0d8e4;border-top:2px solid #1a3a6b;">' +
+                    totalArea.toFixed(2) + '</td>';
+                tableRows += '<td style="padding:6px 8px;border:1px solid #d0d8e4;border-top:2px solid #1a3a6b;"></td>';
+                tableRows += '<td style="text-align:right;padding:6px 8px;border:1px solid #d0d8e4;border-top:2px solid #1a3a6b;">' +
+                    totalDus + '</td>';
+                tableRows += '</tr>';
+            }
+
+            var html = '<html><head><title>Estimasi Kebutuhan Seluruh Rumah</title>';
+            html +=
+                '<style>body{font-family:"Inter",-apple-system,sans-serif;padding:24px 30px;max-width:780px;margin:auto;color:#0b1a33;font-size:12px;background:#fff;}';
+            html +=
+                'h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:1.4rem;color:#0b1a33;margin:0 0 2px 0;}';
+            html += '.sub{color:#2b4a73;font-size:0.85rem;margin-bottom:16px;}';
+            html +=
+                'table{width:100%;border-collapse:collapse;font-size:11px;margin:10px 0 6px;border:1px solid #d0d8e4;}';
+            html += 'th{background:#1a3a6b;color:#fff;font-weight:600;padding:6px 8px;border:1px solid #1a3a6b;text-align:left;font-size:11px;}';
+            html += 'th.num{text-align:right;}';
+            html +=
+                'td{background:#fff;padding:5px 8px;border:1px solid #d0d8e4;vertical-align:middle;}';
+            html += 'tr:nth-child(even) td{background:#f8faff;}';
+            html +=
+                '.footer{margin-top:18px;font-size:10px;color:#7a8fa8;border-top:1px solid #e6ecf5;padding-top:12px;text-align:center;}';
+            html += '.badge-print{display:inline-block;background:#1a4b8c;color:#fff;padding:2px 14px;border-radius:30px;font-size:10px;font-weight:600;margin-top:4px;}';
+            html += 'hr{border:0;border-top:1px solid #e6ecf5;margin:10px 0;}';
+            html += '.note{font-size:10px;color:#4a6a8a;margin-top:4px;}';
+            html +=
+                '@media print{body{padding:16px;}th{background:#1a3a6b !important;color:#fff !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}tr:nth-child(even) td{background:#f8faff !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}.total-row td{background:#e9eff8 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}}</style>';
+            html += '</head><body>';
+
+            html += '<h2>🏠 Estimasi Kebutuhan Seluruh Rumah</h2>';
+            html += '<div class="sub">SEKAWAN JAYA · Supplier Keramik &amp; Granit</div>';
+
+            html += '<table>';
+            html += '<thead><tr>';
+            html += '<th style="text-align:right;width:40px;">No</th>';
+            html += '<th style="min-width:110px;">Nama Ruangan</th>';
+            html += '<th style="text-align:right;width:70px;">Panjang (m)</th>';
+            html += '<th style="text-align:right;width:70px;">Lebar (m)</th>';
+            html += '<th style="text-align:right;width:75px;">Luas (m²)</th>';
+            html += '<th style="width:80px;">Ukuran (cm)</th>';
+            html += '<th style="text-align:right;width:70px;">Kebutuhan (dus)</th>';
+            html += '</tr></thead>';
+            html += '<tbody>' + tableRows + '</tbody>';
+            html += '</table>';
+
+            html += '<div class="badge-print">Total ' + totalDus + ' dus</div>';
+            html += '<div class="note"><i class="fas fa-info-circle"></i> Hasil estimasi berdasarkan input yang dimasukkan. Konsultasi dengan tim ahli disarankan.</div>';
+            html += '<hr />';
+            html += '<div class="footer">Dicetak dari Kalkulator SEKAWAN JAYA · ' + new Date().toLocaleDateString(
+                'id-ID') + ' · ' + new Date().toLocaleTimeString('id-ID') + '</div>';
+
+            html += '</body></html>';
+
+            win.document.write(html);
+            win.document.close();
+            setTimeout(function() {
+                win.print();
+            }, 300);
+        };
+
+        // ============================================================
+        // INISIALISASI — satu baris default dengan "Belum diketahui"
+        // ============================================================
+        var initRow = createRow();
+        roomContainer.appendChild(initRow);
+        updateRow(initRow);
+    </script>
 </body>
 </html>
