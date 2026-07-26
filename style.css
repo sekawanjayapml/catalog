@@ -602,48 +602,6 @@ body {
     font-size: 0.7rem;
 }
 
-/* ===== TESTIMONIALS ===== */
-.testimonials-section {
-    padding: 2rem 0;
-    background: var(--abu-super);
-}
-.testimonials-container {
-    max-width: 700px;
-    margin: 0 auto;
-}
-.testimonial-slide {
-    background: var(--putih);
-    padding: 1.2rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    border: 1px solid var(--biru-muda);
-    text-align: center;
-}
-.testimonial-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 0.6rem;
-    border: 2px solid var(--biru-muda);
-}
-.testimonial-text {
-    font-style: italic;
-    color: var(--abu-terang);
-    font-size: 0.7rem;
-    line-height: 1.5;
-    margin-bottom: 0.5rem;
-}
-.testimonial-author {
-    font-weight: 600;
-    color: var(--biru-utama);
-    font-size: 0.7rem;
-}
-.testimonial-role {
-    color: var(--abu-terang);
-    font-size: 0.6rem;
-}
-
 /* ===== CONTACT ===== */
 .contact-section {
     padding: 2rem 0;
@@ -1314,29 +1272,33 @@ input:checked + .preference-slider::before {
         text-align: center !important;
     }
 
+    /* ===== PERBAIKAN FITUR CARD DI MOBILE ===== */
     .features-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.5rem;
         max-width: 100%;
     }
     .feature-card {
-        padding: 0.6rem 0.3rem;
-        aspect-ratio: 1/1;
+        padding: 0.3rem 0.2rem; /* lebih kecil */
+        border-radius: 6px;
+        /* HAPUS aspect-ratio agar tinggi menyesuaikan konten */
+        aspect-ratio: auto;
+        max-width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        max-width: 100%;
+        min-height: 60px; /* tinggi minimal agar tidak terlalu pendek */
     }
     .feature-card p {
-        display: none;
+        display: none; /* tetap disembunyikan di mobile */
     }
     .feature-icon {
-        font-size: 1.4rem;
-        margin-bottom: 0.2rem;
+        font-size: 1.2rem; /* lebih kecil */
+        margin-bottom: 0.1rem;
     }
     .feature-card h4 {
-        font-size: 0.7rem;
+        font-size: 0.6rem; /* lebih kecil */
         margin-bottom: 0;
     }
 
@@ -1553,16 +1515,19 @@ input:checked + .preference-slider::before {
         min-height: 18px;
         padding: 0.1rem 0.1rem;
     }
+
+    /* Fitur card makin kecil di layar sangat kecil */
     .feature-card {
-        padding: 0.4rem 0.2rem;
+        padding: 0.2rem 0.1rem;
+        min-height: 50px;
     }
     .feature-icon {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .feature-card h4 {
-        font-size: 0.6rem;
+        font-size: 0.55rem;
     }
-    /* ===== PASTIKAN FOOTER TETAP DUA KOLOM ===== */
+
     .footer-links-contact-wrapper {
         grid-template-columns: 1fr 1fr !important;
         gap: 0.5rem !important;
