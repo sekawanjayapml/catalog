@@ -1185,6 +1185,7 @@ input:checked + .preference-slider::before {
         height: 100vh;
         background: var(--putih);
         flex-direction: column;
+        align-items: flex-start;
         padding: 3.5rem 1rem 1rem;
         box-shadow: -3px 0 18px rgba(15,47,90,0.08);
         transition: right 0.3s ease;
@@ -1196,22 +1197,42 @@ input:checked + .preference-slider::before {
     .nav-menu.active {
         right: 0;
     }
-    .nav-menu a {
-        padding: 0.5rem 0.5rem;
-        border-bottom: 1px solid var(--biru-muda);
+    .nav-menu li {
         width: 100%;
-        font-size: 0.75rem;
         text-align: left;
+        list-style: none;
+    }
+    /* Hilangkan border-bottom, buat link tidak full-width */
+    .nav-menu a {
+        display: inline-block;
+        padding: 0.5rem 0.5rem;
+        /* border-bottom: dihapus */
+        width: auto;
+        font-size: 0.75rem;
+        text-align: left !important;
+        box-sizing: border-box;
+        color: var(--abu-gelap);
+        text-decoration: none;
+        transition: var(--transition);
     }
     .nav-menu a::after {
         display: none;
     }
+    /* Tombol WhatsApp di menu mobile - tidak melebar */
     .whatsapp-header {
         margin: 0.5rem 0 0;
-        justify-content: center;
-        width: 100%;
+        justify-content: flex-start !important;
+        width: auto !important;
+        display: inline-flex !important;
         font-size: 0.7rem;
         padding: 0.3rem 0.8rem !important;
+        background: var(--hijau-wa);
+        border-radius: 50px;
+        color: var(--putih) !important;
+        border: none;
+    }
+    .whatsapp-header:hover {
+        background: #128C7E;
     }
 
     /* hero */
@@ -1226,7 +1247,7 @@ input:checked + .preference-slider::before {
         padding: 0 0.3rem;
     }
 
-    /* ===== PERBAIKAN TOMBOL HERO (dengan !important) ===== */
+    /* tombol hero */
     .hero-buttons {
         flex-wrap: nowrap !important;
         gap: 0.5rem !important;
@@ -1243,7 +1264,6 @@ input:checked + .preference-slider::before {
         justify-content: center !important;
         text-align: center !important;
     }
-    /* ======================================================= */
 
     /* features */
     .features-container {
