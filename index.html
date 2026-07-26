@@ -11,54 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Tambahan untuk perbaikan about */
-        .about-content {
-            text-align: left !important;
-        }
-        .about-content p {
-            text-align: left !important;
-        }
-        .about-features-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-            justify-content: flex-start;
-        }
-        .about-feature-item {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            background: var(--biru-muda);
-            padding: 0.2rem 0.8rem;
-            border-radius: 50px;
-            font-weight: 500;
-            font-size: 0.65rem;
-            white-space: nowrap;
-        }
-        .about-feature-item i {
-            color: var(--biru-utama);
-            font-size: 0.7rem;
-        }
-        /* Responsive: di mobile tetap 3 kolom atau wrap */
-        @media (max-width: 480px) {
-            .about-features-row {
-                gap: 0.3rem;
-            }
-            .about-feature-item {
-                font-size: 0.6rem;
-                padding: 0.15rem 0.5rem;
-            }
-        }
-        /* Pastikan di about container tidak center */
-        .about-container {
-            align-items: center;
-        }
-        .about-content h3 {
-            text-align: left;
-        }
-    </style>
 </head>
 <body>
 
@@ -107,37 +59,33 @@
             </div>
         </section>
 
+        <!-- FEATURE CAROUSEL -->
         <section class="features-section">
             <div class="container">
-                <div class="features-container">
-                    <div class="feature-card animate__animated animate__fadeInUp" data-feature="quality">
-                        <div class="feature-icon">
-                            <i class="fas fa-award"></i>
+                <div class="feature-carousel">
+                    <div class="feature-carousel-track" id="featureTrack">
+                        <div class="feature-card" data-feature="quality">
+                            <div class="feature-icon"><i class="fas fa-award"></i></div>
+                            <h4>Kualitas Terjamin</h4>
+                            <p>Produk kami terbuat dari bahan berkualitas tinggi dengan standar internasional.</p>
                         </div>
-                        <h4>Kualitas Terjamin</h4>
-                        <p>Produk kami terbuat dari bahan berkualitas tinggi dengan standar internasional.</p>
-                    </div>
-                    <div class="feature-card animate__animated animate__fadeInUp" data-wow-delay="0.2s" data-feature="shipping">
-                        <div class="feature-icon">
-                            <i class="fas fa-truck"></i>
+                        <div class="feature-card" data-feature="shipping">
+                            <div class="feature-icon"><i class="fas fa-truck"></i></div>
+                            <h4>Gratis Pengiriman</h4>
+                            <p>Gratis biaya pengiriman untuk area tertentu tanpa minimum pembelian.</p>
                         </div>
-                        <h4>Gratis Pengiriman</h4>
-                        <p>Gratis biaya pengiriman untuk area tertentu tanpa minimum pembelian.</p>
-                    </div>
-                    <div class="feature-card animate__animated animate__fadeInUp" data-wow-delay="0.4s" data-feature="price">
-                        <div class="feature-icon">
-                            <i class="fas fa-money-bill-wave"></i>
+                        <div class="feature-card" data-feature="price">
+                            <div class="feature-icon"><i class="fas fa-money-bill-wave"></i></div>
+                            <h4>Harga Terjangkau</h4>
+                            <p>Kami menawarkan harga terbaik tanpa mengorbankan kualitas produk.</p>
                         </div>
-                        <h4>Harga Terjangkau</h4>
-                        <p>Kami menawarkan harga terbaik tanpa mengorbankan kualitas produk.</p>
-                    </div>
-                    <div class="feature-card animate__animated animate__fadeInUp" data-wow-delay="0.6s" data-feature="service">
-                        <div class="feature-icon">
-                            <i class="fas fa-clock"></i>
+                        <div class="feature-card" data-feature="service">
+                            <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                            <h4>Layanan 24/7</h4>
+                            <p>Tim customer service kami siap membantu Anda kapan saja melalui WhatsApp.</p>
                         </div>
-                        <h4>Layanan 24/7</h4>
-                        <p>Tim customer service kami siap membantu Anda kapan saja melalui WhatsApp.</p>
                     </div>
+                    <div class="feature-dots" id="featureDots"></div>
                 </div>
             </div>
         </section>
@@ -178,18 +126,24 @@
                         <h3>Tentang SEKAWAN JAYA</h3>
                         <p>SEKAWAN JAYA hadir sebagai solusi untuk kebutuhan keramik dan granit berkualitas tinggi di tengah masyarakat Pemalang. Kami berkomitmen untuk menyediakan produk terbaik dan layanan pelanggan yang prima.</p>
                         <p>Kami menawarkan berbagai pilihan keramik dan granit dari produsen terkemuka dengan kualitas terjamin dan harga yang kompetitif.</p>
-                        <!-- Fitur dalam satu baris -->
-                        <div class="about-features-row">
-                            <span class="about-feature-item"><i class="fas fa-check-circle"></i> Pelayanan Mudah</span>
-                            <span class="about-feature-item"><i class="fas fa-check-circle"></i> Harga Terjangkau</span>
-                            <span class="about-feature-item"><i class="fas fa-check-circle"></i> Gratis Pengiriman</span>
+                        <div class="about-features">
+                            <div class="about-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Pelayanan Mudah</span>
+                            </div>
+                            <div class="about-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Harga Terjangkau</span>
+                            </div>
+                            <div class="about-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Gratis Pengiriman</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Bagian Testimoni DIHAPUS -->
 
         <section id="contact" class="contact-section">
             <div class="container">
@@ -296,9 +250,7 @@
     <div class="modal" id="productModal">
         <div class="modal-content">
             <span class="close-button" id="closeModal">&times;</span>
-            <div class="modal-body" id="modalBody">
-                <!-- Konten modal akan diisi melalui JavaScript -->
-            </div>
+            <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
 
@@ -356,7 +308,7 @@
                 <div class="cookie-preference">
                     <div class="preference-info">
                         <h4>Cookies Pemasaran</h4>
-                        <p>Cookies ini digunakan untuk menampilkan iklan yang relevan dengan minut Anda.</p>
+                        <p>Cookies ini digunakan untuk menampilkan iklan yang relevan dengan minat Anda.</p>
                     </div>
                     <label class="preference-toggle">
                         <input type="checkbox" id="marketingCookies" checked>
