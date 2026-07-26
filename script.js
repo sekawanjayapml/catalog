@@ -1,7 +1,7 @@
 // ============================================================
 // SCRIPT.JS - TERINTEGRASI DENGAN GOOGLE SHEETS
 // DENGAN FORMAT HARGA OTOMATIS + UKURAN + KATEGORI BERJEJER
-// + WATERMARK HABIS + FEATURE CAROUSEL
+// + WATERMARK HABIS + FEATURE CAROUSEL (AUTO SLIDE 1.5s)
 // ============================================================
 
 // ===== KONFIGURASI =====
@@ -40,7 +40,6 @@ async function fetchProductsFromSheet() {
         const missing = required.filter(col => !headers.includes(col));
         if (missing.length > 0) {
             console.warn('Kolom yang hilang di Sheets:', missing.join(', '));
-            // Tetap lanjut, tapi status mungkin tidak ada
         }
 
         const products = [];
@@ -109,7 +108,6 @@ function renderProducts(productsToRender, page = 1) {
         const categoryDisplay = product.category ? `<span class="product-category">(${product.category})</span>` : '';
         const sizeDisplay = product.size ? `<span class="product-size">${product.size}</span>` : '';
         
-        // SOLD OUT OVERLAY
         let soldOutOverlay = '';
         if (isSoldOut) {
             soldOutOverlay = `
@@ -119,7 +117,6 @@ function renderProducts(productsToRender, page = 1) {
             `;
         }
         
-        // Actions atau teks stok habis
         let actionsHTML = '';
         if (isSoldOut) {
             actionsHTML = `<div class="stok-habis-text"><i class="fas fa-times-circle"></i> Stok Habis</div>`;
@@ -220,7 +217,7 @@ function filterProducts(filterValue) {
 }
 
 // ============================================================
-// 3. FEATURE CAROUSEL (AUTO SLIDE)
+// 3. FEATURE CAROUSEL (AUTO SLIDE 1.5 DETIK)
 // ============================================================
 function initFeatureCarousel() {
     const track = document.getElementById('featureTrack');
@@ -259,7 +256,8 @@ function initFeatureCarousel() {
     function startAutoSlide() {
         if (window.innerWidth > 768) return;
         stopAutoSlide();
-        autoSlideInterval = setInterval(nextSlide, 3500);
+        // === PERUBAHAN: interval 1.5 detik (1500 ms) ===
+        autoSlideInterval = setInterval(nextSlide, 1500);
     }
 
     function stopAutoSlide() {
