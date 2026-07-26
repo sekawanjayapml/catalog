@@ -4,7 +4,7 @@ const allProducts = [
         category: "granit lantai",
         image: "https://i.imgur.com/fBbMjhR.jpeg",
         name: "GRANIT INFINITI ROMANIA GREY",
-        price: "Rp 155.000 / dus",
+        price: "Rp 165.000 / dus",
         description: "Granit Infiniti Romania Grey 60 x 60 adalah ubin granit premium yang menonjolkan warna dasar abu-abu yang elegan, dengan ciri khas berupa corak urat (vein) alami yang tersebar secara acak (random) menyerupai tekstur batu marmer, seringkali dengan sentuhan warna putih atau abu-abu yang lebih gelap/terang, memberikan kesan kedalaman dan kemewahan yang dinamis. Granit ini sangat diminati dalam finishing Polished (mengkilap) untuk memaksimalkan kilau dan coraknya, menjadikannya pilihan ideal untuk desain interior modern minimalis pada lantai, dinding, maupun countertop, berkat tampilannya yang kontemporer sekaligus daya tahannya yang kuat.",
         features: ["Tampilan Premium", "Glazed Polish", "Daya Tahan Tinggi", "Aplikasi Fleksibel"],
         badge: "new"
@@ -13,7 +13,7 @@ const allProducts = [
         category: "granit lantai",
         image: "https://i.imgur.com/8V58O25.jpeg",
         name: "GRANIT INFINITI REVOLVER GREY",
-        price: "Rp 155.000 / dus",
+        price: "Rp 165.000 / dus",
         description: "Granit Infiniti Revolver Grey 60 x 60 adalah ubin granit yang memiliki daya tarik elegan dan timeless karena desainnya meniru motif Marmer Carrara atau Calacatta, di mana warna dasarnya adalah abu-abu muda yang cenderung cerah atau mendekati putih, dihiasi dengan urat-urat halus berwarna abu-abu lembut yang menyebar secara acak. Finishingnya yang paling umum adalah Glazed Polish sehingga permukaannya sangat mengkilap (glowing), membuat ruangan terlihat bersih, terang, dan luas, menjadikannya pilihan favorit untuk desain interior bergaya klasik modern yang menginginkan tampilan mewah nan soft dan tidak terlalu mencolok seperti varian grey lainnya.",
         features: ["Tampilan Premium", "Glazed Polish", "Daya Tahan Tinggi", "Aplikasi Fleksibel"],
         badge: "bestseller"
@@ -22,7 +22,7 @@ const allProducts = [
         category: "granit lantai",
         image: "https://i.imgur.com/rt7zAa1.jpeg",
         name: "GRANIT INFINITI ROYSTON GREY",
-        price: "Rp 155.000 / dus",
+        price: "Rp 165.000 / dus",
         description: "Granit Infiniti Royston Grey 60 x 60 adalah salah satu varian granit premium dari Infiniti yang berada dalam spektrum warna abu-abu muda hingga medium, seringkali diklasifikasikan dengan nuansa warna yang sedang (tidak terlalu gelap seperti Romania, tapi tidak seputih Revolver), dan memiliki ciri khas motif yang cenderung minimalis atau monokrom dengan tekstur urat atau flecks yang sangat halus dan samar, memberikan kesan polos yang bertekstur. Granit ini hadir dengan finishing Glazed Polished untuk memaksimalkan pantulan cahaya dan tampilan yang clean, menghasilkan lantai yang elegan, bersih, dan sangat cocok untuk aplikasi pada ruangan berkonsep minimalis kontemporer yang membutuhkan warna netral sebagai base yang tenang.",
         features: ["Tampilan Premium", "Glazed Polish", "Daya Tahan Tinggi", "Aplikasi Fleksibel"],
         badge: "new"
@@ -40,7 +40,7 @@ const allProducts = [
         category: "keramik lantai",
         image: "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?fit=crop&w=600&h=400",
         name: "KERAMIK MULIA GILMORE GREY",
-        price: "Rp 67.000 / dus",
+        price: "Rp 82.000 / dus",
         description: "Keramik lantai dengan pola geometris modern yang unik dan eye-catching. Tersedia dalam berbagai kombinasi warna yang dapat disesuaikan dengan tema interior Anda.",
         features: ["Pola geometris modern", "Berbagai pilihan warna", "Anti-selip", "Mudah dipasang"],
         badge: "sale"
@@ -49,7 +49,7 @@ const allProducts = [
         category: "granit lantai",
         image: "https://images.unsplash.com/photo-1598928635260-7d5dc0f240bd?fit=crop&w=600&h=400",
         name: "Granit Lantai Abu-abu Polos",
-        price: "Rp 155.000 / dus",
+        price: "Rp 165.000 / dus",
         description: "Granit lantai berwarna abu-abu polos dengan tekstur halus. Cocok untuk gaya interior industrial and minimalis. Sangat kuat dan tahan terhadap beban berat.",
         features: ["Warna abu-abu netral", "Tekstur halus", "Tahan beban berat", "Cocok untuk interior industrial"],
         badge: ""
@@ -58,7 +58,7 @@ const allProducts = [
         category: "keramik dinding",
         image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?fit=crop&w=600&h=400",
         name: "Keramik Dinding Putih Polos",
-        price: "Rp 155.000 / dusm²",
+        price: "Rp 75.000 / dusm²",
         description: "Keramik dinding putih polos dengan permukaan halus. Cocok untuk semua jenis ruangan. Mudah dibersihkan dan tahan lama dengan kualitas terjamin.",
         features: ["Warna netral", "Mudah dipadukan", "Permukaan halus", "Hemat budget"],
         badge: "sale"
@@ -76,7 +76,7 @@ const allProducts = [
         category: "keramik lantai",
         image: "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?fit=crop&w=600&h=400",
         name: "Keramik Lantai Batu Alam",
-        price: "Rp 155.000 / dus",
+        price: "Rp 75.000 / dus",
         description: "Keramik lantai dengan motif batu alam yang natural. Cocok untuk exterior dan interior. Memberikan kesan alami dan segar pada setiap ruangan.",
         features: ["Motif batu alam", "Tahan cuaca", "Anti-selip", "Natural look"],
         badge: ""
@@ -94,7 +94,7 @@ const allProducts = [
         category: "granit lantai",
         image: "https://images.unsplash.com/photo-1618220179428-22790b461013?fit=crop&w=600&h=400",
         name: "GRANIT VELLINO LUMINO",
-        price: "Rp 118.000 / dus",
+        price: "Rp 125.000 / dus",
         description: "Granit Vellino Lumino (atau sering disebut Luminous White) 60 x 60 adalah glazed porcelain tile yang menawarkan kemewahan terang dengan base color putih bersih atau cream yang lembut, dan menonjolkan motif urat marmer yang halus berwarna abu-abu cerah, menyerupai marmer Calacatta atau Carrara, tapi dengan tingkat kelembutan yang lebih tinggi. Keunggulan utamanya terletak pada finishing Glossy (kilap) yang optimal, membuat ubin ini memantulkan cahaya dengan maksimal, sehingga memberikan ilusi ruangan yang sangat terang dan luas. Karena desainnya yang timeless dan netral, granit ini menjadi pilihan top buat yang mencari tampilan elegan minimalis untuk ruang keluarga, ruang tamu, atau hallway tanpa kesan yang terlalu ramai atau bold.",
         features: ["Tampilan Bersih", "Glazed Polish", "Daya Tahan Tinggi", "Aplikasi Fleksibel"],
         badge: "new"
