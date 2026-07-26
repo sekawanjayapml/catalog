@@ -1,11 +1,11 @@
 // ============================================================
 // SCRIPT.JS - TERINTEGRASI DENGAN GOOGLE SHEETS
 // DENGAN FORMAT HARGA OTOMATIS + UKURAN + KATEGORI BERJEJER
-// + FITUR STATUS HABIS (WATERMARK & NONAKTIFKAN TOMBOL)
+// + WATERMARK HABIS + FEATURE CAROUSEL
 // ============================================================
 
 // ===== KONFIGURASI =====
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-g2_pLN1ojcW1B3U-aTOPqp_mT9zXWdEooCpj8HpDc5RpypnfEx4DxEBEEyVd5Z1RlFGAy_g2glAW/pub?output=csv'; // <-- GANTI DENGAN URL SHEETS ANDA!
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-g2_pLN1ojcW1B3U-aTOPqp_mT9zXWdEooCpj8HpDc5RpypnfEx4DxEBEEyVd5Z1RlFGAy_g2glAW/pub?output=csv'; // GANTI DENGAN URL SHEETS ANDA
 
 // ============================================================
 // FUNGSI FORMAT HARGA
@@ -36,13 +36,11 @@ async function fetchProductsFromSheet() {
         const rows = csvText.split('\n').filter(row => row.trim() !== '');
         
         const headers = rows[0].split(',').map(h => h.trim().toLowerCase());
-        const required = ['name', 'price', 'description', 'image', 'category', 'badge', 'features', 'size'];
-        // status tidak wajib, jadi tidak dimasukkan ke required
+        const required = ['name', 'price', 'description', 'image', 'category', 'badge', 'features', 'size', 'status'];
         const missing = required.filter(col => !headers.includes(col));
         if (missing.length > 0) {
-            console.error('Kolom yang hilang di Sheets:', missing.join(', '));
-            alert('Error: Kolom di Google Sheets tidak lengkap. Pastikan ada: ' + required.join(', '));
-            return [];
+            console.warn('Kolom yang hilang di Sheets:', missing.join(', '));
+            // Tetap lanjut, tapi status mungkin tidak ada
         }
 
         const products = [];
@@ -73,7 +71,7 @@ async function fetchProductsFromSheet() {
 }
 
 // ============================================================
-// 2. RENDER PRODUK (dengan tata letak baru + status HABIS)
+// 2. RENDER PRODUK (dengan WATERMARK HABIS)
 // ============================================================
 function renderProducts(productsToRender, page = 1) {
     const startIndex = (page - 1) * productsPerPage;
@@ -89,8 +87,10 @@ function renderProducts(productsToRender, page = 1) {
         productCard.setAttribute('data-category', product.category || '');
         productCard.setAttribute('data-product', JSON.stringify(product));
         
+        const isSoldOut = product.status && product.status.toLowerCase() === 'habis';
+        
         let badgeHTML = '';
-        if (product.badge) {
+        if (product.badge && !isSoldOut) {
             let badgeClass = '';
             let badgeText = '';
             switch(product.badge.toLowerCase()) {
@@ -106,39 +106,25 @@ function renderProducts(productsToRender, page = 1) {
         const imageUrl = product.image || 'https://via.placeholder.com/400x300?text=No+Image';
         const priceDisplay = formatPrice(product.price);
         
-        // Category dengan kurung, size di samping
         const categoryDisplay = product.category ? `<span class="product-category">(${product.category})</span>` : '';
         const sizeDisplay = product.size ? `<span class="product-size">${product.size}</span>` : '';
         
-        // ===== CEK STATUS HABIS =====
-        const isSoldOut = product.status && product.status.toLowerCase() === 'habis';
-        
-        // Overlay watermark HABIS
+        // SOLD OUT OVERLAY
         let soldOutOverlay = '';
         if (isSoldOut) {
             soldOutOverlay = `
-                <div style="position:absolute; top:0; left:0; width:100%; height:100%; 
-                            background:rgba(0,0,0,0.45); display:flex; align-items:center; justify-content:center; 
-                            z-index:5; pointer-events:none; border-radius:var(--radius);">
-                    <span style="background:#ef4444; color:#fff; padding:0.2rem 1.2rem; border-radius:4px; 
-                                 font-weight:800; font-size:1rem; transform:rotate(-15deg); 
-                                 text-transform:uppercase; letter-spacing:2px; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
-                        HABIS
-                    </span>
+                <div class="sold-out-overlay">
+                    <span class="sold-out-badge">HABIS</span>
                 </div>
             `;
         }
         
-        // Tentukan bagian aksi (tombol atau teks stok habis)
-        let actionHTML = '';
+        // Actions atau teks stok habis
+        let actionsHTML = '';
         if (isSoldOut) {
-            actionHTML = `
-                <div style="text-align:center; color:#ef4444; font-weight:600; font-size:0.7rem; padding:0.2rem 0;">
-                    <i class="fas fa-times-circle"></i> Stok Habis
-                </div>
-            `;
+            actionsHTML = `<div class="stok-habis-text"><i class="fas fa-times-circle"></i> Stok Habis</div>`;
         } else {
-            actionHTML = `
+            actionsHTML = `
                 <div class="product-actions">
                     <button class="detail-button">Detail Produk</button>
                     <button class="whatsapp-button"><i class="fab fa-whatsapp"></i> WhatsApp</button>
@@ -148,7 +134,7 @@ function renderProducts(productsToRender, page = 1) {
         
         productCard.innerHTML = `
             ${badgeHTML}
-            <div class="product-image-container" style="position:relative;">
+            <div class="product-image-container">
                 <img src="${imageUrl}" alt="${product.name}" class="product-image" loading="lazy">
                 ${soldOutOverlay}
             </div>
@@ -159,7 +145,7 @@ function renderProducts(productsToRender, page = 1) {
                     ${sizeDisplay}
                 </div>
                 <span class="price">${priceDisplay}</span>
-                ${actionHTML}
+                ${actionsHTML}
             </div>
         `;
         productGrid.appendChild(productCard);
@@ -215,7 +201,7 @@ function changePage(page) {
 }
 
 // ============================================================
-// FILTER (CASE-INSENSITIVE)
+// FILTER
 // ============================================================
 function filterProducts(filterValue) {
     currentFilter = filterValue;
@@ -234,7 +220,93 @@ function filterProducts(filterValue) {
 }
 
 // ============================================================
-// 3. EVENT LISTENER & INISIALISASI
+// 3. FEATURE CAROUSEL (AUTO SLIDE)
+// ============================================================
+function initFeatureCarousel() {
+    const track = document.getElementById('featureTrack');
+    if (!track) return;
+    const cards = track.querySelectorAll('.feature-card');
+    const dotsContainer = document.getElementById('featureDots');
+    if (!dotsContainer || cards.length === 0) return;
+    
+    let currentIndex = 0;
+    let autoSlideInterval = null;
+
+    // Buat dot
+    cards.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'feature-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('data-index', i);
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    function goToSlide(index) {
+        if (window.innerWidth > 768) return;
+        if (index < 0) index = cards.length - 1;
+        if (index >= cards.length) index = 0;
+        currentIndex = index;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        document.querySelectorAll('.feature-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    function nextSlide() {
+        goToSlide(currentIndex + 1);
+    }
+
+    function startAutoSlide() {
+        if (window.innerWidth > 768) return;
+        stopAutoSlide();
+        autoSlideInterval = setInterval(nextSlide, 3500);
+    }
+
+    function stopAutoSlide() {
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = null;
+        }
+    }
+
+    // Touch swipe
+    let startX = 0;
+    let isDragging = false;
+    track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        stopAutoSlide();
+    });
+    track.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+        if (Math.abs(diff) > 30) {
+            if (diff > 0) goToSlide(currentIndex + 1);
+            else goToSlide(currentIndex - 1);
+        }
+        isDragging = false;
+        startAutoSlide();
+    });
+
+    // Resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            track.style.transform = 'none';
+            stopAutoSlide();
+        } else {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            startAutoSlide();
+        }
+    });
+
+    if (window.innerWidth <= 768) {
+        startAutoSlide();
+    }
+}
+
+// ============================================================
+// 4. EVENT LISTENER & INISIALISASI
 // ============================================================
 document.addEventListener('DOMContentLoaded', async () => {
     const loader = document.getElementById('loader');
@@ -243,13 +315,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     allProducts = await fetchProductsFromSheet();
     
     if (allProducts.length === 0) {
-        console.warn('Tidak ada data dari Sheets, gunakan data cadangan jika ada.');
+        console.warn('Tidak ada data dari Sheets.');
     }
     
     filteredProducts = [...allProducts];
     renderProducts(filteredProducts, 1);
     loader.classList.remove('active');
     
+    // Filter buttons
     document.querySelectorAll('.filter-button').forEach(button => {
         button.addEventListener('click', () => {
             document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
@@ -258,11 +331,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
     
+    // Load More
     document.getElementById('loadMoreButton').addEventListener('click', () => {
         currentPage++;
         renderProducts(filteredProducts, currentPage);
     });
     
+    // Detail & WhatsApp
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('detail-button') || e.target.closest('.detail-button')) {
             const button = e.target.classList.contains('detail-button') ? e.target : e.target.closest('.detail-button');
@@ -270,7 +345,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (productCard && productCard.getAttribute('data-product')) {
                 try {
                     const productData = JSON.parse(productCard.getAttribute('data-product'));
-                    // Jangan tampilkan modal jika produk habis (opsional, karena tombol sudah tidak ada)
                     showProductModal(productData);
                 } catch (error) {
                     alert('Terjadi kesalahan saat memuat detail produk.');
@@ -291,16 +365,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
     
+    // Feature card click (untuk modal di desktop)
     document.querySelectorAll('.feature-card').forEach(card => {
         card.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                const key = this.getAttribute('data-feature');
-                if (key) showFeatureModal(key);
+            const key = this.getAttribute('data-feature');
+            if (key && window.innerWidth > 768) {
+                showFeatureModal(key);
             }
         });
     });
 
-    // ===== TOMBOL CLOSE MENU =====
+    // Close menu
     const closeMenuBtn = document.querySelector('.close-menu-btn');
     if (closeMenuBtn) {
         closeMenuBtn.addEventListener('click', function() {
@@ -309,7 +384,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // Tutup menu saat klik di luar (overlay)
     document.addEventListener('click', function(e) {
         const navMenu = document.querySelector('.nav-menu');
         const menuToggle = document.querySelector('.menu-toggle');
@@ -322,10 +396,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }
     });
+
+    // Inisialisasi carousel
+    initFeatureCarousel();
 });
 
 // ============================================================
-// 4. FUNGSI MODAL (dengan kategori dan ukuran)
+// 5. FUNGSI MODAL
 // ============================================================
 function showProductModal(productData) {
     const modal = document.getElementById('productModal');
@@ -334,6 +411,23 @@ function showProductModal(productData) {
     const priceDisplay = formatPrice(productData.price);
     const sizeDisplay = productData.size ? `<p><strong>Ukuran:</strong> ${productData.size}</p>` : '';
     const categoryDisplay = productData.category ? `<p><strong>Kategori:</strong> ${productData.category}</p>` : '';
+    const isSoldOut = productData.status && productData.status.toLowerCase() === 'habis';
+    
+    let actionsHTML = '';
+    if (isSoldOut) {
+        actionsHTML = `<div style="text-align:center; color:#ef4444; font-weight:700; font-size:1rem; padding:0.5rem 0;"><i class="fas fa-times-circle"></i> Stok Habis</div>`;
+    } else {
+        actionsHTML = `
+            <div class="modal-actions">
+                <a href="https://wa.me/6288216124228?text=Saya%20tertarik%20dengan%20produk%20${encodeURIComponent(productData.name)}%20dari%20SEKAWAN%20JAYA" class="cta-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                </a>
+                <button class="cta-button secondary" id="closeModalButton">
+                    <i class="fas fa-times"></i> Tutup
+                </button>
+            </div>
+        `;
+    }
     
     modalBody.innerHTML = `
         <div class="modal-image-container">
@@ -348,19 +442,13 @@ function showProductModal(productData) {
             <div class="modal-features">
                 ${(productData.features || []).map(f => `<div class="modal-feature"><i class="fas fa-check"></i><span>${f}</span></div>`).join('')}
             </div>
-            <div class="modal-actions">
-                <a href="https://wa.me/6288216124228?text=Saya%20tertarik%20dengan%20produk%20${encodeURIComponent(productData.name)}%20dari%20SEKAWAN%20JAYA" class="cta-button" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
-                </a>
-                <button class="cta-button secondary" id="closeModalButton">
-                    <i class="fas fa-times"></i> Tutup
-                </button>
-            </div>
+            ${actionsHTML}
         </div>
     `;
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
-    document.getElementById('closeModalButton').addEventListener('click', closeModalFunction);
+    const closeBtn = document.getElementById('closeModalButton');
+    if (closeBtn) closeBtn.addEventListener('click', closeModalFunction);
 }
 
 function closeModalFunction() {
@@ -368,7 +456,7 @@ function closeModalFunction() {
     document.body.style.overflow = '';
 }
 
-// Fitur modal (tetap)
+// Feature modal data
 const featuresData = {
     quality: {
         icon: '<i class="fas fa-award"></i>',
@@ -424,7 +512,7 @@ document.addEventListener('keydown', function(e) {
 });
 
 // ============================================================
-// 5. FUNGSI LAIN (BACK TO TOP, HEADER, FORM, COOKIES)
+// 6. FUNGSI LAIN (BACK TO TOP, HEADER, FORM, COOKIES)
 // ============================================================
 window.addEventListener('scroll', () => {
     const header = document.getElementById('header');
@@ -476,6 +564,7 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
     }, 1500);
 });
 
+// Cookies
 function showCookiesBanner() {
     if (!localStorage.getItem('cookiesAccepted')) {
         setTimeout(() => document.getElementById('cookiesBanner').classList.add('active'), 2000);
