@@ -1,6 +1,6 @@
 // ============================================================
 // SCRIPT.JS - TERINTEGRASI DENGAN GOOGLE SHEETS
-// DENGAN FORMAT HARGA OTOMATIS (Rp + titik ribuan)
+// DENGAN FORMAT HARGA OTOMATIS + UKURAN
 // ============================================================
 
 // ===== KONFIGURASI =====
@@ -11,22 +11,16 @@ const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-g2_pLN1ojc
 // ============================================================
 function formatPrice(value) {
     if (!value) return '';
-    // Jika sudah ada "Rp" atau "$" atau mata uang lain, tampilkan apa adanya
     if (/[Rp$€£]/.test(value)) return value;
-    
-    // Bersihkan karakter selain angka dan koma
     const clean = value.replace(/[^0-9,]/g, '');
-    // Ubah koma menjadi titik (untuk desimal) lalu ambil bagian integer
     const number = parseFloat(clean.replace(',', '.'));
-    if (isNaN(number)) return value; // jika gagal, tampilkan asli
-    
-    // Format dengan pemisah ribuan (titik)
+    if (isNaN(number)) return value;
     const formatted = new Intl.NumberFormat('id-ID').format(number);
     return `Rp ${formatted}`;
 }
 
 // ============================================================
-// 1. AMBIL DATA DARI GOOGLE SHEETS
+// 1. AMBIL DATA DARI GOOGLE SHEETS (termasuk kolom size)
 // ============================================================
 let allProducts = [];
 let currentPage = 1;
@@ -41,7 +35,8 @@ async function fetchProductsFromSheet() {
         const rows = csvText.split('\n').filter(row => row.trim() !== '');
         
         const headers = rows[0].split(',').map(h => h.trim().toLowerCase());
-        const required = ['name', 'price', 'description', 'image', 'category', 'badge', 'features'];
+        // Kolom yang dibutuhkan: name, price, description, image, category, badge, features, size (baru)
+        const required = ['name', 'price', 'description', 'image', 'category', 'badge', 'features', 'size'];
         const missing = required.filter(col => !headers.includes(col));
         if (missing.length > 0) {
             console.error('Kolom yang hilang di Sheets:', missing.join(', '));
@@ -77,7 +72,7 @@ async function fetchProductsFromSheet() {
 }
 
 // ============================================================
-// 2. RENDER PRODUK (dengan format harga)
+// 2. RENDER PRODUK (dengan ukuran)
 // ============================================================
 function renderProducts(productsToRender, page = 1) {
     const startIndex = (page - 1) * productsPerPage;
@@ -108,7 +103,8 @@ function renderProducts(productsToRender, page = 1) {
         }
         
         const imageUrl = product.image || 'https://via.placeholder.com/400x300?text=No+Image';
-        const priceDisplay = formatPrice(product.price); // <-- FORMAT HARGA
+        const priceDisplay = formatPrice(product.price);
+        const sizeDisplay = product.size ? `<span class="product-size">${product.size}</span>` : '';
         
         productCard.innerHTML = `
             ${badgeHTML}
@@ -118,6 +114,7 @@ function renderProducts(productsToRender, page = 1) {
             <div class="product-info">
                 <h4>${product.name}</h4>
                 <span class="price">${priceDisplay}</span>
+                ${sizeDisplay}
                 <div class="product-actions">
                     <button class="detail-button">Detail Produk</button>
                     <button class="whatsapp-button"><i class="fab fa-whatsapp"></i> WhatsApp</button>
@@ -259,13 +256,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // ============================================================
-// 4. FUNGSI MODAL (dengan format harga)
+// 4. FUNGSI MODAL (dengan ukuran)
 // ============================================================
 function showProductModal(productData) {
     const modal = document.getElementById('productModal');
     const modalBody = document.getElementById('modalBody');
     const imageUrl = productData.image || 'https://via.placeholder.com/400x300?text=No+Image';
-    const priceDisplay = formatPrice(productData.price); // <-- FORMAT HARGA
+    const priceDisplay = formatPrice(productData.price);
+    const sizeDisplay = productData.size ? `<p><strong>Ukuran:</strong> ${productData.size}</p>` : '';
     
     modalBody.innerHTML = `
         <div class="modal-image-container">
@@ -274,6 +272,7 @@ function showProductModal(productData) {
         <div class="modal-info">
             <h3>${productData.name}</h3>
             <span class="modal-price">${priceDisplay}</span>
+            ${sizeDisplay}
             <p class="modal-description">${productData.description || 'Deskripsi produk belum tersedia.'}</p>
             <div class="modal-features">
                 ${(productData.features || []).map(f => `<div class="modal-feature"><i class="fas fa-check"></i><span>${f}</span></div>`).join('')}
