@@ -5,13 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SEKAWAN JAYA - Supplier Keramik & Granit Berkualitas Tinggi di Pemalang dengan Harga Terjangkau. Temukan Beragam Pilihan untuk Rumah Impian Anda.">
     <title>SEKAWAN JAYA - Keramik & Granit Berkualitas Terbaik</title>
-    <!-- TAMBAHAN: font Inter (seperti kalkulator) + Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Tambahan untuk perbaikan about */
+        .about-content {
+            text-align: left !important;
+        }
+        .about-content p {
+            text-align: left !important;
+        }
+        .about-features-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            justify-content: flex-start;
+        }
+        .about-feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: var(--biru-muda);
+            padding: 0.2rem 0.8rem;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.65rem;
+            white-space: nowrap;
+        }
+        .about-feature-item i {
+            color: var(--biru-utama);
+            font-size: 0.7rem;
+        }
+        /* Responsive: di mobile tetap 3 kolom atau wrap */
+        @media (max-width: 480px) {
+            .about-features-row {
+                gap: 0.3rem;
+            }
+            .about-feature-item {
+                font-size: 0.6rem;
+                padding: 0.15rem 0.5rem;
+            }
+        }
+        /* Pastikan di about container tidak center */
+        .about-container {
+            align-items: center;
+        }
+        .about-content h3 {
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
 
@@ -32,12 +79,10 @@
                 <span></span>
             </button>
             <ul class="nav-menu">
-                <!-- Tombol close (X) di dalam menu -->
                 <button class="close-menu-btn" aria-label="Tutup menu">&times;</button>
                 <li><a href="#home">Beranda</a></li>
                 <li><a href="#products">Katalog</a></li>
                 <li><a href="#about-us">Tentang Kami</a></li>
-                <!-- Link Testimoni dihapus -->
                 <li><a href="#contact">Kontak</a></li>
                 <li>
                     <a href="https://wa.me/6288216124228" class="whatsapp-header" target="_blank">
@@ -133,19 +178,11 @@
                         <h3>Tentang SEKAWAN JAYA</h3>
                         <p>SEKAWAN JAYA hadir sebagai solusi untuk kebutuhan keramik dan granit berkualitas tinggi di tengah masyarakat Pemalang. Kami berkomitmen untuk menyediakan produk terbaik dan layanan pelanggan yang prima.</p>
                         <p>Kami menawarkan berbagai pilihan keramik dan granit dari produsen terkemuka dengan kualitas terjamin dan harga yang kompetitif.</p>
-                        <div class="about-features">
-                            <div class="about-feature">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Pelayanan Mudah</span>
-                            </div>
-                            <div class="about-feature">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Harga Terjangkau</span>
-                            </div>
-                            <div class="about-feature">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Gratis Pengiriman</span>
-                            </div>
+                        <!-- Fitur dalam satu baris -->
+                        <div class="about-features-row">
+                            <span class="about-feature-item"><i class="fas fa-check-circle"></i> Pelayanan Mudah</span>
+                            <span class="about-feature-item"><i class="fas fa-check-circle"></i> Harga Terjangkau</span>
+                            <span class="about-feature-item"><i class="fas fa-check-circle"></i> Gratis Pengiriman</span>
                         </div>
                     </div>
                 </div>
@@ -265,7 +302,6 @@
         </div>
     </div>
 
-    <!-- Modal untuk Fitur (Popup) -->
     <div class="feature-modal" id="featureModal">
         <div class="feature-modal-content">
             <span class="close-button" id="closeFeatureModal">&times;</span>
@@ -276,7 +312,6 @@
         </div>
     </div>
 
-    <!-- Cookies Banner -->
     <div class="cookies-banner" id="cookiesBanner">
         <button class="cookies-close" id="cookiesClose">&times;</button>
         <div class="cookies-content">
@@ -291,7 +326,6 @@
         </div>
     </div>
 
-    <!-- Cookies Settings Modal -->
     <div class="cookies-modal" id="cookiesModal">
         <div class="cookies-modal-content">
             <div class="cookies-modal-header">
