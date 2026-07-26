@@ -403,29 +403,39 @@ body {
     margin-bottom: 0.4rem;
     display: block;
 }
-/* ----- TAMBAHAN UNTUK UKURAN DAN KATEGORI ----- */
+
+/* ===== TAMPILAN SIZE DAN CATEGORY YANG PROFESIONAL ===== */
 .product-size {
     display: block;
-    font-size: 0.6rem;
-    color: var(--abu-terang);
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--abu-gelap);
     margin-top: 0.1rem;
     margin-bottom: 0.2rem;
 }
+.product-size::before {
+    content: "📐 ";
+    font-size: 0.7rem;
+}
+/* Jika ingin tanpa icon, hapus baris di atas */
+
 .product-category {
     display: inline-block;
     font-size: 0.6rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--biru-utama);
     background: var(--biru-muda);
-    padding: 0.05rem 0.5rem;
-    border-radius: 30px;
+    padding: 0.15rem 0.6rem;
+    border-radius: 20px;
     margin-top: 0.1rem;
     margin-bottom: 0.3rem;
     align-self: flex-start;
     text-transform: uppercase;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(26, 75, 140, 0.1);
 }
-/* --------------------------------------------- */
+/* ======================================================= */
+
 .product-actions {
     display: flex;
     gap: 0.3rem;
@@ -1192,7 +1202,6 @@ input:checked + .preference-slider::before {
 }
 
 @media (max-width: 768px) {
-    /* header */
     .header .container {
         padding: 0 0.6rem;
     }
@@ -1225,11 +1234,9 @@ input:checked + .preference-slider::before {
         text-align: left;
         list-style: none;
     }
-    /* Hilangkan border-bottom, buat link tidak full-width */
     .nav-menu a {
         display: inline-block;
         padding: 0.5rem 0.5rem;
-        /* border-bottom: dihapus */
         width: auto;
         font-size: 0.75rem;
         text-align: left !important;
@@ -1241,7 +1248,6 @@ input:checked + .preference-slider::before {
     .nav-menu a::after {
         display: none;
     }
-    /* Tombol WhatsApp di menu mobile - tidak melebar */
     .whatsapp-header {
         margin: 0.5rem 0 0;
         justify-content: flex-start !important;
@@ -1258,7 +1264,6 @@ input:checked + .preference-slider::before {
         background: #128C7E;
     }
 
-    /* hero */
     .hero-section {
         padding: 4rem 0 2rem;
     }
@@ -1269,8 +1274,6 @@ input:checked + .preference-slider::before {
         font-size: 0.75rem;
         padding: 0 0.3rem;
     }
-
-    /* tombol hero */
     .hero-buttons {
         flex-wrap: nowrap !important;
         gap: 0.5rem !important;
@@ -1288,7 +1291,6 @@ input:checked + .preference-slider::before {
         text-align: center !important;
     }
 
-    /* features */
     .features-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.5rem;
@@ -1315,7 +1317,6 @@ input:checked + .preference-slider::before {
         margin-bottom: 0;
     }
 
-    /* products */
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.6rem;
@@ -1335,6 +1336,16 @@ input:checked + .preference-slider::before {
         font-size: 0.65rem;
         margin-bottom: 0.2rem;
     }
+    .product-size {
+        font-size: 0.6rem;
+    }
+    .product-size::before {
+        font-size: 0.6rem;
+    }
+    .product-category {
+        font-size: 0.5rem;
+        padding: 0.1rem 0.4rem;
+    }
     .detail-button,
     .whatsapp-button {
         font-size: 0.5rem;
@@ -1352,7 +1363,6 @@ input:checked + .preference-slider::before {
         padding: 0.05rem 0.3rem;
     }
 
-    /* section header */
     .section-header h3 {
         font-size: 1.1rem;
     }
@@ -1368,7 +1378,6 @@ input:checked + .preference-slider::before {
         min-height: 26px;
     }
 
-    /* about */
     .about-content h3 {
         font-size: 1.1rem;
     }
@@ -1383,7 +1392,6 @@ input:checked + .preference-slider::before {
         padding: 0.2rem 0.6rem;
     }
 
-    /* contact */
     .contact-container {
         gap: 1rem;
     }
@@ -1401,7 +1409,6 @@ input:checked + .preference-slider::before {
         min-height: 30px;
     }
 
-    /* footer */
     .footer-container {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -1427,7 +1434,6 @@ input:checked + .preference-slider::before {
         font-size: 0.65rem;
     }
 
-    /* modal */
     .modal-content,
     .feature-modal-content,
     .cookies-modal-content {
@@ -1453,7 +1459,6 @@ input:checked + .preference-slider::before {
         font-size: 0.65rem;
     }
 
-    /* cookies */
     .cookies-content {
         flex-direction: column;
         text-align: center;
@@ -1523,6 +1528,16 @@ input:checked + .preference-slider::before {
     }
     .product-card .price {
         font-size: 0.6rem;
+    }
+    .product-size {
+        font-size: 0.55rem;
+    }
+    .product-size::before {
+        font-size: 0.55rem;
+    }
+    .product-category {
+        font-size: 0.45rem;
+        padding: 0.05rem 0.3rem;
     }
     .detail-button,
     .whatsapp-button {
