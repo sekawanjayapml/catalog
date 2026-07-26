@@ -1557,7 +1557,7 @@ input:checked + .preference-slider::before {
     .feature-card h4 {
         font-size: 0.6rem;
     }
-    /* ===== PERBAIKAN: footer tetap 2 kolom di 480px ke bawah ===== */
+    /* ===== PASTIKAN FOOTER TETAP DUA KOLOM ===== */
     .footer-links-contact-wrapper {
         grid-template-columns: 1fr 1fr !important;
         gap: 0.5rem !important;
