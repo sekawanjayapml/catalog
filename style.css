@@ -404,37 +404,26 @@ body {
     display: block;
 }
 
-/* ===== TAMPILAN SIZE DAN CATEGORY YANG PROFESIONAL ===== */
-.product-size {
-    display: block;
-    font-size: 0.7rem;
-    font-weight: 500;
-    color: var(--abu-gelap);
-    margin-top: 0.1rem;
+/* ===== META (KATEGORI + UKURAN) BERJEJER ===== */
+.product-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
     margin-bottom: 0.2rem;
 }
-.product-size::before {
-    content: "📐 ";
-    font-size: 0.7rem;
-}
-/* Jika ingin tanpa icon, hapus baris di atas */
-
 .product-category {
-    display: inline-block;
-    font-size: 0.6rem;
-    font-weight: 700;
+    font-size: 0.65rem;
+    font-weight: 600;
     color: var(--biru-utama);
-    background: var(--biru-muda);
-    padding: 0.15rem 0.6rem;
-    border-radius: 20px;
-    margin-top: 0.1rem;
-    margin-bottom: 0.3rem;
-    align-self: flex-start;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border: 1px solid rgba(26, 75, 140, 0.1);
+    letter-spacing: 0.3px;
 }
-/* ======================================================= */
+.product-size {
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--abu-terang);
+}
+/* ================================================= */
 
 .product-actions {
     display: flex;
@@ -1336,15 +1325,13 @@ input:checked + .preference-slider::before {
         font-size: 0.65rem;
         margin-bottom: 0.2rem;
     }
+    .product-meta {
+        gap: 0.3rem;
+        font-size: 0.6rem;
+    }
+    .product-category,
     .product-size {
         font-size: 0.6rem;
-    }
-    .product-size::before {
-        font-size: 0.6rem;
-    }
-    .product-category {
-        font-size: 0.5rem;
-        padding: 0.1rem 0.4rem;
     }
     .detail-button,
     .whatsapp-button {
@@ -1529,15 +1516,13 @@ input:checked + .preference-slider::before {
     .product-card .price {
         font-size: 0.6rem;
     }
+    .product-meta {
+        gap: 0.2rem;
+        font-size: 0.55rem;
+    }
+    .product-category,
     .product-size {
         font-size: 0.55rem;
-    }
-    .product-size::before {
-        font-size: 0.55rem;
-    }
-    .product-category {
-        font-size: 0.45rem;
-        padding: 0.05rem 0.3rem;
     }
     .detail-button,
     .whatsapp-button {
