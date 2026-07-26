@@ -262,6 +262,30 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         });
     });
+
+    // ===== TOMBOL CLOSE MENU =====
+    const closeMenuBtn = document.querySelector('.close-menu-btn');
+    if (closeMenuBtn) {
+        closeMenuBtn.addEventListener('click', function() {
+            document.querySelector('.menu-toggle').classList.remove('active');
+            document.querySelector('.nav-menu').classList.remove('active');
+        });
+    }
+
+    // Tutup menu saat klik di luar (overlay)
+    document.addEventListener('click', function(e) {
+        const navMenu = document.querySelector('.nav-menu');
+        const menuToggle = document.querySelector('.menu-toggle');
+        // Jika menu aktif dan klik di luar menu serta di luar tombol toggle
+        if (navMenu.classList.contains('active')) {
+            const isClickInsideMenu = navMenu.contains(e.target);
+            const isClickOnToggle = menuToggle.contains(e.target);
+            if (!isClickInsideMenu && !isClickOnToggle) {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        }
+    });
 });
 
 // ============================================================
