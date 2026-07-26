@@ -159,6 +159,27 @@ body {
     transform: rotate(-45deg) translate(4px, -4px);
 }
 
+/* Tombol close di dalam menu */
+.close-menu-btn {
+    display: none; /* hanya muncul di mobile */
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--abu-gelap);
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 1600;
+    transition: transform 0.2s ease;
+}
+.close-menu-btn:hover {
+    transform: rotate(90deg);
+    color: var(--biru-utama);
+}
+
 /* ===== HERO ===== */
 .hero-section {
     background: linear-gradient(135deg, rgba(26, 75, 140, 0.88), rgba(15, 47, 90, 0.88)), url('https://i.imgur.com/GJdJw9g.jpeg') center/cover no-repeat;
@@ -1206,6 +1227,10 @@ input:checked + .preference-slider::before {
     .menu-toggle {
         display: flex;
     }
+    /* Tampilkan tombol close di dalam menu */
+    .close-menu-btn {
+        display: block;
+    }
     .nav-menu {
         position: fixed;
         top: 0;
@@ -1487,26 +1512,6 @@ input:checked + .preference-slider::before {
     .cookies-text p {
         font-size: 0.6rem;
     }
-}
-
-/* ===== CLOSE BUTTON MOBILE ===== */
-.close-menu-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 1.8rem;
-    font-weight: 300;
-    color: var(--abu-gelap);
-    background: none;
-    border: none;
-    cursor: pointer;
-    line-height: 1;
-    transition: transform 0.2s ease;
-    z-index: 1600;
-}
-.close-menu-btn:hover {
-    transform: rotate(90deg);
-    color: var(--biru-utama);
 }
 
 @media (max-width: 480px) {
