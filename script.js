@@ -1,10 +1,11 @@
 // ============================================================
 // SCRIPT.JS - TERINTEGRASI DENGAN GOOGLE SHEETS
 // DENGAN FORMAT HARGA OTOMATIS + UKURAN + KATEGORI BERJEJER
+// + FITUR STATUS HABIS (WATERMARK & NONAKTIFKAN TOMBOL)
 // ============================================================
 
 // ===== KONFIGURASI =====
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-g2_pLN1ojcW1B3U-aTOPqp_mT9zXWdEooCpj8HpDc5RpypnfEx4DxEBEEyVd5Z1RlFGAy_g2glAW/pub?output=csv'; // <-- GANTI!
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-g2_pLN1ojcW1B3U-aTOPqp_mT9zXWdEooCpj8HpDc5RpypnfEx4DxEBEEyVd5Z1RlFGAy_g2glAW/pub?output=csv'; // <-- GANTI DENGAN URL SHEETS ANDA!
 
 // ============================================================
 // FUNGSI FORMAT HARGA
@@ -36,6 +37,7 @@ async function fetchProductsFromSheet() {
         
         const headers = rows[0].split(',').map(h => h.trim().toLowerCase());
         const required = ['name', 'price', 'description', 'image', 'category', 'badge', 'features', 'size'];
+        // status tidak wajib, jadi tidak dimasukkan ke required
         const missing = required.filter(col => !headers.includes(col));
         if (missing.length > 0) {
             console.error('Kolom yang hilang di Sheets:', missing.join(', '));
@@ -71,7 +73,7 @@ async function fetchProductsFromSheet() {
 }
 
 // ============================================================
-// 2. RENDER PRODUK (dengan tata letak baru)
+// 2. RENDER PRODUK (dengan tata letak baru + status HABIS)
 // ============================================================
 function renderProducts(productsToRender, page = 1) {
     const startIndex = (page - 1) * productsPerPage;
@@ -108,10 +110,47 @@ function renderProducts(productsToRender, page = 1) {
         const categoryDisplay = product.category ? `<span class="product-category">(${product.category})</span>` : '';
         const sizeDisplay = product.size ? `<span class="product-size">${product.size}</span>` : '';
         
+        // ===== CEK STATUS HABIS =====
+        const isSoldOut = product.status && product.status.toLowerCase() === 'habis';
+        
+        // Overlay watermark HABIS
+        let soldOutOverlay = '';
+        if (isSoldOut) {
+            soldOutOverlay = `
+                <div style="position:absolute; top:0; left:0; width:100%; height:100%; 
+                            background:rgba(0,0,0,0.45); display:flex; align-items:center; justify-content:center; 
+                            z-index:5; pointer-events:none; border-radius:var(--radius);">
+                    <span style="background:#ef4444; color:#fff; padding:0.2rem 1.2rem; border-radius:4px; 
+                                 font-weight:800; font-size:1rem; transform:rotate(-15deg); 
+                                 text-transform:uppercase; letter-spacing:2px; box-shadow:0 2px 8px rgba(0,0,0,0.3);">
+                        HABIS
+                    </span>
+                </div>
+            `;
+        }
+        
+        // Tentukan bagian aksi (tombol atau teks stok habis)
+        let actionHTML = '';
+        if (isSoldOut) {
+            actionHTML = `
+                <div style="text-align:center; color:#ef4444; font-weight:600; font-size:0.7rem; padding:0.2rem 0;">
+                    <i class="fas fa-times-circle"></i> Stok Habis
+                </div>
+            `;
+        } else {
+            actionHTML = `
+                <div class="product-actions">
+                    <button class="detail-button">Detail Produk</button>
+                    <button class="whatsapp-button"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                </div>
+            `;
+        }
+        
         productCard.innerHTML = `
             ${badgeHTML}
-            <div class="product-image-container">
+            <div class="product-image-container" style="position:relative;">
                 <img src="${imageUrl}" alt="${product.name}" class="product-image" loading="lazy">
+                ${soldOutOverlay}
             </div>
             <div class="product-info">
                 <h4>${product.name}</h4>
@@ -120,10 +159,7 @@ function renderProducts(productsToRender, page = 1) {
                     ${sizeDisplay}
                 </div>
                 <span class="price">${priceDisplay}</span>
-                <div class="product-actions">
-                    <button class="detail-button">Detail Produk</button>
-                    <button class="whatsapp-button"><i class="fab fa-whatsapp"></i> WhatsApp</button>
-                </div>
+                ${actionHTML}
             </div>
         `;
         productGrid.appendChild(productCard);
@@ -234,6 +270,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (productCard && productCard.getAttribute('data-product')) {
                 try {
                     const productData = JSON.parse(productCard.getAttribute('data-product'));
+                    // Jangan tampilkan modal jika produk habis (opsional, karena tombol sudah tidak ada)
                     showProductModal(productData);
                 } catch (error) {
                     alert('Terjadi kesalahan saat memuat detail produk.');
@@ -276,7 +313,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.addEventListener('click', function(e) {
         const navMenu = document.querySelector('.nav-menu');
         const menuToggle = document.querySelector('.menu-toggle');
-        // Jika menu aktif dan klik di luar menu serta di luar tombol toggle
         if (navMenu.classList.contains('active')) {
             const isClickInsideMenu = navMenu.contains(e.target);
             const isClickOnToggle = menuToggle.contains(e.target);
