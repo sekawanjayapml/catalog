@@ -1,6 +1,6 @@
 // ============================================================
 // SCRIPT.JS - TERINTEGRASI DENGAN GOOGLE SHEETS
-// FLEKSIBEL: SEMUA KOLOM BISA KOSONG, DROPDOWN TETAP TERBACA
+// DENGAN KATEGORI KAPITAL (KERAMIK / GRANIT) TAMPIL DI CARD
 // ============================================================
 
 // ===== KONFIGURASI =====
@@ -20,7 +20,7 @@ function formatPrice(value) {
 }
 
 // ============================================================
-// 1. AMBIL DATA DARI GOOGLE SHEETS (otomatis semua kolom)
+// 1. AMBIL DATA DARI GOOGLE SHEETS
 // ============================================================
 let allProducts = [];
 let currentPage = 1;
@@ -35,13 +35,11 @@ async function fetchProductsFromSheet() {
         const rows = csvText.split('\n').filter(row => row.trim() !== '');
         
         const headers = rows[0].split(',').map(h => h.trim().toLowerCase());
-        // Kolom wajib: name (sisanya opsional)
-        // Tapi kita tetap periksa agar tidak error jika ada kolom tambahan
-        const required = ['name'];
+        const required = ['name', 'price', 'description', 'image', 'category', 'badge', 'features', 'size'];
         const missing = required.filter(col => !headers.includes(col));
         if (missing.length > 0) {
             console.error('Kolom yang hilang di Sheets:', missing.join(', '));
-            alert('Error: Kolom "name" tidak ditemukan di Google Sheets. Pastikan ada kolom bernama "name".');
+            alert('Error: Kolom di Google Sheets tidak lengkap. Pastikan ada: ' + required.join(', '));
             return [];
         }
 
@@ -54,14 +52,12 @@ async function fetchProductsFromSheet() {
             headers.forEach((header, index) => {
                 let val = values[index] || '';
                 if (header === 'features') {
-                    // features bisa diisi dengan koma, misal "A,B,C"
                     obj[header] = val ? val.split(',').map(f => f.trim()) : [];
                 } else {
                     obj[header] = val;
                 }
             });
             
-            // Hanya wajibkan name
             if (obj.name) {
                 products.push(obj);
             }
@@ -75,7 +71,7 @@ async function fetchProductsFromSheet() {
 }
 
 // ============================================================
-// 2. RENDER PRODUK (semua kolom fleksibel)
+// 2. RENDER PRODUK (dengan kategori kapital tampil di card)
 // ============================================================
 function renderProducts(productsToRender, page = 1) {
     const startIndex = (page - 1) * productsPerPage;
@@ -108,6 +104,8 @@ function renderProducts(productsToRender, page = 1) {
         const imageUrl = product.image || 'https://via.placeholder.com/400x300?text=No+Image';
         const priceDisplay = formatPrice(product.price);
         const sizeDisplay = product.size ? `<span class="product-size">${product.size}</span>` : '';
+        // Tampilkan kategori jika ada (dalam huruf kapital)
+        const categoryDisplay = product.category ? `<span class="product-category">${product.category}</span>` : '';
         
         productCard.innerHTML = `
             ${badgeHTML}
@@ -118,6 +116,7 @@ function renderProducts(productsToRender, page = 1) {
                 <h4>${product.name}</h4>
                 <span class="price">${priceDisplay}</span>
                 ${sizeDisplay}
+                ${categoryDisplay}
                 <div class="product-actions">
                     <button class="detail-button">Detail Produk</button>
                     <button class="whatsapp-button"><i class="fab fa-whatsapp"></i> WhatsApp</button>
@@ -176,14 +175,19 @@ function changePage(page) {
     window.scrollTo({ top: document.getElementById('productGrid').offsetTop - 100, behavior: 'smooth' });
 }
 
+// ============================================================
+// FILTER (CASE-INSENSITIVE)
+// ============================================================
 function filterProducts(filterValue) {
     currentFilter = filterValue;
     currentPage = 1;
     if (filterValue === 'all') {
         filteredProducts = [...allProducts];
     } else {
+        // Case-insensitive: ubah filter dan category ke lowercase
+        const lowerFilter = filterValue.toLowerCase();
         filteredProducts = allProducts.filter(product => 
-            product.category && product.category.includes(filterValue)
+            product.category && product.category.toLowerCase().includes(lowerFilter)
         );
     }
     renderProducts(filteredProducts, currentPage);
@@ -259,7 +263,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // ============================================================
-// 4. FUNGSI MODAL (dengan ukuran)
+// 4. FUNGSI MODAL (dengan kategori)
 // ============================================================
 function showProductModal(productData) {
     const modal = document.getElementById('productModal');
@@ -267,6 +271,7 @@ function showProductModal(productData) {
     const imageUrl = productData.image || 'https://via.placeholder.com/400x300?text=No+Image';
     const priceDisplay = formatPrice(productData.price);
     const sizeDisplay = productData.size ? `<p><strong>Ukuran:</strong> ${productData.size}</p>` : '';
+    const categoryDisplay = productData.category ? `<p><strong>Kategori:</strong> ${productData.category}</p>` : '';
     
     modalBody.innerHTML = `
         <div class="modal-image-container">
@@ -276,6 +281,7 @@ function showProductModal(productData) {
             <h3>${productData.name}</h3>
             <span class="modal-price">${priceDisplay}</span>
             ${sizeDisplay}
+            ${categoryDisplay}
             <p class="modal-description">${productData.description || 'Deskripsi produk belum tersedia.'}</p>
             <div class="modal-features">
                 ${(productData.features || []).map(f => `<div class="modal-feature"><i class="fas fa-check"></i><span>${f}</span></div>`).join('')}
