@@ -1,6 +1,6 @@
 // ============================================================
 // SCRIPT.JS - TERINTEGRASI DENGAN GOOGLE SHEETS
-// DENGAN KATEGORI KAPITAL (KERAMIK / GRANIT) TAMPIL DI CARD
+// DENGAN FORMAT HARGA OTOMATIS + KATEGORI & UKURAN DI CARD
 // ============================================================
 
 // ===== KONFIGURASI =====
@@ -71,7 +71,7 @@ async function fetchProductsFromSheet() {
 }
 
 // ============================================================
-// 2. RENDER PRODUK (dengan kategori kapital tampil di card)
+// 2. RENDER PRODUK (dengan kategori berjejer dan ukuran)
 // ============================================================
 function renderProducts(productsToRender, page = 1) {
     const startIndex = (page - 1) * productsPerPage;
@@ -103,9 +103,10 @@ function renderProducts(productsToRender, page = 1) {
         
         const imageUrl = product.image || 'https://via.placeholder.com/400x300?text=No+Image';
         const priceDisplay = formatPrice(product.price);
+        
+        // Category dengan kurung
+        const categoryDisplay = product.category ? `<span class="product-category">(${product.category})</span>` : '';
         const sizeDisplay = product.size ? `<span class="product-size">${product.size}</span>` : '';
-        // Tampilkan kategori jika ada (dalam huruf kapital)
-        const categoryDisplay = product.category ? `<span class="product-category">${product.category}</span>` : '';
         
         productCard.innerHTML = `
             ${badgeHTML}
@@ -114,9 +115,11 @@ function renderProducts(productsToRender, page = 1) {
             </div>
             <div class="product-info">
                 <h4>${product.name}</h4>
+                <div class="product-meta">
+                    ${categoryDisplay}
+                    ${sizeDisplay}
+                </div>
                 <span class="price">${priceDisplay}</span>
-                ${sizeDisplay}
-                ${categoryDisplay}
                 <div class="product-actions">
                     <button class="detail-button">Detail Produk</button>
                     <button class="whatsapp-button"><i class="fab fa-whatsapp"></i> WhatsApp</button>
@@ -184,7 +187,6 @@ function filterProducts(filterValue) {
     if (filterValue === 'all') {
         filteredProducts = [...allProducts];
     } else {
-        // Case-insensitive: ubah filter dan category ke lowercase
         const lowerFilter = filterValue.toLowerCase();
         filteredProducts = allProducts.filter(product => 
             product.category && product.category.toLowerCase().includes(lowerFilter)
@@ -263,7 +265,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // ============================================================
-// 4. FUNGSI MODAL (dengan kategori)
+// 4. FUNGSI MODAL (dengan kategori dan ukuran)
 // ============================================================
 function showProductModal(productData) {
     const modal = document.getElementById('productModal');
