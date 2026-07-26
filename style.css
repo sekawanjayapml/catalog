@@ -385,13 +385,13 @@ body {
     flex-direction: column;
 }
 
-/* ===== PERBAIKAN JARAK ANTARA ELEMEN ===== */
-.product-card h4 {
+/* ===== PERBAIKAN JARAK (GAP DIPERKECIL) ===== */
+.product-card .product-info h4 {
     font-family: 'Poppins', sans-serif;
     font-size: 0.7rem;
     font-weight: 600;
     color: var(--biru-utama);
-    margin-bottom: 0.15rem; /* jarak kecil ke meta */
+    margin-bottom: 0.05rem !important; /* DIPERKECIL dari 0.15rem */
     min-height: 2rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -404,7 +404,8 @@ body {
     align-items: center;
     gap: 0.4rem;
     flex-wrap: wrap;
-    margin-bottom: 0.2rem; /* jarak ke harga */
+    margin-top: 0 !important;
+    margin-bottom: 0.15rem; /* DIPERKECIL dari 0.2rem */
 }
 
 .product-category {
@@ -424,7 +425,7 @@ body {
     font-weight: 700;
     color: var(--biru-utama);
     font-size: 0.75rem;
-    margin-top: 0.15rem;
+    margin-top: 0.1rem;
     margin-bottom: 0.4rem;
     display: block;
 }
@@ -1322,10 +1323,10 @@ input:checked + .preference-slider::before {
     .product-info {
         padding: 0.4rem 0.3rem;
     }
-    .product-card h4 {
+    .product-card .product-info h4 {
         font-size: 0.6rem;
         min-height: 1.6rem;
-        margin-bottom: 0.1rem;
+        margin-bottom: 0.05rem !important;
     }
     .product-meta {
         gap: 0.2rem;
@@ -1518,10 +1519,10 @@ input:checked + .preference-slider::before {
     .product-image-container {
         height: 90px;
     }
-    .product-card h4 {
+    .product-card .product-info h4 {
         font-size: 0.55rem;
         min-height: 1.4rem;
-        margin-bottom: 0.05rem;
+        margin-bottom: 0.05rem !important;
     }
     .product-meta {
         gap: 0.15rem;
