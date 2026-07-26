@@ -1,6 +1,6 @@
 // ============================================================
 // SCRIPT.JS - TERINTEGRASI DENGAN GOOGLE SHEETS
-// DENGAN FORMAT HARGA OTOMATIS + KATEGORI & UKURAN DI CARD
+// DENGAN FORMAT HARGA OTOMATIS + UKURAN + KATEGORI BERJEJER
 // ============================================================
 
 // ===== KONFIGURASI =====
@@ -71,7 +71,7 @@ async function fetchProductsFromSheet() {
 }
 
 // ============================================================
-// 2. RENDER PRODUK (dengan kategori berjejer dan ukuran)
+// 2. RENDER PRODUK (dengan tata letak baru)
 // ============================================================
 function renderProducts(productsToRender, page = 1) {
     const startIndex = (page - 1) * productsPerPage;
@@ -104,7 +104,7 @@ function renderProducts(productsToRender, page = 1) {
         const imageUrl = product.image || 'https://via.placeholder.com/400x300?text=No+Image';
         const priceDisplay = formatPrice(product.price);
         
-        // Category dengan kurung
+        // Category dengan kurung, size di samping
         const categoryDisplay = product.category ? `<span class="product-category">(${product.category})</span>` : '';
         const sizeDisplay = product.size ? `<span class="product-size">${product.size}</span>` : '';
         
