@@ -376,6 +376,88 @@ body {
     border-color: var(--biru-utama);
 }
 
+/* ===== SEARCH & SIZE FILTER ===== */
+.search-size-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    background: var(--putih);
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--biru-muda);
+    box-shadow: var(--shadow);
+}
+
+.search-box {
+    flex: 2;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    background: var(--abu-super);
+    border-radius: 50px;
+    padding: 0.2rem 0.8rem;
+    border: 1px solid var(--biru-muda);
+    transition: var(--transition);
+}
+.search-box:focus-within {
+    border-color: var(--biru-utama);
+    box-shadow: 0 0 0 2px rgba(26, 75, 140, 0.08);
+}
+.search-box i {
+    color: var(--abu-terang);
+    font-size: 0.7rem;
+    margin-right: 0.4rem;
+}
+.search-box input {
+    border: none;
+    background: transparent;
+    padding: 0.3rem 0;
+    font-size: 0.75rem;
+    width: 100%;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+}
+.search-box input::placeholder {
+    color: var(--abu-terang);
+    font-size: 0.7rem;
+}
+
+.size-filter {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+.size-filter label {
+    font-weight: 500;
+    font-size: 0.7rem;
+    color: var(--abu-gelap);
+}
+.size-filter select {
+    padding: 0.3rem 1.8rem 0.3rem 0.8rem;
+    border: 1px solid var(--biru-muda);
+    border-radius: 50px;
+    background: var(--putih);
+    font-size: 0.7rem;
+    font-family: 'Inter', sans-serif;
+    color: var(--abu-gelap);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.6rem center;
+    background-size: 0.7rem;
+    cursor: pointer;
+    min-height: 30px;
+}
+.size-filter select:focus {
+    outline: none;
+    border-color: var(--biru-utama);
+    box-shadow: 0 0 0 2px rgba(26, 75, 140, 0.08);
+}
+
 /* ===== PRODUCT ===== */
 .product-catalog-section {
     padding: 2rem 0;
@@ -1226,7 +1308,7 @@ input:checked + .preference-slider::before {
         text-align: center;
     }
     .about-content p {
-        text-align: left; /* PARAGRAF RATA KIRI */
+        text-align: left;
     }
     .about-features {
         justify-content: center;
@@ -1392,7 +1474,23 @@ input:checked + .preference-slider::before {
         min-height: 26px;
     }
 
-    /* ABOUT: 3 fitur berjejer */
+    .search-size-filter {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+        padding: 0.6rem;
+    }
+    .search-box {
+        min-width: unset;
+    }
+    .size-filter {
+        justify-content: center;
+    }
+    .size-filter select {
+        flex: 1;
+        min-width: 120px;
+    }
+
     .about-features {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -1409,7 +1507,7 @@ input:checked + .preference-slider::before {
         font-size: 1.1rem;
     }
     .about-content p {
-        text-align: left; /* RATA KIRI DI MOBILE JUGA */
+        text-align: left;
     }
 
     .contact-container {
