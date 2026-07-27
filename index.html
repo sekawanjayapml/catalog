@@ -90,6 +90,7 @@
             </div>
         </section>
 
+        <!-- KATALOG PRODUK dengan Pencarian & Filter Ukuran -->
         <section id="products" class="product-catalog-section">
             <div class="container">
                 <div class="section-header">
@@ -97,6 +98,7 @@
                     <p>Temukan beragam pilihan keramik dan granit berkualitas tinggi untuk kebutuhan properti Anda</p>
                 </div>
                 
+                <!-- Filter Kategori -->
                 <div class="category-filter">
                     <button class="filter-button active" data-filter="all">Semua Produk</button>
                     <button class="filter-button" data-filter="keramik">Keramik</button>
@@ -104,7 +106,22 @@
                     <button class="filter-button" data-filter="lantai">Lantai</button>
                     <button class="filter-button" data-filter="dinding">Dinding</button>
                 </div>
-                
+
+                <!-- Pencarian & Filter Ukuran -->
+                <div class="search-size-filter">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="Cari produk... (nama atau deskripsi)">
+                    </div>
+                    <div class="size-filter">
+                        <label for="sizeSelect">Ukuran:</label>
+                        <select id="sizeSelect">
+                            <option value="all">Semua Ukuran</option>
+                            <!-- Opsi akan diisi oleh JavaScript -->
+                        </select>
+                    </div>
+                </div>
+
                 <div class="product-grid" id="productGrid">
                     <!-- Produk akan dimuat melalui JavaScript -->
                 </div>
