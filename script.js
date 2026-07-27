@@ -1,15 +1,11 @@
 // ============================================================
-// SCRIPT.JS - TERINTEGRASI DENGAN GOOGLE SHEETS
-// DENGAN FORMAT HARGA OTOMATIS + UKURAN + KATEGORI BERJEJER
-// + WATERMARK HABIS + FEATURE CAROUSEL (AUTO SLIDE 1.5s)
+// SCRIPT.JS - DENGAN FITUR PENCARIAN & FILTER UKURAN
 // ============================================================
 
 // ===== KONFIGURASI =====
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-g2_pLN1ojcW1B3U-aTOPqp_mT9zXWdEooCpj8HpDc5RpypnfEx4DxEBEEyVd5Z1RlFGAy_g2glAW/pub?output=csv'; // GANTI DENGAN URL SHEETS ANDA
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-g2_pLN1ojcW1B3U-aTOPqp_mT9zXWdEooCpj8HpDc5RpypnfEx4DxEBEEyVd5Z1RlFGAy_g2glAW/pub?output=csv';
 
-// ============================================================
-// FUNGSI FORMAT HARGA
-// ============================================================
+// ===== FORMAT HARGA =====
 function formatPrice(value) {
     if (!value) return '';
     if (/[Rp$€£]/.test(value)) return value;
@@ -20,15 +16,16 @@ function formatPrice(value) {
     return `Rp ${formatted}`;
 }
 
-// ============================================================
-// 1. AMBIL DATA DARI GOOGLE SHEETS
-// ============================================================
+// ===== STATE =====
 let allProducts = [];
+let filteredProducts = [];
 let currentPage = 1;
 const productsPerPage = 6;
 let currentFilter = 'all';
-let filteredProducts = [];
+let currentSearch = '';
+let currentSize = 'all';
 
+// ===== 1. AMBIL DATA DARI GOOGLE SHEETS =====
 async function fetchProductsFromSheet() {
     try {
         const response = await fetch(SHEET_URL);
@@ -69,9 +66,7 @@ async function fetchProductsFromSheet() {
     }
 }
 
-// ============================================================
-// 2. RENDER PRODUK (dengan WATERMARK HABIS)
-// ============================================================
+// ===== 2. RENDER PRODUK =====
 function renderProducts(productsToRender, page = 1) {
     const startIndex = (page - 1) * productsPerPage;
     const endIndex = startIndex + productsPerPage;
@@ -197,28 +192,96 @@ function changePage(page) {
     window.scrollTo({ top: document.getElementById('productGrid').offsetTop - 100, behavior: 'smooth' });
 }
 
-// ============================================================
-// FILTER
-// ============================================================
-function filterProducts(filterValue) {
-    currentFilter = filterValue;
-    currentPage = 1;
-    if (filterValue === 'all') {
-        filteredProducts = [...allProducts];
-    } else {
-        const lowerFilter = filterValue.toLowerCase();
-        filteredProducts = allProducts.filter(product => 
+// ===== 3. FILTER GABUNGAN (KATEGORI + UKURAN + PENCARIAN) =====
+function applyFilters() {
+    let result = [...allProducts];
+    
+    // Filter kategori
+    if (currentFilter !== 'all') {
+        const lowerFilter = currentFilter.toLowerCase();
+        result = result.filter(product => 
             product.category && product.category.toLowerCase().includes(lowerFilter)
         );
     }
+    
+    // Filter ukuran
+    if (currentSize !== 'all') {
+        result = result.filter(product => 
+            product.size && product.size.toLowerCase() === currentSize.toLowerCase()
+        );
+    }
+    
+    // Filter pencarian (teks bebas di nama dan deskripsi)
+    if (currentSearch.trim() !== '') {
+        const searchLower = currentSearch.trim().toLowerCase();
+        result = result.filter(product => 
+            (product.name && product.name.toLowerCase().includes(searchLower)) ||
+            (product.description && product.description.toLowerCase().includes(searchLower))
+        );
+    }
+    
+    filteredProducts = result;
+    currentPage = 1;
     renderProducts(filteredProducts, currentPage);
     const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
     document.getElementById('paginationContainer').style.display = totalPages <= 1 ? 'none' : 'flex';
 }
 
-// ============================================================
-// 3. FEATURE CAROUSEL (AUTO SLIDE 1.5 DETIK)
-// ============================================================
+// ===== 4. ISI DROPDOWN UKURAN =====
+function populateSizeFilter() {
+    const sizeSelect = document.getElementById('sizeSelect');
+    if (!sizeSelect) return;
+    const sizes = new Set();
+    allProducts.forEach(product => {
+        if (product.size && product.size.trim() !== '') {
+            sizes.add(product.size.trim());
+        }
+    });
+    const sortedSizes = Array.from(sizes).sort();
+    sortedSizes.forEach(size => {
+        const option = document.createElement('option');
+        option.value = size;
+        option.textContent = size;
+        sizeSelect.appendChild(option);
+    });
+}
+
+// ===== 5. EVENT LISTENER UNTUK FILTER =====
+function initFilterListeners() {
+    // Filter kategori
+    document.querySelectorAll('.filter-button').forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            currentFilter = button.getAttribute('data-filter');
+            applyFilters();
+        });
+    });
+    
+    // Pencarian (dengan debounce sederhana)
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        let debounceTimer;
+        searchInput.addEventListener('input', () => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => {
+                currentSearch = searchInput.value;
+                applyFilters();
+            }, 300);
+        });
+    }
+    
+    // Filter ukuran
+    const sizeSelect = document.getElementById('sizeSelect');
+    if (sizeSelect) {
+        sizeSelect.addEventListener('change', () => {
+            currentSize = sizeSelect.value;
+            applyFilters();
+        });
+    }
+}
+
+// ===== 6. FEATURE CAROUSEL (AUTO SLIDE 1.5 DETIK) =====
 function initFeatureCarousel() {
     const track = document.getElementById('featureTrack');
     if (!track) return;
@@ -229,7 +292,6 @@ function initFeatureCarousel() {
     let currentIndex = 0;
     let autoSlideInterval = null;
 
-    // Buat dot
     cards.forEach((_, i) => {
         const dot = document.createElement('button');
         dot.className = 'feature-dot' + (i === 0 ? ' active' : '');
@@ -256,7 +318,6 @@ function initFeatureCarousel() {
     function startAutoSlide() {
         if (window.innerWidth > 768) return;
         stopAutoSlide();
-        // === PERUBAHAN: interval 1.5 detik (1500 ms) ===
         autoSlideInterval = setInterval(nextSlide, 1500);
     }
 
@@ -267,7 +328,6 @@ function initFeatureCarousel() {
         }
     }
 
-    // Touch swipe
     let startX = 0;
     let isDragging = false;
     track.addEventListener('touchstart', (e) => {
@@ -287,7 +347,6 @@ function initFeatureCarousel() {
         startAutoSlide();
     });
 
-    // Resize
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) {
             track.style.transform = 'none';
@@ -303,9 +362,7 @@ function initFeatureCarousel() {
     }
 }
 
-// ============================================================
-// 4. EVENT LISTENER & INISIALISASI
-// ============================================================
+// ===== 7. INISIALISASI =====
 document.addEventListener('DOMContentLoaded', async () => {
     const loader = document.getElementById('loader');
     loader.classList.add('active');
@@ -316,18 +373,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.warn('Tidak ada data dari Sheets.');
     }
     
+    // Isi dropdown ukuran
+    populateSizeFilter();
+    
+    // Set filter awal
     filteredProducts = [...allProducts];
     renderProducts(filteredProducts, 1);
     loader.classList.remove('active');
     
-    // Filter buttons
-    document.querySelectorAll('.filter-button').forEach(button => {
-        button.addEventListener('click', () => {
-            document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            filterProducts(button.getAttribute('data-filter'));
-        });
-    });
+    // Inisialisasi event listener untuk filter
+    initFilterListeners();
     
     // Load More
     document.getElementById('loadMoreButton').addEventListener('click', () => {
@@ -395,13 +450,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // Inisialisasi carousel
     initFeatureCarousel();
 });
 
-// ============================================================
-// 5. FUNGSI MODAL
-// ============================================================
+// ===== 8. MODAL PRODUK =====
 function showProductModal(productData) {
     const modal = document.getElementById('productModal');
     const modalBody = document.getElementById('modalBody');
@@ -454,7 +506,7 @@ function closeModalFunction() {
     document.body.style.overflow = '';
 }
 
-// Feature modal data
+// ===== 9. FEATURE MODAL =====
 const featuresData = {
     quality: {
         icon: '<i class="fas fa-award"></i>',
@@ -509,9 +561,7 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// ============================================================
-// 6. FUNGSI LAIN (BACK TO TOP, HEADER, FORM, COOKIES)
-// ============================================================
+// ===== 10. FUNGSI LAIN (BACK TO TOP, HEADER, FORM, COOKIES) =====
 window.addEventListener('scroll', () => {
     const header = document.getElementById('header');
     const backToTop = document.getElementById('backToTop');
